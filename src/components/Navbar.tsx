@@ -5,12 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Instagram, Facebook, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Ana Səhifə", href: "#hero", id: "hero" },
-  { label: "Haqqımızda", href: "#about", id: "about" },
-  { label: "Texnika", href: "#equipment", id: "equipment" },
-  { label: "Kateqoriyalar", href: "#categories", id: "categories" },
-  { label: "Üstünlüklər", href: "#why-us", id: "why-us" },
-  { label: "Əlaqə", href: "#contact", id: "contact" },
+  { label: "Ana Səhifə", href: "/#hero", id: "hero" },
+  { label: "Haqqımızda", href: "/#about", id: "about" },
+  { label: "Texnika", href: "/#equipment", id: "equipment" },
+  { label: "Layihələr", href: "/layiheler", id: "layiheler" },
+  { label: "Kateqoriyalar", href: "/#categories", id: "categories" },
+  { label: "Üstünlüklər", href: "/#why-us", id: "why-us" },
+  { label: "Əlaqə", href: "/#contact", id: "contact" },
 ];
 
 export default function Navbar() {
