@@ -39,23 +39,23 @@ export default function AboutUs() {
 
             <div className="grid sm:grid-cols-3 gap-8 pt-8 border-t border-black/5">
               <div className="flex flex-col gap-2">
-                <span className="text-3xl font-black text-black">10+</span>
-                <span className="text-[11px] font-bold text-black/40 uppercase tracking-widest">İllik Təcrübə</span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-3xl font-black text-black">150+</span>
+                <span className="text-3xl font-black text-black">50+</span>
                 <span className="text-[11px] font-bold text-black/40 uppercase tracking-widest">Müasir Texnika</span>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-3xl font-black text-black">500+</span>
-                <span className="text-[11px] font-bold text-black/40 uppercase tracking-widest">Uğurlu Layihə</span>
+                <span className="text-3xl font-black text-black">24/7</span>
+                <span className="text-[11px] font-bold text-black/40 uppercase tracking-widest">Texniki Dəstək</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span className="text-3xl font-black text-black">100%</span>
+                <span className="text-[11px] font-bold text-black/40 uppercase tracking-widest">Müştəri Məmnuniyyəti</span>
               </div>
             </div>
           </FadeIn>
 
           <FadeIn direction="left" delay={0.3} className="relative aspect-square md:aspect-auto md:h-[600px] overflow-hidden rounded-3xl group shadow-2xl">
             <img 
-              src="/machines/excavator-heavy.png" 
+              src="/machines/excavator.png" 
               alt="Heavy Machinery" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
