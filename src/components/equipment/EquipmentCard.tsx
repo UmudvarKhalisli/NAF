@@ -34,7 +34,7 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: idx * 0.06 }}
-      className="group relative bg-white border border-black/[0.04] hover:border-black/10 transition-all duration-500 overflow-hidden flex flex-col h-full hover:shadow-lg"
+      className="group relative bg-white border border-black/[0.04] hover:border-black/10 transition-all duration-500 overflow-hidden flex flex-col h-full hover:shadow-lg rounded-xl"
     >
       {/* Image */}
       <div className="relative aspect-[3/2] w-full overflow-hidden bg-neutral-50">
