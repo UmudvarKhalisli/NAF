@@ -87,7 +87,7 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`relative text-[13px] font-bold tracking-wide transition-all duration-300 group ${
+                  className={`relative text-[15px] font-bold tracking-wide transition-all duration-300 group ${
                     activeSection === link.id && isHome
                       ? (forceSolid ? "text-neutral-900" : "text-gray-300")      
                       : (forceSolid ? "text-black/60 hover:text-black" : "text-white/70 hover:text-white")
