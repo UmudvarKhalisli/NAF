@@ -21,7 +21,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
       
       <div className="absolute top-4 left-4 z-10 flex gap-2">
-        <span className={`px-3 py-1 text-[10px] font-black tracking-widest uppercase ${isCompleted ? 'bg-green-500 text-black' : 'bg-[#FFBD59] text-black'} `}>
+        <span className={`px-3 py-1 text-[10px] font-black tracking-widest uppercase ${isCompleted ? 'bg-green-500 text-black' : 'bg-white text-black'} `}>
           {isCompleted ? 'Tamamlandı' : 'Davam Edir'}
         </span>
       </div>
@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <p className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase mb-2">
           {project.location}
         </p>
-        <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-4 group-hover:text-[#f59e0b] transition-colors">
+        <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-4 group-hover:text-neutral-300 transition-colors">
           {project.title}
         </h3>
         

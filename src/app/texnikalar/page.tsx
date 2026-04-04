@@ -2,14 +2,17 @@ import { supabase } from '@/lib/supabase/client';
 import CatalogClient from './CatalogClient';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { DUMMY_EQUIPMENT } from '@/components/equipment/EquipmentGrid';
 
-export const revalidate = 60; // 1 minute revalidation
+export const revalidate = 60;
 
 export default async function EquipmentCatalogPage() {
   const { data: equipment, error } = await supabase
     .from('equipment')
     .select('*')
     .order('created_at', { ascending: false });
+
+  const displayData = (equipment && equipment.length > 0 && !error) ? equipment : DUMMY_EQUIPMENT;
 
   return (
     <div className="bg-[#fafafa] min-h-screen flex flex-col">
@@ -28,13 +31,7 @@ export default async function EquipmentCatalogPage() {
             </p>
           </div>
 
-          {!error && equipment ? (
-            <CatalogClient initialData={equipment} />
-          ) : (
-            <div className="text-center py-24 text-black/50 font-bold uppercase tracking-widest">
-              Texnikalar yüklənərkən xəta baş verdi və ya siyahı boşdur.
-            </div>
-          )}
+          <CatalogClient initialData={displayData} />
         </div>
       </main>
 

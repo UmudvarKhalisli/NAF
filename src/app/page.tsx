@@ -26,7 +26,7 @@ export default function Home() {
             </div>
             <Link 
               href="/texnikalar" 
-              className="group inline-flex items-center gap-4 bg-black text-white px-8 py-5 hover:bg-[#FFBD59] hover:text-black transition-all duration-300"
+              className="group inline-flex items-center gap-4 bg-black text-white px-8 py-5 hover:bg-neutral-700 transition-all duration-300"
             >
               <span className="text-[12px] font-black tracking-[0.2em] relative top-[1px] uppercase">
                 BÜTÜN TEXNİKALARA BAX

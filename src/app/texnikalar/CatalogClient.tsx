@@ -55,7 +55,7 @@ export default function CatalogClient({ initialData }: CatalogClientProps) {
           </p>
           <button 
             onClick={() => setActiveCategory('Hamısı')}
-            className="mt-4 text-[10px] font-black tracking-widest bg-black text-[#FFBD59] px-6 py-2 uppercase hover:bg-neutral-800 transition-colors"
+            className="mt-4 text-[10px] font-black tracking-widest bg-black text-white px-6 py-2 uppercase hover:bg-neutral-800 transition-colors"
           >
             Hamısına bax
           </button>

@@ -37,7 +37,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
             />
           )}
           <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-            <span className="px-4 py-1.5 text-[10px] font-black tracking-[0.2em] mb-4 uppercase bg-[#f59e0b] text-black">
+            <span className="px-4 py-1.5 text-[10px] font-black tracking-[0.2em] mb-4 uppercase bg-white text-black">
               {project.status === 'completed' ? 'Tamamlandı' : 'Davam Edir'}
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-black text-white uppercase tracking-tighter">
@@ -78,7 +78,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
           </div>
           
           <div className="mt-16 flex justify-center">
-            <Link href="/layiheler" className="px-8 py-4 bg-black text-white text-xs font-black uppercase tracking-widest hover:bg-[#FFBD59] hover:text-black transition-colors">
+            <Link href="/layiheler" className="px-8 py-4 bg-black text-white text-xs font-black uppercase tracking-widest hover:bg-neutral-700 transition-colors">
               GERİ QAYIT
             </Link>
           </div>

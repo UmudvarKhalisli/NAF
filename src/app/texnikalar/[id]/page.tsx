@@ -74,7 +74,7 @@ export default async function EquipmentDetailPage({ params }: { params: { id: st
               </h1>
 
               <div className="mb-8 border-b border-t border-black/10 py-6 flex items-baseline gap-2">
-                <span className="text-4xl md:text-5xl font-black text-[#FFBD59]">{equipment.price}₼</span>
+                <span className="text-4xl md:text-5xl font-black text-black">{equipment.price}₼</span>
                 <span className="text-sm font-bold uppercase tracking-widest text-black/40">/ {equipment.price_unit}</span>
               </div>
 
@@ -89,7 +89,7 @@ export default async function EquipmentDetailPage({ params }: { params: { id: st
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center bg-black text-white py-5 px-8 font-black uppercase tracking-widest text-sm hover:bg-[#FFBD59] hover:text-black transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-black text-white py-5 px-8 font-black uppercase tracking-widest text-sm hover:bg-neutral-700 transition-colors"
               >
                 WHATSAPP TƏSİQİLƏ İCARƏYƏ GÖTÜR
               </a>
