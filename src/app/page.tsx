@@ -38,6 +38,10 @@ export default function Home() {
         </div>
       </section>
 
+      <Categories />
+      <WhyUs />
+      <ContactForm />
+      <Footer />
     </>
   );
 }
