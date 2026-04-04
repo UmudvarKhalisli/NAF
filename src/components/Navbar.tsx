@@ -63,9 +63,11 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        forceSolid
-          ? "bg-white/95 backdrop-blur-xl border-b border-black/5 py-4 shadow-sm"
-          : "bg-transparent py-6"
+        open
+          ? "bg-white border-b border-black/5 py-4 shadow-sm"
+          : forceSolid
+            ? "bg-white/95 backdrop-blur-xl border-b border-black/5 py-4 shadow-sm"
+            : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
