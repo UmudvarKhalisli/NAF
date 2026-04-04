@@ -27,72 +27,48 @@ interface EquipmentCardProps {
 
 export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps) {
   const isAvailable = equipment.status === 'available';
-  const isRented = equipment.status === 'rented';
   
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: idx * 0.08 }}
-      className="group relative bg-white border border-black/5 hover:border-black/20 transition-all duration-500 overflow-hidden flex flex-col h-full"
+      transition={{ duration: 0.4, delay: idx * 0.06 }}
+      className="group relative bg-white border border-black/[0.04] hover:border-black/10 transition-all duration-500 overflow-hidden flex flex-col h-full hover:shadow-lg"
     >
-      {/* Status Badge */}
-      <div className="absolute top-3 right-3 z-10">
-        <div className={`px-2.5 py-1 text-[9px] font-black tracking-widest uppercase flex items-center gap-1.5 ${
-          isAvailable ? 'bg-black text-white' : 
-          isRented ? 'bg-neutral-600 text-white' : 'bg-neutral-400 text-black'
-        }`}>
-          <div className={`w-1.5 h-1.5 rounded-full ${isAvailable ? 'bg-emerald-400' : isRented ? 'bg-neutral-300' : 'bg-neutral-200'} animate-pulse`} />
-          {equipment.status === 'available' ? 'Mövcuddur' : 
-           equipment.status === 'rented' ? 'İcarədədir' : 'Texniki Baxış'}
-        </div>
-      </div>
-
       {/* Image */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
-        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-[1]" />
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-50">
+        <div className="absolute inset-0 bg-black/[0.03] group-hover:bg-transparent transition-colors duration-500 z-[1]" />
         {equipment.image_url ? (
-          <Image
+          <img
             src={equipment.image_url}
             alt={equipment.name}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-black/20 font-bold uppercase tracking-widest text-xs">
+          <div className="w-full h-full flex items-center justify-center text-black/15 font-bold uppercase tracking-widest text-[9px]">
             Şəkil yoxdur
           </div>
         )}
+
+        {/* Status dot */}
+        <div className="absolute top-2 right-2 z-10">
+          <div className={`w-2 h-2 rounded-full ${isAvailable ? 'bg-emerald-400' : 'bg-neutral-400'} ring-2 ring-white shadow-sm`} />
+        </div>
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col flex-grow">
-        <p className="text-[9px] font-bold tracking-[0.2em] text-black/40 uppercase mb-1.5">
+      <div className="p-3 flex flex-col flex-grow">
+        <p className="text-[8px] font-bold tracking-[0.15em] text-black/30 uppercase mb-1">
           {equipment.category}
         </p>
-        <h3 className="text-base font-black text-black uppercase tracking-tight line-clamp-2 mb-auto">
+        <h3 className="text-[11px] sm:text-xs font-black text-black leading-tight line-clamp-2 mb-auto">
           {equipment.name}
         </h3>
 
-        <div className="mt-4 pt-4 border-t border-black/5 flex items-end justify-between">
-          <div>
-            <p className="text-[9px] font-bold tracking-[0.15em] text-black/40 uppercase mb-1">
-              İcarə Qiyməti
-            </p>
-            <div className="flex items-baseline gap-1">
-              <span className="text-xl font-black text-black">{equipment.price}₼</span>
-              <span className="text-xs font-bold text-black/30">/ {equipment.price_unit}</span>
-            </div>
-          </div>
-          
-          <Link
-            href={`/texnikalar/${equipment.id}`}
-            className="px-4 py-2.5 bg-black text-white text-[9px] font-black tracking-widest uppercase hover:bg-neutral-700 transition-colors duration-300"
-          >
-            Ətraflı
-          </Link>
+        <div className="mt-2 pt-2 border-t border-black/[0.04] flex items-center justify-between">
+          <span className="text-xs font-black text-black">{equipment.price}₼</span>
+          <span className="text-[7px] font-bold text-black/25 uppercase">/ {equipment.price_unit}</span>
         </div>
       </div>
     </motion.div>

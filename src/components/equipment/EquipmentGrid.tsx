@@ -10,63 +10,63 @@ interface EquipmentGridProps {
 export const DUMMY_EQUIPMENT: EquipmentItem[] = [
   {
     id: 'dummy-1',
-    name: 'Caterpillar 320D Ekskavator',
+    name: 'Cat 320 Ekskavator',
     category: 'Ekskavatorlar',
     price: 350,
-    price_unit: 'günlük',
+    price_unit: 'saatlıq',
     status: 'available',
     is_featured: true,
     created_at: new Date().toISOString(),
     specs: { "Çəki": "20 ton", "Güc": "162 a.g." },
-    image_url: 'https://images.unsplash.com/photo-1580901368919-7738efb0f228?q=80&w=800&auto=format&fit=crop'
+    image_url: '/machines/excavator.png'
   },
   {
     id: 'dummy-2',
-    name: 'JCB 3CX Buldozer',
-    category: 'Buldozerlər',
-    price: 450,
-    price_unit: 'günlük',
-    status: 'available',
-    is_featured: true,
-    created_at: new Date().toISOString(),
-    specs: { "Çəki": "8 ton", "Güc": "92 a.g." },
-    image_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 'dummy-3',
-    name: 'Liebherr LTM 1100 Kran',
+    name: 'Liebherr LTM 1100',
     category: 'Kranlar',
-    price: 550,
-    price_unit: 'günlük',
+    price: 800,
+    price_unit: 'saatlıq',
     status: 'available',
     is_featured: true,
     created_at: new Date().toISOString(),
     specs: { "Qaldırma": "100 ton", "Boom": "60 m" },
-    image_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop'
+    image_url: '/machines/crane.png'
   },
   {
-    id: 'dummy-4',
-    name: 'Volvo FMX 8x4 Yük Maşını',
-    category: 'Yük Maşınları',
-    price: 250,
-    price_unit: 'günlük',
+    id: 'dummy-3',
+    name: 'Komatsu D65EX',
+    category: 'Buldozerlər',
+    price: 400,
+    price_unit: 'saatlıq',
     status: 'available',
     is_featured: true,
     created_at: new Date().toISOString(),
-    specs: { "Yük tutumu": "25 ton", "Həcm": "16 m³" },
-    image_url: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=800&auto=format&fit=crop'
+    specs: { "Çəki": "20.5 ton", "Tutum": "5.4 m³" },
+    image_url: '/machines/bulldozer.png'
   },
   {
-    id: 'dummy-5',
-    name: 'Putzmeister BSF 36 Nasos',
-    category: 'Beton Nasosları',
-    price: 600,
-    price_unit: 'günlük',
+    id: 'dummy-4',
+    name: 'Volvo FMX 8x4',
+    category: 'Yük Maşınları',
+    price: 250,
+    price_unit: 'saatlıq',
     status: 'rented',
     is_featured: true,
     created_at: new Date().toISOString(),
-    specs: { "Boom": "36 m", "Məhsuldarlıq": "160 m³/saat" },
-    image_url: 'https://images.unsplash.com/photo-1621922688758-8d99323bf596?q=80&w=800&auto=format&fit=crop'
+    specs: { "Yük": "25 ton", "Həcm": "16 m³" },
+    image_url: '/machines/truck.png'
+  },
+  {
+    id: 'dummy-5',
+    name: 'Putzmeister BSF 36',
+    category: 'Beton Nasosları',
+    price: 600,
+    price_unit: 'saatlıq',
+    status: 'available',
+    is_featured: true,
+    created_at: new Date().toISOString(),
+    specs: { "Boom": "36 m", "Məhsul": "160 m³/s" },
+    image_url: '/machines/pump.png'
   },
   {
     id: 'dummy-6',
@@ -78,7 +78,7 @@ export const DUMMY_EQUIPMENT: EquipmentItem[] = [
     is_featured: true,
     created_at: new Date().toISOString(),
     specs: { "Güc": "400 kVA", "Gərginlik": "400V" },
-    image_url: 'https://images.unsplash.com/photo-1590846083693-f23fdede3a7e?q=80&w=800&auto=format&fit=crop'
+    image_url: '/machines/generator.png'
   },
 ];
 
@@ -101,7 +101,7 @@ export default async function EquipmentGrid({ limit, featuredOnly }: EquipmentGr
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
       {finalEq.map((item, idx) => (
         <EquipmentCard key={item.id} equipment={item} idx={idx} />
       ))}
