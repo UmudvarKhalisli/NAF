@@ -116,7 +116,7 @@ export default function Navbar() {
                 href="https://wa.me/994501234567"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`hidden md:block px-6 py-2.5 text-[11px] font-black tracking-[0.2em] uppercase border transition-all duration-500 ${
+                className={`hidden md:block px-6 py-2.5 text-[11px] font-black tracking-[0.2em] uppercase border transition-all duration-500 rounded-lg ${
                   forceSolid || open
                   ? "bg-black text-white border-black hover:bg-neutral-800 hover:border-neutral-800"
                   : "bg-white text-black border-white hover:bg-neutral-200 hover:text-black hover:border-neutral-200"
