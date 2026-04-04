@@ -103,7 +103,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-4 lg:gap-8 flex-shrink-0">      
               <a
-                href="tel:+994501234567"
+                href="tel:*7766"
                 className={`hidden sm:flex items-center gap-2 text-[13px] font-bold tracking-tighter transition-colors ${
                   forceSolid || open ? "text-black" : "text-white"
                 }`}
@@ -158,7 +158,7 @@ export default function Navbar() {
 
             {/* Top: social icons row */}
             <div className="flex items-center justify-between mb-10 pb-6 border-b border-black/5">
-              <a href="tel:+994501234567" className="flex items-center gap-2 text-lg font-black text-black">
+              <a href="tel:*7766" className="flex items-center gap-2 text-lg font-black text-black">
                 <Phone size={16} className="text-black/40" />
                 *7766
               </a>
