@@ -104,7 +104,7 @@ export default function EquipmentCards() {
   const filtered = filter === "Hamısı" ? displayList : displayList.filter((e) => e.category === filter);
 
   return (
-    <section ref={sectionRef} id="equipment" className="relative py-32 bg-[#f8f9fa] overflow-hidden">
+    <section ref={sectionRef} className="relative py-32 bg-[#f8f9fa] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <FadeIn className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-black mb-6">
