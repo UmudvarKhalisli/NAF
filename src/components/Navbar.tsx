@@ -71,9 +71,7 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
             <a href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
-              <div className={`w-10 h-10 flex items-center justify-center bg-black text-white font-black text-xl transition-all duration-500 group-hover:bg-neutral-700 ${forceSolid ? 'scale-90' : ''}`}>
-                N
-              </div>
+              <img src="/logo.png" alt="NAF" className={`w-9 h-9 sm:w-10 sm:h-10 object-contain transition-all duration-500 ${forceSolid ? 'scale-90' : ''}`} />
               <div className="flex flex-col">
                 <span className={`text-xl font-black tracking-tight transition-colors duration-500 ${forceSolid || open ? "text-black" : "text-white"}`}>
                   NAF
