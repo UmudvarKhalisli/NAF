@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 export default function ContactForm() {
@@ -16,21 +17,32 @@ export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    email: "",
     equipment: "",
     message: "",
   });
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
   const [submitted, setSubmitted] = useState(false);
+
+  const validate = () => {
+    const newErrors: {[key: string]: string} = {};
+    if (!form.name.trim()) newErrors.name = "Ad daxil edilməlidir";
+    if (!form.phone.trim()) newErrors.phone = "Telefon daxil edilməlidir";
+    if (!form.equipment) newErrors.equipment = "Texnika seçilməlidir";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Salam, mən ${form.name}. ${form.equipment} texnikası haqqında məlumat və qiymət təklifi almaq istəyirəm.\nTelefon: ${form.phone}\nE-poçt: ${form.email}\nMesaj: ${form.message}`;
-    window.open(`https://wa.me/994501234567?text=${encodeURIComponent(text)}`, "_blank");
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setForm({ name: "", phone: "", email: "", equipment: "", message: "" });
-    }, 4000);
+    if (validate()) {
+      const text = `Salam, mən ${form.name}. ${form.equipment} texnikası haqqında məlumat və qiymət təklifi almaq istəyirəm.\nTelefon: ${form.phone}\nMesaj: ${form.message}`;
+      window.open(`https://wa.me/994501234567?text=${encodeURIComponent(text)}`, "_blank");
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setForm({ name: "", phone: "", equipment: "", message: "" });
+      }, 4000);
+    }
   };
 
   return (
@@ -39,152 +51,156 @@ export default function ContactForm() {
       ref={containerRef}
       className="relative py-32 bg-white overflow-hidden"
     >
-      {/* Background Blueprint */}
-      <motion.div 
-        style={{ y: backgroundY }}
-        className="absolute inset-0 z-0 opacity-[0.11] grayscale brightness-[1.1] pointer-events-none"
-      >
-        <img 
-          src="/images/engine-bg.png" 
-          alt="Blueprint Engine" 
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
-
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <FadeIn className="text-center mb-24">
-          <span className="text-[10px] tracking-[0.4em] font-bold text-black/40 uppercase mb-6 block">
-            ƏLAQƏ
-          </span>
-          <h2 className="text-5xl md:text-6xl font-serif font-black tracking-tighter text-black mb-8 uppercase">
-            SİFARİŞ FORMU
-          </h2>
-          <div className="w-12 h-[1px] bg-black mx-auto mb-8" />
-          <p className="text-sm tracking-widest text-black/60 max-w-xl mx-auto uppercase">
-            MƏLUMATLARI DOLDURUN VƏ BİRBASA WHATSAPP ÜZƏRİNDƏN BİZƏ GÖNDƏRİN
-          </p>
-        </FadeIn>
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
+          
+          {/* Contact Info */}
+          <FadeIn direction="right" className="space-y-12">
+            <div>
+              <span className="text-[11px] tracking-[0.4em] font-black text-orange-500 uppercase mb-4 block">Əlaqə Məlumatları</span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-black mb-8">Bizimlə Əlaqə Saxlayın</h2>
+              <p className="text-lg text-black/60 font-medium mb-10 max-w-md">
+                Hər hansı bir sualınız və ya xüsusi tələbiniz varsa, bizə birbaşa yazın və ya zəng edin.
+              </p>
+            </div>
 
-        <div className="grid lg:grid-cols-2 gap-24">
-          <FadeIn direction="right">
-            <div className="space-y-12">
-              <div>
-                <h4 className="text-[10px] tracking-[0.3em] font-black text-black/40 mb-4 uppercase">Telefon</h4>
-                <p className="text-2xl font-serif font-bold text-black tracking-tight">+994 50 123 45 67</p>
+            <div className="grid sm:grid-cols-2 gap-8">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-orange-500 rounded-xl">
+                  <Phone size={24} />
+                </div>
+                <div>
+                  <h4 className="text-[12px] font-black text-black/40 uppercase mb-1">Zəng Edin</h4>
+                  <p className="text-lg font-bold text-black">*7766</p>
+                  <p className="text-sm text-black/60">+994 50 123 45 67</p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-[10px] tracking-[0.3em] font-black text-black/40 mb-4 uppercase">E-poçt</h4>
-                <p className="text-2xl font-serif font-bold text-black tracking-tight">info@naf-construction.az</p>
+              <div className="flex gap-4">
+                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-orange-500 rounded-xl">
+                  <Mail size={24} />
+                </div>
+                <div>
+                  <h4 className="text-[12px] font-black text-black/40 uppercase mb-1">E-poçt</h4>
+                  <p className="text-lg font-bold text-black">info@naf.az</p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-[10px] tracking-[0.3em] font-black text-black/40 mb-4 uppercase">Ünvan</h4>
-                <p className="text-2xl font-serif font-bold text-black tracking-tight">Bakı, Azərbaycan</p>
+              <div className="flex gap-4">
+                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-orange-500 rounded-xl">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <h4 className="text-[12px] font-black text-black/40 uppercase mb-1">Ünvan</h4>
+                  <p className="text-lg font-bold text-black">Bakı, Azərbaycan</p>
+                </div>
               </div>
-              
-              <div className="pt-12 border-t border-black/5">
-                <h4 className="text-[10px] tracking-[0.3em] font-black text-black/40 mb-8 uppercase">İş saatları</h4>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center text-[11px] tracking-widest text-black/60 uppercase">
-                    <span>Bazar ertəsi — Cümə</span>
-                    <span className="font-bold text-black">08:00 — 18:00</span>
-                  </div>
-                  <div className="flex justify-between items-center text-[11px] tracking-widest text-black/60 uppercase">
-                    <span>Şənbə</span>
-                    <span className="font-bold text-black">09:00 — 15:00</span>
-                  </div>
-                  <div className="flex justify-between items-center text-[11px] tracking-widest text-black/60 uppercase">
-                    <span>Bazar</span>
-                    <span className="font-bold text-black/20">Bağlı</span>
-                  </div>
+              <div className="flex gap-4">
+                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-orange-500 rounded-xl">
+                  <Clock size={24} />
+                </div>
+                <div>
+                  <h4 className="text-[12px] font-black text-black/40 uppercase mb-1">İş Saatları</h4>
+                  <p className="text-lg font-bold text-black">09:00 — 18:00</p>
+                  <p className="text-sm text-black/60">Bazar ertəsi — Şənbə</p>
                 </div>
               </div>
             </div>
           </FadeIn>
 
-          <FadeIn direction="left">
+          {/* Form */}
+          <FadeIn direction="left" className="bg-[#f8f9fa] p-8 md:p-12 rounded-3xl border border-black/5 shadow-2xl relative overflow-hidden">
             {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center p-12 border border-black/5">
-                <div className="w-16 h-[1px] bg-black mb-8" />
-                <h3 className="text-2xl font-serif font-bold text-black mb-4 uppercase tracking-widest">
-                  GÖNDƏRİLDİ
-                </h3>
-                <p className="text-[10px] tracking-widest text-black/40 uppercase">
-                  TEZLİKLƏ SİZİNLƏ ƏLAQƏ SAXLANILACAQ
-                </p>
-              </div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="h-full min-h-[400px] flex flex-col items-center justify-center text-center space-y-6"
+              >
+                <div className="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle2 size={48} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-3xl font-black text-black">Məlumat Göndərildi</h3>
+                <p className="text-black/60 font-medium">Mütəxəssislərimiz ən qısa zamanda sizinlə əlaqə saxlayacaq.</p>
+              </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid sm:grid-cols-2 gap-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] font-bold text-black/40 uppercase">
-                      Ad, Soyad
-                    </label>
+                    <label className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Ad, Soyad</label>
                     <input
                       type="text"
-                      required
                       value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-transparent border-b border-black/10 py-4 text-sm tracking-widest outline-none focus:border-black transition-colors"
-                      placeholder="DAXİL EDİN"
+                      onChange={(e) => {
+                        setForm({ ...form, name: e.target.value });
+                        if (errors.name) setErrors({...errors, name: ""});
+                      }}
+                      className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-orange-500 transition-all text-sm`}
+                      placeholder="Məs: Elvin Məmmədov"
                     />
+                    {errors.name && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.name}</span>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] font-bold text-black/40 uppercase">
-                      Telefon
-                    </label>
+                    <label className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Telefon</label>
                     <input
                       type="tel"
-                      required
                       value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full bg-transparent border-b border-black/10 py-4 text-sm tracking-widest outline-none focus:border-black transition-colors"
-                      placeholder="+994"
+                      onChange={(e) => {
+                        setForm({ ...form, phone: e.target.value });
+                        if (errors.phone) setErrors({...errors, phone: ""});
+                      }}
+                      className={`w-full bg-white border ${errors.phone ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-orange-500 transition-all text-sm`}
+                      placeholder="Məs: +994 50 123 45 67"
                     />
+                    {errors.phone && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.phone}</span>}
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-[10px] tracking-[0.2em] font-bold text-black/40 uppercase">
-                    Texnika növü
-                  </label>
+                  <label className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Texnika Növü</label>
                   <select
-                    required
                     value={form.equipment}
-                    onChange={(e) => setForm({ ...form, equipment: e.target.value })}
-                    className="w-full bg-transparent border-b border-black/10 py-4 text-sm tracking-widest outline-none focus:border-black transition-colors appearance-none"
+                    onChange={(e) => {
+                      setForm({ ...form, equipment: e.target.value });
+                      if (errors.equipment) setErrors({...errors, equipment: ""});
+                    }}
+                    className={`w-full bg-white border ${errors.equipment ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-orange-500 transition-all text-sm appearance-none cursor-pointer`}
                   >
-                    <option value="">SEÇİN</option>
-                    <option>EKSKAVATOR</option>
-                    <option>BULDOZER</option>
-                    <option>KRAN</option>
-                    <option>BETON NASOSU</option>
-                    <option>YÜK MAŞINI</option>
-                    <option>GENERATOR</option>
-                    <option>KOMPAKTOR</option>
+                    <option value="">Kateqoriya seçin</option>
+                    <option>Ekskavatorlar</option>
+                    <option>Buldozerlər</option>
+                    <option>Kranlar</option>
+                    <option>Beton Nasosları</option>
+                    <option>Yük Maşınları</option>
+                    <option>Generatorlar</option>
+                    <option>Kompaktorlar</option>
+                    <option>Qaldırıcılar</option>
                   </select>
+                  {errors.equipment && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.equipment}</span>}
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] tracking-[0.2em] font-bold text-black/40 uppercase">
-                    Mesaj
-                  </label>
+                  <label className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Mesaj (İxtiyari)</label>
                   <textarea
                     rows={4}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-transparent border-b border-black/10 py-4 text-sm tracking-widest outline-none focus:border-black transition-colors resize-none"
-                    placeholder="QEYDLƏRİNİZ"
+                    className="w-full bg-white border border-black/5 px-6 py-4 rounded-xl outline-none focus:border-orange-500 transition-all text-sm resize-none"
+                    placeholder="Əlavə qeydləriniz və ya tələbləriniz..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-5 bg-black text-white text-[11px] font-black tracking-[0.4em] uppercase hover:bg-white hover:text-black border border-black transition-all duration-700"
+                  className="w-full py-5 bg-black text-white text-[12px] font-black tracking-[0.3em] uppercase hover:bg-orange-500 rounded-xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/10 group"
                 >
-                  WHATSAPP ÜZƏRİNDƏN GÖNDƏR
+                  <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  Sifariş Formunu Göndər
                 </button>
               </form>
             )}
+
+            {/* Decorative background logo */}
+            <div className="absolute -bottom-10 -right-10 opacity-[0.03] select-none pointer-events-none">
+              <h2 className="text-[150px] font-black">NAF</h2>
+            </div>
           </FadeIn>
         </div>
       </div>

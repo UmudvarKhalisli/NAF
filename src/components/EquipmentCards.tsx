@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase";
+import { MessageCircle, ArrowRight, Gauge, Weight, Calendar, CheckCircle2, AlertCircle } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 interface EquipmentItem {
@@ -20,63 +21,63 @@ interface EquipmentItem {
 const SAMPLE_EQUIPMENT: EquipmentItem[] = [
   {
     id: 1,
-    name: "CAT 320 EKSKAVATOR",
-    category: "EKSKAVATORLAR",
+    name: "Cat 320 Ekskavator",
+    category: "Ekskavatorlar",
     image: "/machines/excavator.png",
     specs: { "Çəki": "20 ton", "Güc": "162 a.g.", "İstehsal ili": "2023" },
-    price: "350 AZN/SAAT",
+    price: "350 AZN / Saat",
     available: true,
   },
   {
     id: 2,
-    name: "LIEBHERR LTM 1100",
-    category: "KRANLAR",
+    name: "Liebherr LTM 1100",
+    category: "Kranlar",
     image: "/machines/crane.png",
     specs: { "Maks. qaldırma": "100 ton", "Boom uzunluğu": "60 m", "İstehsal ili": "2022" },
-    price: "800 AZN/SAAT",
+    price: "800 AZN / Saat",
     available: true,
   },
   {
     id: 3,
-    name: "KOMATSU D65EX",
-    category: "BULDOZERLƏR",
+    name: "Komatsu D65EX",
+    category: "Buldozerlər",
     image: "/machines/bulldozer.png",
     specs: { "Çəki": "20.5 ton", "Bıçaq tutumu": "5.4 m³", "İstehsal ili": "2023" },
-    price: "400 AZN/SAAT",
+    price: "400 AZN / Saat",
     available: true,
   },
   {
     id: 4,
-    name: "VOLVO FMX 8x4",
-    category: "YÜK MAŞINLARI",
+    name: "Volvo FMX 8x4",
+    category: "Yük Maşınları",
     image: "/machines/truck.png",
     specs: { "Yük tutumu": "25 ton", "Həcm": "16 m³", "İstehsal ili": "2024" },
-    price: "250 AZN/SAAT",
+    price: "250 AZN / Saat",
     available: false,
   },
   {
     id: 5,
-    name: "PUTZMEISTER BSF 36",
-    category: "BETON NASOSLARI",
+    name: "Putzmeister BSF 36",
+    category: "Beton Nasosları",
     image: "/machines/pump.png",
     specs: { "Boom uzunluğu": "36 m", "Məhsuldarlıq": "160 m³/saat", "İstehsal ili": "2023" },
-    price: "600 AZN/SAAT",
+    price: "600 AZN / Saat",
     available: true,
   },
   {
     id: 6,
-    name: "CAT C15 GENERATOR",
-    category: "GENERATORLAR",
+    name: "Cat C15 Generator",
+    category: "Generatorlar",
     image: "/machines/generator.png",
     specs: { "Güc": "400 kVA", "Gərginlik": "400V", "İstehsal ili": "2024" },
-    price: "200 AZN/GÜN",
+    price: "200 AZN / Gün",
     available: true,
   },
 ];
 
 export default function EquipmentCards() {
   const [dbEquipment, setDbEquipment] = useState<EquipmentItem[]>([]);
-  const [filter, setFilter] = useState("HAMISI");
+  const [filter, setFilter] = useState("Hamısı");
   const sectionRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -92,120 +93,124 @@ export default function EquipmentCards() {
           setDbEquipment(data);
         }
       } catch (e) {
-        console.error("Using samples due to error or empty DB");
+        // Fallback handled by displayList
       }
     }
     fetchEquipment();
   }, []);
 
-  // If DB is empty, use SAMPLE_EQUIPMENT
   const displayList = dbEquipment.length > 0 ? dbEquipment : SAMPLE_EQUIPMENT;
-
-  const categories = ["HAMISI", ...Array.from(new Set(displayList.map((e) => e.category)))];
-  
-  const filtered = filter === "HAMISI" 
-    ? displayList 
-    : displayList.filter((e) => e.category === filter);
+  const categories = ["Hamısı", ...Array.from(new Set(displayList.map((e) => e.category)))];
+  const filtered = filter === "Hamısı" ? displayList : displayList.filter((e) => e.category === filter);
 
   return (
-    <section ref={sectionRef} id="equipment" className="relative py-32 bg-white overflow-hidden">
-      {/* Background Blueprint */}
-      <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]) }}
-        className="absolute inset-0 z-0 opacity-[0.06] grayscale brightness-[1.1] pointer-events-none"
-      >
-        <img 
-          src="/images/gears-bg.png" 
-          alt="Blueprint Gears" 
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
-
+    <section ref={sectionRef} id="equipment" className="relative py-32 bg-[#f8f9fa] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <FadeIn className="text-center mb-24">
-          <h2 className="text-5xl md:text-7xl font-serif font-black tracking-tighter text-black uppercase mb-10">
-            AVADANLIQLAR
+        <FadeIn className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-black mb-6">
+            Mövcud Texnikalar
           </h2>
-
-          <div className="w-12 h-[1px] bg-black mx-auto mb-12" />
+          <div className="w-20 h-[3px] bg-orange-500 mx-auto mb-10" />
           
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-4">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`text-[11px] tracking-[0.3em] font-bold transition-all p-2 relative group uppercase ${
-                  filter === cat ? "text-black" : "text-black/50 hover:text-black"
+                className={`px-6 py-2 rounded-full text-[13px] font-bold transition-all duration-300 ${
+                  filter === cat 
+                  ? "bg-black text-white shadow-lg" 
+                  : "bg-white text-black/60 hover:bg-black/5"
                 }`}
               >
                 {cat}
-                <span className={`absolute bottom-0 left-0 h-[1px] bg-black transition-all duration-500 ${
-                  filter === cat ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
               </button>
             ))}
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {filtered.map((item, index) => (
-            <FadeIn key={item.id} delay={index * 0.1} direction="up" className="group">
-              <div className="relative border border-black/5 overflow-hidden bg-white">
-                <div className="relative aspect-[4/3] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((item, index) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                key={item.id}
+                className={`group relative bg-white border border-black/5 hover:border-orange-500/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] ${
+                  !item.available ? "opacity-75" : ""
+                }`}
+              >
+                {/* Equipment Image */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
                   <img
                     src={item.image_url || item.image || "/machines/excavator.png"}
                     alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-1000" />
-                  {(item.status === 'Rented' || item.available === false) && (
-                    <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center">
-                      <span className="text-[10px] tracking-[0.4em] font-black text-black border border-black px-6 py-2">
-                        MƏŞĞULDUR
-                      </span>
-                    </div>
-                  )}
-                  <div className="absolute top-6 left-6">
-                    <span className="bg-black text-white text-[10px] tracking-[0.3em] font-bold px-3 py-1 uppercase">
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
+                  
+                  {/* Category Tag */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-black/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider">
                       {item.category}
                     </span>
                   </div>
+
+                  {/* Status Badge */}
+                  {!item.available && (
+                    <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] flex items-center justify-center p-6">
+                      <div className="bg-white px-6 py-3 border border-black flex items-center gap-3 shadow-2xl">
+                        <AlertCircle size={16} className="text-orange-500" />
+                        <span className="text-[11px] font-black tracking-[0.2em] text-black">MƏŞĞULDUR</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="p-8">
-                  <div className="flex justify-between items-start mb-6">
-                    <h3 className="text-xl font-serif font-bold tracking-tight text-black uppercase">
-                      {item.name}
-                    </h3>
-                    <div className="w-6 h-[1px] bg-black/20 mt-3" />
-                  </div>
+                  <h3 className="text-xl font-black text-black mb-6 group-hover:text-orange-500 transition-colors">
+                    {item.name}
+                  </h3>
 
-                  <div className="space-y-4 mb-8">
-                    {item.specs && Object.entries(item.specs).map(([key, value]) => (
-                      <div key={key} className="flex justify-between items-center text-[12px] tracking-widest text-black/80 uppercase border-b border-black/[0.03] pb-2">
-                        <span>{key}</span>
-                        <span className="font-bold text-black">{value}</span>
+                  {/* Specs Grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    {Object.entries(item.specs).map(([key, value]) => (
+                      <div key={key} className="flex flex-col gap-1">
+                        <span className="text-[10px] uppercase tracking-widest text-black/40 font-bold">{key}</span>
+                        <span className="text-[13px] font-bold text-black">{value}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between pt-4">
-                    <span className="text-lg font-bold tracking-tighter text-black uppercase">
-                      {typeof item.price === 'number' ? `${item.price} AZN / SAAT` : item.price}
-                    </span>
+                  {/* Price and Action */}
+                  <div className="flex flex-col gap-6 pt-6 border-t border-black/5">
+                    <div className="flex flex-col">
+                      <span className="text-[10px] uppercase font-bold text-black/30 tracking-widest mb-1">Başlanğıc qiymət</span>
+                      <span className="text-2xl font-black text-orange-500">
+                        {item.price}
+                      </span>
+                    </div>
+
                     <a
-                      href={`https://wa.me/994501234567`}
-                      target="_blank"
+                      href={item.available ? `https://wa.me/994501234567?text=Salam, ${item.name} texnikası haqqında məlumat almaq istəyirəm.` : "#"}
+                      target={item.available ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className="text-[11px] font-black tracking-[0.3em] uppercase border-b border-black pb-1 hover:border-black/20 transition-all"
+                      className={`w-full py-4 text-center text-[11px] font-black tracking-[0.3em] uppercase transition-all duration-300 ${
+                        item.available 
+                        ? "bg-black text-white hover:bg-orange-500 shadow-xl shadow-black/5" 
+                        : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                      }`}
                     >
-                      SİFARİŞ
+                      {item.available ? "SİFARİŞ ET" : "MÖVCUD DEYİL"}
                     </a>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>

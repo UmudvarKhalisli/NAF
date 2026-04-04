@@ -2,32 +2,39 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Truck, ShieldCheck, Banknote, Wrench, FileText, History } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const reasons = [
   {
-    title: <>SÜRƏTLİ <br /> ÇATDIRILMA</>,
-    desc: "Sifarişiniz 24 saat ərzində ünvanınıza çatdırılır. Modern loqistika həlləri.",
+    title: "Sürətli Çatdırılma",
+    desc: "Sifarişiniz 24 saat ərzində ünvanınıza çatdırılır. Modern loqistika həllərimizlə vaxtınıza qənaət edirik.",
+    icon: <Truck size={32} />
   },
   {
-    title: <>SIĞORTA VƏ <br /> ZƏMANƏT</>,
-    desc: "Bütün texnikalarımız tam sığortalıdır. Hər hansı problem olarsa, dərhal əvəzlənir.",
+    title: "Sığorta Və Zəmanət",
+    desc: "Bütün texnikalarımız tam sığortalıdır. Hər hansı texniki problem olarsa, dərhal yenisi ilə əvəzləyirik.",
+    icon: <ShieldCheck size={32} />
   },
   {
-    title: <>RƏQABƏTLİ <br /> QİYMƏTLƏR</>,
-    desc: "Bazarda ən uyğun qiymətlər. Həcmli sifarişlər üçün xüsusi endirimlər.",
+    title: "Rəqabətli Qiymətlər",
+    desc: "Bazarda ən münasib qiymətlər bizdədir. Uzunmüddətli icarə sifarişləri üçün xüsusi endirimlər təklif edirik.",
+    icon: <Banknote size={32} />
   },
   {
-    title: <>TEXNİKİ DƏSTƏK <br /> 24/7</>,
-    desc: "Peşəkar mühəndis komandamız hər an xidmətinizdədir. Gecə-gündüz dəstək.",
+    title: "Texniki Dəstək 24/7",
+    desc: "Peşəkar mühəndis komandamız hər an xidmətinizdədir. Gecə-gündüz texniki dəstək göstərilir.",
+    icon: <Wrench size={32} />
   },
   {
-    title: <>MÜQAVİLƏ <br /> ŞƏFFAFLIĞI</>,
-    desc: "Aydınlıq və şəffaf müqavilə şərtləri. Gizli xərclər və əlavə ödənişlər yoxdur.",
+    title: "Müqavilə Şəffaflığı",
+    desc: "Aydın və şəffaf müqavilə şərtləri. Heç bir gizli xərc və ya əlavə ödənişlər nəzərdə tutulmayıb.",
+    icon: <FileText size={32} />
   },
   {
-    title: <>10+ İL <br /> TƏCRÜBƏ</>,
-    desc: "On ildən artıq mühəndislik təcrübəsi. 500-dən çox uğurlu dövlət və özəl layihə.",
+    title: "10+ İl Təcrübə",
+    desc: "On ildən artıq mühəndislik təcrübəsi. 500-dən çox uğurlu dövlət və özəl tikinti layihəsində tərəfdaşıq.",
+    icon: <History size={32} />
   },
 ];
 
@@ -44,54 +51,60 @@ export default function WhyUs() {
     <section 
       id="why-us" 
       ref={containerRef}
-      className="relative py-32 bg-white overflow-hidden"
+      className="relative py-32 bg-[#f8f9fa] overflow-hidden border-t border-black/5"
     >
-      {/* Background Blueprint */}
+      {/* Background Blueprint Graphic */}
       <motion.div 
         style={{ y: backgroundY }}
-        className="absolute inset-0 z-0 opacity-[0.07] grayscale brightness-[1.1] pointer-events-none"
+        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
       >
         <img 
           src="/images/site-bg.png" 
-          alt="Blueprint Site" 
-          className="w-full h-full object-cover"
+          alt="Technical Drawing" 
+          className="w-full h-full object-cover scale-110"
         />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <FadeIn className="text-center mb-24">
-          <span className="text-[12px] tracking-[0.4em] font-bold text-black/60 uppercase mb-6 block">
-            FƏLSƏFƏMİZ
-          </span>
-          <h2 className="text-5xl md:text-6xl font-serif font-black tracking-tighter text-black mb-8">
+          <span className="text-[11px] tracking-[0.4em] font-black text-orange-500 uppercase mb-6 block">
             NİYƏ BİZ?
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-black mb-8">
+            Bizim Üstünlüklərimiz
           </h2>
-          <div className="w-12 h-[1px] bg-black mx-auto mb-8" />
-          <p className="text-sm tracking-widest text-black/60 max-w-xl mx-auto uppercase">
-            ETİBARLI TƏRƏFDAŞLIQ VƏ PEŞƏKAR YANAŞMA
+          <div className="w-16 h-[3px] bg-black mx-auto mb-8" />
+          <p className="text-lg text-black/60 max-w-xl mx-auto font-medium">
+            Müştərilərimizə yalnız texnika deyil, həm də sürətli xidmət və peşəkar mühəndis dəstəyi vəd edirik.
           </p>
         </FadeIn>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((r, i) => (
             <FadeIn
               key={i}
               delay={i * 0.1}
-              className="group p-12 border border-black/5 hover:border-black/20 transition-all duration-700 bg-white relative overflow-hidden"
+              className="group p-10 bg-white border border-black/5 hover:border-orange-500/30 transition-all duration-500 relative overflow-hidden rounded-3xl hover:shadow-2xl"
             >
-              <span className="text-5xl font-serif font-light text-black/5 absolute top-8 right-8 group-hover:text-black/10 transition-colors duration-700">
-                {String(i + 1).padStart(2, "0")}
-              </span>
+              <div className="flex justify-between items-start mb-8">
+                <div className="p-4 bg-gray-50 text-orange-500 rounded-2xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-500">
+                  {r.icon}
+                </div>
+                <span className="text-4xl font-black text-black/5 group-hover:text-black/10 transition-colors">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
 
-              <h3 className="text-lg font-bold tracking-[0.2em] text-black mb-6 uppercase">
+              <h3 className="text-xl font-black text-black mb-4 transition-colors group-hover:text-orange-500">
                 {r.title}
               </h3>
-              <div className="w-8 h-[1px] bg-black mb-6 group-hover:w-16 transition-all duration-700" />
-              <p className="text-[13px] tracking-widest text-black/75 leading-[1.8] uppercase font-medium">
+              <div className="w-10 h-[2px] bg-black/10 mb-6 transition-all duration-500 group-hover:w-20 group-hover:bg-orange-500" />
+              <p className="text-[15px] font-medium text-black/60 leading-relaxed">
                 {r.desc}
               </p>
 
-              <div className="absolute bottom-0 left-0 w-full h-[1px] bg-black translate-x-full group-hover:translate-x-0 transition-transform duration-1000" />
+              {/* Accent bar at bottom */}
+              <div className="absolute left-0 bottom-0 right-0 h-[4px] bg-orange-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </FadeIn>
           ))}
         </div>
