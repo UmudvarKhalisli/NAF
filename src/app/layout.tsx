@@ -24,7 +24,7 @@ export default function RootLayout({
       lang="az"
       className={`${jakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f8f9fa] text-[#1a1a1a] selection:bg-orange-500 selection:text-white">
+      <body className="min-h-full flex flex-col bg-[#f8f9fa] text-[#1a1a1a] selection:bg-neutral-700 selection:text-white">
         {children}
         <AdminReturnButton />
       </body>

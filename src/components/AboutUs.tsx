@@ -28,7 +28,7 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           <FadeIn direction="right" className="relative">
-            <span className="text-[11px] tracking-[0.4em] font-black text-orange-500 uppercase mb-6 block">Haqqımızda</span>
+            <span className="text-[11px] tracking-[0.4em] font-black text-neutral-500 uppercase mb-6 block">Haqqımızda</span>
             <h2 className="text-4xl md:text-6xl font-black tracking-tight text-black mb-10 leading-tight">
               Müasir Mühəndis Həlləri Və Peşəkar <br /> Texnika İcarəsi
             </h2>
@@ -62,7 +62,7 @@ export default function AboutUs() {
             {/* Dark glass element overlay */}
             <div className="absolute bottom-8 left-8 right-8 p-8 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-orange-500 rounded-lg text-white">
+                <div className="p-3 bg-neutral-700 rounded-lg text-white">
                   <ShieldCheck size={24} />
                 </div>
                 <h4 className="text-lg font-bold text-white">Keyfiyyət Təminatı</h4>

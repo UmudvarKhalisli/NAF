@@ -55,7 +55,7 @@ export default function Hero() {
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/60 font-medium mb-12">
               Modern mühəndislik həlləri və peşəkar tikinti texnikasının icarəsi üzrə ixtisaslaşmış komanda.
             </p>
-            <div className="w-24 h-[2px] bg-orange-500 mx-auto mb-16" />
+            <div className="w-24 h-[2px] bg-neutral-500 mx-auto mb-16" />
           </div>
         </FadeIn>
 
@@ -63,7 +63,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
               href="#equipment"
-              className="group relative px-16 py-6 bg-orange-500 text-white border border-orange-500 overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(251,146,60,0.3)]"
+              className="group relative px-16 py-6 bg-neutral-700 text-white border border-neutral-700 overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(64,64,64,0.3)]"
             >
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
               <span className="relative z-10 text-[13px] font-bold tracking-[0.2em] group-hover:text-black">Kataloq</span>
@@ -91,7 +91,7 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute top-0 left-0 w-full h-1/2 bg-orange-500/50"
+              className="absolute top-0 left-0 w-full h-1/2 bg-neutral-500/50"
             />
           </div>
         </FadeIn>

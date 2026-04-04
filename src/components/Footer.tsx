@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <a href="#hero" className="flex items-center gap-3 mb-8 group">
-              <div className="w-10 h-10 bg-orange-500 text-white flex items-center justify-center font-black text-xl">N</div>
+              <div className="w-10 h-10 bg-neutral-700 text-white flex items-center justify-center font-black text-xl">N</div>
               <span className="text-3xl font-black tracking-tight text-white transition-colors duration-500">NAF</span>
             </a>
             <p className="text-[13px] leading-[1.8] text-white/40 mb-10 max-w-xs">
@@ -30,7 +30,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social, i) => (
-                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:bg-orange-500 hover:text-white transition-all duration-300">
+                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:bg-neutral-600 hover:text-white transition-all duration-300">
                   {social.icon}
                 </a>
               ))}
@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[11px] font-black tracking-[0.2em] text-orange-500 mb-8 uppercase">Xidmətlər</h4>
+            <h4 className="text-[11px] font-black tracking-[0.2em] text-neutral-400 mb-8 uppercase">Xidmətlər</h4>
             <ul className="space-y-4">
               <li><a href="#categories" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Kateqoriyalar</a></li>
               <li><a href="#equipment" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Avadanlıqlar</a></li>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-[11px] font-black tracking-[0.2em] text-orange-500 mb-8 uppercase">Şirkət</h4>
+            <h4 className="text-[11px] font-black tracking-[0.2em] text-neutral-400 mb-8 uppercase">Şirkət</h4>
             <ul className="space-y-4">
               <li><a href="#about" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Haqqımızda</a></li>
               <li><a href="/privacy" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Məxfilik Siyasəti</a></li>
@@ -60,18 +60,18 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div>
-            <h4 className="text-[11px] font-black tracking-[0.2em] text-orange-500 mb-8 uppercase">Region</h4>
+            <h4 className="text-[11px] font-black tracking-[0.2em] text-neutral-400 mb-8 uppercase">Region</h4>
             <ul className="space-y-6">
               <li className="flex gap-3">
-                <MapPin size={18} className="text-orange-500 shrink-0" />
+                <MapPin size={18} className="text-neutral-400 shrink-0" />
                 <span className="text-[14px] text-white/60">Bakı, Azərbaycan</span>
               </li>
               <li className="flex gap-3">
-                <Phone size={18} className="text-orange-500 shrink-0" />
+                <Phone size={18} className="text-neutral-400 shrink-0" />
                 <span className="text-[14px] text-white/60">+994 50 123 45 67</span>
               </li>
               <li className="flex gap-3">
-                <Mail size={18} className="text-orange-500 shrink-0" />
+                <Mail size={18} className="text-neutral-400 shrink-0" />
                 <span className="text-[14px] text-white/60">info@naf.az</span>
               </li>
             </ul>

@@ -57,7 +57,7 @@ export default function Categories() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <FadeIn className="text-center mb-24">
-          <span className="text-[11px] tracking-[0.4em] font-black text-orange-500 uppercase mb-6 block">
+          <span className="text-[11px] tracking-[0.4em] font-black text-neutral-500 uppercase mb-6 block">
             Texniki Kataloq
           </span>
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-black mb-8">
@@ -81,12 +81,12 @@ export default function Categories() {
                 className={`w-full aspect-square p-10 flex flex-col justify-between border transition-all duration-500 text-left relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl ${
                   active === cat.id 
                   ? "bg-black text-white border-black" 
-                  : "bg-white text-black border-black/5 hover:border-orange-500/50"
+                  : "bg-white text-black border-black/5 hover:border-neutral-500/50"
                 }`}
               >
                 <div className="flex justify-between items-start">
                   <div className={`p-4 rounded-xl transition-colors duration-500 ${
-                    active === cat.id ? "bg-white/10 text-orange-500" : "bg-black/5 text-black/40 group-hover:bg-orange-100 group-hover:text-orange-500"
+                    active === cat.id ? "bg-white/10 text-neutral-400" : "bg-black/5 text-black/40 group-hover:bg-neutral-200 group-hover:text-neutral-700"
                   }`}>
                     {cat.icon}
                   </div>
@@ -105,7 +105,7 @@ export default function Categories() {
                     }`} />
                   </h3>
                   <div className={`w-8 h-[2px] transition-all duration-500 mb-4 ${
-                    active === cat.id ? "bg-orange-500 w-16" : "bg-black/20 group-hover:bg-orange-500 group-hover:w-16"
+                    active === cat.id ? "bg-neutral-500 w-16" : "bg-black/20 group-hover:bg-neutral-700 group-hover:w-16"
                   }`} />
                   <span className={`text-[11px] tracking-widest font-bold font-sans uppercase transition-colors ${
                     active === cat.id ? "text-white/50" : "text-black/30"
@@ -116,7 +116,7 @@ export default function Categories() {
 
                 {/* Accent line */}
                 <div className={`absolute left-0 bottom-0 top-0 w-[4px] transition-all duration-500 ${
-                  active === cat.id ? "bg-orange-500" : "bg-transparent group-hover:bg-orange-500/30"
+                  active === cat.id ? "bg-neutral-700" : "bg-transparent group-hover:bg-neutral-500/30"
                 }`} />
               </button>
             </FadeIn>

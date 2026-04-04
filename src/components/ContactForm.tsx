@@ -57,7 +57,7 @@ export default function ContactForm() {
           {/* Contact Info */}
           <FadeIn direction="right" className="space-y-12">
             <div>
-              <span className="text-[11px] tracking-[0.4em] font-black text-orange-500 uppercase mb-4 block">Əlaqə Məlumatları</span>
+              <span className="text-[11px] tracking-[0.4em] font-black text-neutral-500 uppercase mb-4 block">Əlaqə Məlumatları</span>
               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-black mb-8">Bizimlə Əlaqə Saxlayın</h2>
               <p className="text-lg text-black/60 font-medium mb-10 max-w-md">
                 Hər hansı bir sualınız və ya xüsusi tələbiniz varsa, bizə birbaşa yazın və ya zəng edin.
@@ -66,7 +66,7 @@ export default function ContactForm() {
 
             <div className="grid sm:grid-cols-2 gap-8">
               <div className="flex gap-4">
-                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-orange-500 rounded-xl">
+                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-neutral-700 rounded-xl">
                   <Phone size={24} />
                 </div>
                 <div>
@@ -76,7 +76,7 @@ export default function ContactForm() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-orange-500 rounded-xl">
+                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-neutral-700 rounded-xl">
                   <Mail size={24} />
                 </div>
                 <div>
@@ -85,7 +85,7 @@ export default function ContactForm() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-orange-500 rounded-xl">
+                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-neutral-700 rounded-xl">
                   <MapPin size={24} />
                 </div>
                 <div>
@@ -94,7 +94,7 @@ export default function ContactForm() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-orange-500 rounded-xl">
+                <div className="w-12 h-12 shrink-0 bg-gray-50 flex items-center justify-center text-neutral-700 rounded-xl">
                   <Clock size={24} />
                 </div>
                 <div>
@@ -132,7 +132,7 @@ export default function ContactForm() {
                         setForm({ ...form, name: e.target.value });
                         if (errors.name) setErrors({...errors, name: ""});
                       }}
-                      className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-orange-500 transition-all text-sm`}
+                      className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm`}
                       placeholder="Məs: Elvin Məmmədov"
                     />
                     {errors.name && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.name}</span>}
@@ -146,7 +146,7 @@ export default function ContactForm() {
                         setForm({ ...form, phone: e.target.value });
                         if (errors.phone) setErrors({...errors, phone: ""});
                       }}
-                      className={`w-full bg-white border ${errors.phone ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-orange-500 transition-all text-sm`}
+                      className={`w-full bg-white border ${errors.phone ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm`}
                       placeholder="Məs: +994 50 123 45 67"
                     />
                     {errors.phone && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.phone}</span>}
@@ -161,7 +161,7 @@ export default function ContactForm() {
                       setForm({ ...form, equipment: e.target.value });
                       if (errors.equipment) setErrors({...errors, equipment: ""});
                     }}
-                    className={`w-full bg-white border ${errors.equipment ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-orange-500 transition-all text-sm appearance-none cursor-pointer`}
+                    className={`w-full bg-white border ${errors.equipment ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm appearance-none cursor-pointer`}
                   >
                     <option value="">Kateqoriya seçin</option>
                     <option>Ekskavatorlar</option>
@@ -182,14 +182,14 @@ export default function ContactForm() {
                     rows={4}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-white border border-black/5 px-6 py-4 rounded-xl outline-none focus:border-orange-500 transition-all text-sm resize-none"
+                    className="w-full bg-white border border-black/5 px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm resize-none"
                     placeholder="Əlavə qeydləriniz və ya tələbləriniz..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-5 bg-black text-white text-[12px] font-black tracking-[0.3em] uppercase hover:bg-orange-500 rounded-xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/10 group"
+                  className="w-full py-5 bg-black text-white text-[12px] font-black tracking-[0.3em] uppercase hover:bg-neutral-700 rounded-xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/10 group"
                 >
                   <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   Sifariş Formunu Göndər

@@ -51,7 +51,7 @@ export default function Navbar() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between gap-4">
           <a href="#hero" className="group flex items-center gap-3 flex-shrink-0">
-            <div className={`w-10 h-10 flex items-center justify-center bg-black text-white font-black text-xl transition-all duration-500 group-hover:bg-orange-500 ${scrolled ? 'scale-90' : ''}`}>
+            <div className={`w-10 h-10 flex items-center justify-center bg-black text-white font-black text-xl transition-all duration-500 group-hover:bg-neutral-700 ${scrolled ? 'scale-90' : ''}`}>
               N
             </div>
             <div className="flex flex-col">
@@ -71,12 +71,12 @@ export default function Navbar() {
                 href={link.href}
                 className={`relative text-[13px] font-bold tracking-wide transition-all duration-300 group ${
                   activeSection === link.id 
-                    ? (scrolled ? "text-orange-500" : "text-orange-400") 
+                    ? (scrolled ? "text-neutral-700" : "text-neutral-400") 
                     : (scrolled ? "text-black/70 hover:text-black" : "text-white/70 hover:text-white")
                 }`}
               >
                 {link.label}
-                <span className={`absolute -bottom-1 left-0 h-[2px] bg-orange-500 transition-all duration-300 ${
+                <span className={`absolute -bottom-1 left-0 h-[2px] bg-neutral-700 transition-all duration-300 ${
                   activeSection === link.id ? "w-full" : "w-0 group-hover:w-full"
                 }`} />
               </a>
@@ -90,7 +90,7 @@ export default function Navbar() {
                 scrolled || open ? "text-black" : "text-white"
               }`}
             >
-              <Phone size={14} className={scrolled || open ? "text-orange-500" : "text-orange-400"} />
+              <Phone size={14} className={scrolled || open ? "text-neutral-700" : "text-neutral-400"} />
               *7766
             </a>
             
@@ -100,8 +100,8 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className={`hidden md:block px-6 py-2.5 text-[11px] font-black tracking-[0.2em] uppercase border transition-all duration-500 ${
                 scrolled || open
-                ? "bg-black text-white border-black hover:bg-orange-500 hover:border-orange-500" 
-                : "bg-white text-black border-white hover:bg-orange-500 hover:text-white hover:border-orange-500"
+                ? "bg-black text-white border-black hover:bg-neutral-700 hover:border-neutral-700" 
+                : "bg-white text-black border-white hover:bg-neutral-700 hover:text-white hover:border-neutral-700"
               }`}
             >
               Sifariş
@@ -138,7 +138,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={`text-3xl font-black tracking-tighter transition-colors ${
-                    activeSection === link.id ? "text-orange-500" : "text-black"
+                    activeSection === link.id ? "text-neutral-600" : "text-black"
                   }`}
                 >
                   {link.label}
@@ -148,17 +148,17 @@ export default function Navbar() {
 
             <div className="mt-auto py-12 border-t border-black/5 flex flex-col gap-8">
               <a href="tel:+994501234567" className="flex items-center gap-4 text-2xl font-black text-black">
-                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold font-sans">
+                <div className="w-12 h-12 rounded-full bg-neutral-200 flex items-center justify-center text-neutral-700 font-bold font-sans">
                   <Phone size={24} />
                 </div>
                 *7766
               </a>
               
               <div className="flex gap-4">
-                <a href="#" className="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white hover:bg-orange-500 transition-colors">
+                <a href="#" className="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white hover:bg-neutral-700 transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white hover:bg-orange-500 transition-colors">
+                <a href="#" className="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white hover:bg-neutral-700 transition-colors">
                   <Facebook size={20} />
                 </a>
               </div>

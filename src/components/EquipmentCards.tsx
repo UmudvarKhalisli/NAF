@@ -110,7 +110,7 @@ export default function EquipmentCards() {
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-black mb-6">
             Mövcud Texnikalar
           </h2>
-          <div className="w-20 h-[3px] bg-orange-500 mx-auto mb-10" />
+          <div className="w-20 h-[3px] bg-neutral-500 mx-auto mb-10" />
           
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((cat) => (
@@ -139,7 +139,7 @@ export default function EquipmentCards() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 key={item.id}
-                className={`group relative bg-white border border-black/5 hover:border-orange-500/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] ${
+                className={`group relative bg-white border border-black/5 hover:border-neutral-500/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] ${
                   !item.available ? "opacity-75" : ""
                 }`}
               >
@@ -163,7 +163,7 @@ export default function EquipmentCards() {
                   {!item.available && (
                     <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px] flex items-center justify-center p-6">
                       <div className="bg-white px-6 py-3 border border-black flex items-center gap-3 shadow-2xl">
-                        <AlertCircle size={16} className="text-orange-500" />
+                        <AlertCircle size={16} className="text-neutral-700" />
                         <span className="text-[11px] font-black tracking-[0.2em] text-black">MƏŞĞULDUR</span>
                       </div>
                     </div>
@@ -171,7 +171,7 @@ export default function EquipmentCards() {
                 </div>
 
                 <div className="p-8">
-                  <h3 className="text-xl font-black text-black mb-6 group-hover:text-orange-500 transition-colors">
+                  <h3 className="text-xl font-black text-black mb-6 group-hover:text-neutral-700 transition-colors">
                     {item.name}
                   </h3>
 
@@ -189,7 +189,7 @@ export default function EquipmentCards() {
                   <div className="flex flex-col gap-6 pt-6 border-t border-black/5">
                     <div className="flex flex-col">
                       <span className="text-[10px] uppercase font-bold text-black/30 tracking-widest mb-1">Başlanğıc qiymət</span>
-                      <span className="text-2xl font-black text-orange-500">
+                      <span className="text-2xl font-black text-neutral-700">
                         {item.price}
                       </span>
                     </div>
@@ -200,7 +200,7 @@ export default function EquipmentCards() {
                       rel="noopener noreferrer"
                       className={`w-full py-4 text-center text-[11px] font-black tracking-[0.3em] uppercase transition-all duration-300 ${
                         item.available 
-                        ? "bg-black text-white hover:bg-orange-500 shadow-xl shadow-black/5" 
+                        ? "bg-black text-white hover:bg-neutral-700 shadow-xl shadow-black/5" 
                         : "bg-gray-200 text-gray-500 cursor-not-allowed"
                       }`}
                     >
