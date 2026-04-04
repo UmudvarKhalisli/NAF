@@ -50,6 +50,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
@@ -136,7 +146,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}        
-            className="fixed inset-0 bg-white z-[105] flex flex-col pt-32 px-10 lg:hidden"
+            className="fixed inset-0 bg-white z-[105] flex flex-col pt-32 px-10 lg:hidden overflow-hidden"
           >
             <div className="flex flex-col gap-8">
               {navLinks.map((link, index) => (
