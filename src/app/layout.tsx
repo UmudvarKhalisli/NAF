@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 };
 
 import AdminReturnButton from "@/components/AdminReturnButton";
-import TargetCursor from "@/components/TargetCursor";
 
 export default function RootLayout({
   children,
@@ -26,12 +25,6 @@ export default function RootLayout({
       className={`${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f8f9fa] text-[#1a1a1a] selection:bg-neutral-700 selection:text-white">
-        <TargetCursor 
-          spinDuration={3}
-          hideDefaultCursor={true}
-          parallaxOn={true}
-          hoverDuration={0.3}
-        />
         {children}
         <AdminReturnButton />
       </body>

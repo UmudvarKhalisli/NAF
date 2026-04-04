@@ -32,12 +32,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (min-width: 1024px) {
-  html, body, a, button, [role="button"] {
-    cursor: none !important;
-  }
-}
-
 @media (max-width: 768px) {
   body {
     font-size: 15px;
