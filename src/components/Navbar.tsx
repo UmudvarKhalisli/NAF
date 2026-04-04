@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Instagram, Facebook } from "lucide-react";
+import { Phone, Instagram, Facebook, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -150,6 +150,14 @@ export default function Navbar() {
             transition={{ type: "spring", damping: 30, stiffness: 300 }}        
             className="fixed inset-0 bg-white z-[110] flex flex-col pt-24 px-10 lg:hidden overflow-hidden"
           >
+            {/* Close button */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-7 right-6 p-2 z-[120]"
+            >
+              <X size={24} className="text-black" />
+            </button>
+
             {/* Top: social icons row */}
             <div className="flex items-center justify-between mb-10 pb-6 border-b border-black/5">
               <a href="tel:+994501234567" className="flex items-center gap-2 text-lg font-black text-black">
