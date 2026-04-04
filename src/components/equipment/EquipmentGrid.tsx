@@ -103,7 +103,9 @@ export default async function EquipmentGrid({ limit, featuredOnly }: EquipmentGr
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {finalEq.map((item, idx) => (
-        <EquipmentCard key={item.id} equipment={item} idx={idx} />
+        <div key={item.id} className={idx >= 3 ? 'hidden sm:block' : ''}>
+          <EquipmentCard equipment={item} idx={idx} />
+        </div>
       ))}
     </div>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -27,14 +26,15 @@ interface EquipmentCardProps {
 
 export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps) {
   const isAvailable = equipment.status === 'available';
+  const isDummy = equipment.id.startsWith('dummy');
   
-  return (
+  const cardContent = (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: idx * 0.06 }}
-      className="group relative bg-white border border-black/[0.04] hover:border-black/10 transition-all duration-500 overflow-hidden flex flex-col h-full hover:shadow-lg rounded-xl"
+      className="group relative bg-white border border-black/[0.04] hover:border-black/10 transition-all duration-500 overflow-hidden flex flex-col h-full hover:shadow-lg rounded-xl cursor-pointer"
     >
       {/* Image */}
       <div className="relative aspect-[3/2] w-full overflow-hidden bg-neutral-50">
@@ -72,5 +72,15 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
         </div>
       </div>
     </motion.div>
+  );
+
+  if (isDummy) {
+    return cardContent;
+  }
+
+  return (
+    <Link href={`/texnikalar/${equipment.id}`} className="block h-full">
+      {cardContent}
+    </Link>
   );
 }

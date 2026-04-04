@@ -37,18 +37,18 @@ export default function AboutUs() {
               {text || "NAF Tikinti Texnikaları - On ildən artıq təcrübə ilə müasir mühəndislik həlləri və peşəkar tikinti texnikası icarəsi sahəsində sizin qabaqcıl tərəfdaşınızdır."}
             </p>
 
-            <div className="grid sm:grid-cols-3 gap-8 pt-8 border-t border-black/5">
-              <div className="flex flex-col gap-2">
-                <span className="text-3xl font-black text-black">50+</span>
-                <span className="text-[11px] font-bold text-black/40 uppercase tracking-widest">Müasir Texnika</span>
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-black/5">
+              <div className="flex flex-col gap-1 sm:gap-2">
+                <span className="text-xl sm:text-3xl font-black text-black">50+</span>
+                <span className="text-[9px] sm:text-[11px] font-bold text-black/40 uppercase tracking-widest">Müasir Texnika</span>
               </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-3xl font-black text-black">24/7</span>
-                <span className="text-[11px] font-bold text-black/40 uppercase tracking-widest">Texniki Dəstək</span>
+              <div className="flex flex-col gap-1 sm:gap-2">
+                <span className="text-xl sm:text-3xl font-black text-black">24/7</span>
+                <span className="text-[9px] sm:text-[11px] font-bold text-black/40 uppercase tracking-widest">Texniki Dəstək</span>
               </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-3xl font-black text-black">100%</span>
-                <span className="text-[11px] font-bold text-black/40 uppercase tracking-widest">Müştəri Məmnuniyyəti</span>
+              <div className="flex flex-col gap-1 sm:gap-2">
+                <span className="text-xl sm:text-3xl font-black text-black">100%</span>
+                <span className="text-[9px] sm:text-[11px] font-bold text-black/40 uppercase tracking-widest">Müştəri Məmnuniyyəti</span>
               </div>
             </div>
           </FadeIn>

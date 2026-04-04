@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { 
   HardHat, 
   Construction, 
@@ -28,6 +28,7 @@ const categories = [
 
 export default function Categories() {
   const [active, setActive] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const containerRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -36,6 +37,8 @@ export default function Categories() {
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+
+  const visibleCategories = showAll ? categories : categories.slice(0, 3);
 
   return (
     <section 
@@ -69,7 +72,8 @@ export default function Categories() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Desktop: all 8 always visible */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, index) => (
             <FadeIn
               key={cat.id}
@@ -121,6 +125,62 @@ export default function Categories() {
               </button>
             </FadeIn>
           ))}
+        </div>
+
+        {/* Mobile: show 3 by default, "Hamısına bax" toggles rest */}
+        <div className="sm:hidden">
+          <div className="grid grid-cols-1 gap-4">
+            <AnimatePresence mode="wait">
+              {visibleCategories.map((cat, index) => (
+                <motion.div
+                  key={cat.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                >
+                  <button
+                    onClick={() => setActive(cat.id)}
+                    className={`w-full p-6 flex items-center gap-4 border transition-all duration-500 text-left relative overflow-hidden rounded-xl ${
+                      active === cat.id 
+                      ? "bg-black text-white border-black" 
+                      : "bg-white text-black border-black/5"
+                    }`}
+                  >
+                    <div className={`p-3 rounded-lg transition-colors duration-500 ${
+                      active === cat.id ? "bg-white/10 text-neutral-400" : "bg-black/5 text-black/40"
+                    }`}>
+                      {cat.icon}
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-base font-black">{cat.name}</h3>
+                      <span className={`text-[10px] tracking-widest font-bold uppercase ${
+                        active === cat.id ? "text-white/50" : "text-black/30"
+                      }`}>
+                        {cat.count} Texnika
+                      </span>
+                    </div>
+                    <ArrowRight size={16} className={`transition-all duration-300 ${
+                      active === cat.id ? "text-white/60" : "text-black/20"
+                    }`} />
+                  </button>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="group relative inline-flex items-center gap-0 overflow-hidden border border-black/10 hover:border-black transition-all duration-500 rounded-xl"
+            >
+              <span className="px-6 py-3 text-[11px] font-black tracking-[0.15em] uppercase transition-all duration-500">
+                {showAll ? 'Gizlət' : 'Hamısına Bax'}
+              </span>
+              <span className="w-10 flex items-center justify-center bg-black text-white h-full py-3 rounded-r-xl">
+                <ArrowRight size={14} className={`transition-transform duration-300 ${showAll ? 'rotate-90' : ''}`} />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
