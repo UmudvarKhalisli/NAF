@@ -10,7 +10,7 @@ cloudinary.config({
 
 export async function POST(req: NextRequest) {
   const token = req.cookies.get('admin_token')?.value
-  if (!token || !verifyAdminToken(token)) {
+  if (!token || !(await verifyAdminToken(token))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
@@ -31,7 +31,11 @@ export async function POST(req: NextRequest) {
       ).end(buffer)
     })
     return NextResponse.json(result)
-  } catch (err) {
-    return NextResponse.json({ error: 'Upload failed' }, { status: 500 })
+  } catch (err: any) {
+    console.error('Cloudinary upload error:', err)
+    return NextResponse.json({ 
+      error: 'Upload failed', 
+      details: err.message || 'Unknown error' 
+    }, { status: 500 })
   }
 }

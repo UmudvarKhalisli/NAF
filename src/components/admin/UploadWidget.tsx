@@ -40,14 +40,15 @@ export default function UploadWidget({ onUpload, folder = 'equipment', defaultIm
       });
 
       if (!res.ok) {
-        throw new Error('Yüklənmə xətası');
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.details || errorData.error || 'Yüklənmə xətası');
       }
 
       const data = await res.json();
       setPreview(data.secure_url);
       onUpload(data.secure_url);
-    } catch (err) {
-      setError("Şəkil yüklənərkən xəta baş verdi.");
+    } catch (err: any) {
+      setError(err.message || "Şəkil yüklənərkən xəta baş verdi.");
     } finally {
       setLoading(false);
     }
