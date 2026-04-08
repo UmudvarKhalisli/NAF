@@ -38,7 +38,7 @@ export default function MaintenancePage() {
           <div className="flex flex-wrap justify-center gap-6 mb-16">
             <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl">
               <Clock className="text-[#f59e0b]" size={20} />
-              <span className="text-white/80 font-bold text-sm uppercase tracking-widest">QISADAN QAYIDIRIQ</span>
+              <span className="text-white/80 font-bold text-sm uppercase tracking-widest">SİZİN ÜÇÜN YENİLƏNİRİK</span>
             </div>
             <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl">
               <Hammer className="text-[#f59e0b]" size={20} />
