@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyAdminToken } from '@/lib/auth/admin-auth'
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   const isAdminRoute = req.nextUrl.pathname.startsWith('/admin')
   const isLoginPage = req.nextUrl.pathname === '/admin/login'
   
@@ -12,7 +12,7 @@ export function middleware(req: NextRequest) {
     
     if (!isLoginPage) {
       const token = req.cookies.get('admin_token')?.value
-      if (!token || !verifyAdminToken(token)) {
+      if (!token || !(await verifyAdminToken(token))) {
         return NextResponse.redirect(new URL('/admin/login', req.url))
       }
     }

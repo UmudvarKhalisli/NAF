@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Yanlış email və ya şifrə' }, { status: 401 })
   }
 
-  const token = generateAdminToken()
+  const token = await generateAdminToken()
   const response = NextResponse.json({ success: true })
   response.cookies.set('admin_token', token, {
     httpOnly: true,
