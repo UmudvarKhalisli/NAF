@@ -71,13 +71,13 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
             <a href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
-              <img src="/logo.png" alt="NAF" className={`w-9 h-9 sm:w-10 sm:h-10 object-contain transition-all duration-500 ${forceSolid ? 'scale-90 mix-blend-multiply' : 'brightness-0 invert'}`} />
+              <img src="/images/logo11.png" alt="NAF" className={`w-9 h-9 sm:w-10 sm:h-10 object-contain transition-all duration-500 ${forceSolid ? 'scale-90 mix-blend-multiply' : 'brightness-0 invert'}`} />
               <div className="flex flex-col">
                 <span className={`text-xl font-black tracking-tight transition-colors duration-500 ${forceSolid || open ? "text-black" : "text-white"}`}>
                   NAF
                 </span>
                 <span className={`text-[9px] font-bold tracking-[0.2em] transition-colors duration-500 ${forceSolid || open ? "text-black/40" : "text-white/40"} uppercase`}>
-                  Texnika İcarəsi
+                  Tikinti Texnikası
                 </span>
               </div>
             </a>
@@ -151,7 +151,7 @@ export default function Navbar() {
             {/* Header: Logo left, X right */}
             <div className="flex items-center justify-between py-5 mb-6">
               <a href="/#hero" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
-                <img src="/logo.png" alt="NAF" className="w-8 h-8 object-contain mix-blend-multiply" />
+                <img src="/images/logo11.png" alt="NAF" className="w-8 h-8 object-contain mix-blend-multiply" />
                 <span className="text-lg font-black tracking-tight text-black">NAF</span>
               </a>
               <button onClick={() => setOpen(false)} className="p-2">
