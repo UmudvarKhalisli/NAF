@@ -8,8 +8,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Tikinti Texnikası İcarəsi Bakı | NAF Tikinti",
-  description: "Bakıda ən müasir tikinti texnikasının (ekskavator, kran, buldozer) icarəsi. Professional texnika və sərfəli qiymətlər.",
+  title: "Naf Company",
+  description: "Yanğın təhlükəsizliyi sistemləri",
   verification: {
     google: "9ZpZjOt1jjfndBksCT2eNtccK34O1HRcwXe6Qh1xM7c",
   },
