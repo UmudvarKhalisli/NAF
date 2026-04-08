@@ -8,8 +8,9 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "NAF | Tikinti Texnikası İcarəsi",
-  description: "Müasir mühəndislik həlləri və peşəkar tikinti texnikası icarəsi.",
+  title: "Tikinti Texnikası İcarəsi Bakı | NAF Texnika",
+  description: "Bakıda ən müasir tikinti texnikasının (ekskavator, kran, buldozer) icarəsi. NAF Texnika ilə layihələrinizi sürətləndirin. Professional texnika və sərfəli qiymətlər.",
+  keywords: ["tikinti texnikası", "icarə", "Bakı", "ekskavator", "kran", "buldozer", "NAF Texnika"],
 };
 
 import AdminReturnButton from "@/components/AdminReturnButton";

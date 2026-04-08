@@ -2,6 +2,12 @@ import { supabase } from '@/lib/supabase/client';
 import ProjectCard from '@/components/projects/ProjectCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Layihələrimiz | NAF Texnika",
+  description: "İştirak etdiyimiz uğurlu layihələr və mühəndislik həlləri. Tikinti texnikasının real layihələrdə tətbiqi.",
+};
 
 export const revalidate = 60; // 1 minute revalidation
 

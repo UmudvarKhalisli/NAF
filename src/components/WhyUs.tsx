@@ -60,7 +60,7 @@ export default function WhyUs() {
       >
         <img 
           src="/images/site-bg.png" 
-          alt="Technical Drawing" 
+          alt="NAF Texnika - Müasir Mühəndislik Çizimi və Texnoloji Həllər" 
           className="w-full h-full object-cover scale-110"
         />
       </motion.div>

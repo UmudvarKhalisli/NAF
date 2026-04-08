@@ -3,6 +3,12 @@ import CatalogClient from './CatalogClient';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { DUMMY_EQUIPMENT } from '@/components/equipment/EquipmentGrid';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Texnika Kataloqu | NAF Texnika",
+  description: "Bütün növ ağır tikinti texnikasının icarə kataloqu. Ekskavatorlar, kranlar, buldozerlər və digər texnikalar burada.",
+};
 
 export const revalidate = 60;
 

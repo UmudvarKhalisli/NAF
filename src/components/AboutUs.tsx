@@ -56,7 +56,7 @@ export default function AboutUs() {
           <FadeIn direction="left" delay={0.3} className="relative aspect-square md:aspect-auto md:h-[600px] overflow-hidden rounded-3xl group shadow-2xl">
             <img 
               src="/machines/excavator.png" 
-              alt="Heavy Machinery" 
+              alt="NAF Texnika - Müasir Ekskavator və Ağır Tikinti Texnikası İcarəsi" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
             {/* Dark glass element overlay */}

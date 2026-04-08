@@ -53,7 +53,7 @@ export default function Categories() {
       >
         <img 
           src="/images/crane-bg.png" 
-          alt="Technical Drawing" 
+          alt="NAF Texnika - Kran Texniki Çizimi və Layihələndirmə Fonu" 
           className="w-full h-full object-cover scale-110"
         />
       </motion.div>

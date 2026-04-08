@@ -26,7 +26,7 @@ export default function Hero() {
       >
         <img 
           src="/images/hero-grand.png" 
-          alt="Grand Construction Foundation" 
+          alt="NAF Texnika - Müasir Tikinti Texnikası və Maşın Parkı" 
           className="w-full h-full object-cover"
         />
         {/* Dark Overlay as requested */}
