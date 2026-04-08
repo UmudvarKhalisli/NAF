@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Tikinti Texnikası İcarəsi Bakı | NAF Texnika",
   description: "Bakıda ən müasir tikinti texnikasının (ekskavator, kran, buldozer) icarəsi. NAF Texnika ilə layihələrinizi sürətləndirin. Professional texnika və sərfəli qiymətlər.",
   keywords: ["tikinti texnikası", "icarə", "Bakı", "ekskavator", "kran", "buldozer", "NAF Texnika"],
+  verification: {
+    google: "9ZpZjOt1jjfndBksCT2eNtccK34O1HRcwXe6Qh1xM7c",
+  },
 };
 
 import AdminReturnButton from "@/components/AdminReturnButton";
