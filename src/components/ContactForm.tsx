@@ -32,16 +32,34 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      const text = `Salam, mən ${form.name}. ${form.equipment} texnikası haqqında məlumat və qiymət təklifi almaq istəyirəm.\nTelefon: ${form.phone}\nMesaj: ${form.message}`;
-      window.open(`https://wa.me/994501234567?text=${encodeURIComponent(text)}`, "_blank");
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setForm({ name: "", phone: "", equipment: "", message: "" });
-      }, 4000);
+      try {
+        // 1. API-ya göndər (Supabase-ə yazmaq və Email üçün)
+        const response = await fetch('/api/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form)
+        });
+
+        if (response.ok) {
+          // 2. Uğurlu halda WhatsApp-da da aç
+          const text = `Salam, mən ${form.name}. ${form.equipment} texnikası haqqında məlumat və qiymət təklifi almaq istəyirəm.\nTelefon: ${form.phone}\nMesaj: ${form.message}`;
+          window.open(`https://wa.me/994501234567?text=${encodeURIComponent(text)}`, "_blank");
+          
+          setSubmitted(true);
+          setTimeout(() => {
+            setSubmitted(false);
+            setForm({ name: "", phone: "", equipment: "", message: "" });
+          }, 4000);
+        } else {
+          alert('Xəta baş verdi, xahiş edirik bir az sonra təkrar yoxlayın.');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        alert('Sistem xətası baş verdi.');
+      }
     }
   };
 

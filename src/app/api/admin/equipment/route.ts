@@ -4,7 +4,7 @@ import { verifyAdminToken } from '@/lib/auth/admin-auth'
 
 export async function GET(req: NextRequest) {
   const token = req.cookies.get('admin_token')?.value
-  if (!token || !verifyAdminToken(token)) {
+  if (!token || !(await verifyAdminToken(token))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   const token = req.cookies.get('admin_token')?.value
-  if (!token || !verifyAdminToken(token)) {
+  if (!token || !(await verifyAdminToken(token))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
