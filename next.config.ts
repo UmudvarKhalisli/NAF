@@ -19,20 +19,24 @@ const nextConfig: NextConfig = {
             value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co;",
           },
           {
-            key: "X-Frame-Options",
-            value: "DENY",
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
           },
           {
             key: "X-Content-Type-Options",
             value: "nosniff",
           },
           {
-            key: "Referrer-Policy",
-            value: "origin-when-cross-origin",
+            key: "X-Frame-Options",
+            value: "DENY",
           },
           {
-            key: "Strict-Transport-Security",
-            value: "max-age=31536000; includeSubDomains; preload",
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
           },
           {
             key: "Permissions-Policy",
