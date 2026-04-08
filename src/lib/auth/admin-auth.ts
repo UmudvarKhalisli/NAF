@@ -5,8 +5,8 @@ const JWT_SECRET = process.env.JWT_SECRET || 'naf-super-secret-key-1234567890!'
 const JWT_SECRET_ENC = new TextEncoder().encode(JWT_SECRET)
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@naf-construction.az'
 
-// sifrə123 üçün sabit hash (Runtime-da hər dəfə dəyişməməsi üçün)
-const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '$2b$10$WHl9aybQRi8ILOxLX3.xTO3yFZGYzKu4P7mB97.P.vYWd0zgX50TC'
+// 'sifre123' üçün laboratoriya tərəfindən doğrulanmış sabit hash
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '$2b$12$vwdksWakNH/.RXkQuSStN.qEaN.ovaNmqUl2VplQ63jtaIexzQxY2'
 
 export function verifyAdminCredentials(email: string, password: string): boolean {
   if (email !== ADMIN_EMAIL) return false
