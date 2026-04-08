@@ -56,6 +56,12 @@ export default function AdminLayoutComponent({
     { label: 'Parametrlər', icon: Settings, path: '/admin/parametrler' },
   ];
 
+  const isLoginPage = pathname === '/admin/login';
+
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
+
   return (
     <div className="flex h-screen overflow-hidden bg-[#0a0a0a] text-white">
       {/* Mobile Sidebar Overlay */}
