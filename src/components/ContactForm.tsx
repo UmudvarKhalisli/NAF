@@ -44,10 +44,6 @@ export default function ContactForm() {
         });
 
         if (response.ok) {
-          // 2. Uğurlu halda WhatsApp-da da aç
-          const text = `Salam, mən ${form.name}. ${form.equipment} texnikası haqqında məlumat və qiymət təklifi almaq istəyirəm.\nTelefon: ${form.phone}\nMesaj: ${form.message}`;
-          window.open(`https://wa.me/994501234567?text=${encodeURIComponent(text)}`, "_blank");
-          
           setSubmitted(true);
           setTimeout(() => {
             setSubmitted(false);
