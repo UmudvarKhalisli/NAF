@@ -12,7 +12,7 @@ export default function AdminSettings() {
   const [settings, setSettings] = useState({
     site_name: 'NAF Texnika',
     contact_email: 'info@naf.az',
-    contact_phone: '+994 50 123 45 67',
+    contact_phone: '+994 50 962 77 66',
     address: 'Bakı, Azərbaycan',
     maintenance_mode: false
   });

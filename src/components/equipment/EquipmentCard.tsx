@@ -87,7 +87,7 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
               Ətraflı Bax
             </Link>
             <a
-              href={`https://wa.me/994501234567?text=${encodeURIComponent(`Salam, "${equipment.name}" (${equipment.category}) texnikasını ${equipment.price}₼/${equipment.price_unit} qiymətlə sifariş etmək istəyirəm. Ətraflı məlumat verə bilərsinizmi?`)}`}
+              href={`https://wa.me/994509627766?text=${encodeURIComponent(`Salam, "${equipment.name}" (${equipment.category}) texnikasını ${equipment.price}₼/${equipment.price_unit} qiymətlə sifariş etmək istəyirəm. Ətraflı məlumat verə bilərsinizmi?`)}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}

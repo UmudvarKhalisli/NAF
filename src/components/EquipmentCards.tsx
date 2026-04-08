@@ -195,7 +195,7 @@ export default function EquipmentCards() {
                     </div>
 
                     <a
-                      href={item.available ? `https://wa.me/994501234567?text=Salam, ${item.name} texnikası haqqında məlumat almaq istəyirəm.` : "#"}
+                      href={item.available ? `https://wa.me/994509627766?text=Salam, ${item.name} texnikası haqqında məlumat almaq istəyirəm.` : "#"}
                       target={item.available ? "_blank" : undefined}
                       rel="noopener noreferrer"
                       className={`w-full py-4 text-center text-[11px] font-black tracking-[0.3em] uppercase transition-all duration-300 ${

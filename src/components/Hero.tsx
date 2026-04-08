@@ -69,7 +69,7 @@ export default function Hero() {
               <span className="relative z-10 text-[13px] font-bold tracking-[0.2em] group-hover:text-black">Kataloq</span>
             </a>
             <a
-              href="https://wa.me/994501234567"
+              href="https://wa.me/994509627766"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-16 py-6 bg-transparent text-white border border-white/20 overflow-hidden transition-all duration-500 hover:border-white rounded-lg"

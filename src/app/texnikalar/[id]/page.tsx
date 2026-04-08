@@ -35,7 +35,7 @@ export default async function EquipmentDetailPage({ params }: { params: { id: st
   }
 
   const whatsappMsg = `Salam, mən ${equipment.name} (${equipment.category}) növlü texnika haqqında maraqlanıram. Qiyməti saytda ${equipment.price} AZN / ${equipment.price_unit} olaraq göstərilib.`;
-  const whatsappUrl = `https://wa.me/994501234567?text=${encodeURIComponent(whatsappMsg)}`;
+  const whatsappUrl = `https://wa.me/994509627766?text=${encodeURIComponent(whatsappMsg)}`;
 
   const isAvailable = equipment.status === 'available';
 
