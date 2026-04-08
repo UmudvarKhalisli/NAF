@@ -2,11 +2,16 @@ import { NextRequest, NextResponse } from 'next/server'
 import { verifyAdminToken } from '@/lib/auth/admin-auth'
 
 export async function middleware(req: NextRequest) {
-  const isAdminRoute = req.nextUrl.pathname.startsWith('/admin')
-  const isLoginPage = req.nextUrl.pathname === '/admin/login'
+  const { pathname } = req.nextUrl
+  const isAdminRoute = pathname.startsWith('/admin')
+  const isLoginPage = pathname === '/admin/login'
   
+  // Pathname-i header kimi ötürürük (Layout-da yoxlamaq üçün)
+  const requestHeaders = new Headers(req.headers)
+  requestHeaders.set('x-pathname', pathname)
+
   if (isAdminRoute) {
-    if (req.nextUrl.pathname === '/admin') {
+    if (pathname === '/admin') {
       return NextResponse.redirect(new URL('/admin/dashboard', req.url))
     }
     
@@ -17,9 +22,23 @@ export async function middleware(req: NextRequest) {
       }
     }
   }
-  return NextResponse.next()
+
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  })
 }
 
 export const config = {
-  matcher: ['/admin/:path*']
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+  ],
 }
