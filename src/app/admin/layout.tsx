@@ -72,7 +72,7 @@ export default function AdminLayoutComponent({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-black/60 z-20"
+            className="fixed inset-0 bg-black/60 z-40"
           />
         )}
       </AnimatePresence>
@@ -80,38 +80,63 @@ export default function AdminLayoutComponent({
       {/* Sidebar */}
       <motion.aside
         initial={false}
-        animate={{ width: isOpen ? 256 : 0 }}
+        animate={{ 
+          width: isMobile ? (isOpen ? 256 : 0) : (isOpen ? 256 : 80),
+          x: isMobile && !isOpen ? -256 : 0
+        }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className={`fixed lg:sticky top-0 left-0 h-full bg-[#1a1a1a] border-r border-white/5 z-30 flex flex-col shrink-0 ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}
+        className={`fixed lg:sticky top-0 left-0 h-full bg-[#1a1a1a] border-r border-white/5 z-50 flex flex-col shrink-0 overflow-hidden shadow-2xl shadow-black/50`}
       >
         {/* Sidebar Header */}
-        <div className="h-20 flex items-center justify-between px-6 border-b border-white/5 whitespace-nowrap overflow-hidden">
+        <div className="h-20 flex items-center justify-between px-6 border-b border-white/5 whitespace-nowrap">
           <Link href="/admin/dashboard" className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center">N</div>
-            <span className="font-black tracking-widest text-[#f59e0b] uppercase">Admin</span>
+            <div className="w-8 h-8 bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center shrink-0">N</div>
+            <AnimatePresence>
+              {isOpen && (
+                <motion.span 
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  className="font-black tracking-widest text-[#f59e0b] uppercase"
+                >
+                  Admin
+                </motion.span>
+              )}
+            </AnimatePresence>
           </Link>
-          {isMobile && (
-            <button onClick={() => setIsOpen(false)} className="text-white/50 hover:text-white">
+          {isMobile && isOpen && (
+            <button onClick={() => setIsOpen(false)} className="text-white/50 hover:text-white ml-2">
               <ChevronLeft size={20} />
             </button>
           )}
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+        <nav className="flex-1 overflow-y-auto py-6 px-4 space-y-2 custom-scrollbar">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
               onClick={() => { if(isMobile) setIsOpen(false) }}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-bold tracking-widest text-xs uppercase ${
+              className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all font-bold tracking-widest text-xs uppercase group ${
                 pathname.startsWith(item.path)
-                  ? 'bg-[#f59e0b]/10 text-[#f59e0b]'
+                  ? 'bg-[#f59e0b] text-black'
                   : 'text-white/50 hover:bg-white/5 hover:text-white'
               }`}
             >
-              <item.icon size={18} />
-              <span className="truncate">{item.label}</span>
+              <item.icon size={18} className="shrink-0" />
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.span 
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -10 }}
+                    className="truncate"
+                  >
+                    {item.label}
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </Link>
           ))}
         </nav>
@@ -120,10 +145,21 @@ export default function AdminLayoutComponent({
         <div className="p-4 border-t border-white/5">
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-500 hover:bg-red-500/10 transition-colors font-bold tracking-widest text-xs uppercase group"
+            className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-xl text-red-500 hover:bg-red-500/10 transition-colors font-bold tracking-widest text-xs uppercase group overflow-hidden`}
           >
-            <LogOut size={18} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="truncate">Çıxış</span>
+            <LogOut size={18} className="shrink-0 group-hover:-translate-x-1 transition-transform" />
+            <AnimatePresence>
+              {isOpen && (
+                <motion.span 
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  className="truncate"
+                >
+                  Çıxış
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
         </div>
       </motion.aside>
@@ -131,18 +167,18 @@ export default function AdminLayoutComponent({
       {/* Main Content Wrapper */}
       <div className="flex-1 flex flex-col h-full overflow-hidden w-full relative">
         {/* Header */}
-        <header className="h-20 bg-[#1a1a1a]/50 backdrop-blur-md border-b border-white/5 flex items-center px-6 sticky top-0 z-10 shrink-0">
+        <header className="h-20 bg-[#1a1a1a]/50 backdrop-blur-md border-b border-white/5 flex items-center px-6 sticky top-0 z-30 shrink-0">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/5 text-white/70 hover:text-white transition-colors"
+            className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-white transition-colors"
           >
             <Menu size={20} />
           </button>
           
           <div className="ml-auto flex items-center gap-4">
             <div className="text-right hidden sm:block">
-              <p className="text-sm font-bold text-white uppercase tracking-widest">Administrator</p>
-              <p className="text-[10px] text-[#f59e0b] uppercase tracking-widest">Onlayn</p>
+              <p className="text-sm font-black text-white uppercase tracking-widest">Administrator</p>
+              <p className="text-[10px] text-[#f59e0b] font-bold uppercase tracking-widest">Onlayn</p>
             </div>
             <div className="w-10 h-10 rounded-full border-2 border-[#f59e0b] flex items-center justify-center bg-black">
               <span className="text-[#f59e0b] font-black text-sm">A</span>
@@ -151,7 +187,7 @@ export default function AdminLayoutComponent({
         </header>
 
         {/* Dynamic Content */}
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#0a0a0a]">
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#0a0a0a] custom-scrollbar">
           {children}
         </main>
       </div>
