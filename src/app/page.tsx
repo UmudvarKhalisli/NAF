@@ -8,6 +8,8 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import Link from 'next/link';
 
+import ProjectsSection from "@/components/projects/ProjectsSection";
+
 export default function Home() {
   return (
     <>
@@ -44,6 +46,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ProjectsSection />
 
       <Categories />
       <WhyUs />
