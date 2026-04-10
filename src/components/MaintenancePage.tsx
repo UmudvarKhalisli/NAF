@@ -62,11 +62,11 @@ export default function MaintenancePage() {
               </div>
               <span className="text-white font-black text-sm tracking-widest group-hover:text-[#f59e0b] transition-colors uppercase">+994 50 962 77 66</span>
             </a>
-            <a href="mailto:info@naf.az" className="group flex flex-col items-center gap-3">
+            <a href="mailto:info@naftexnika.az" className="group flex flex-col items-center gap-3">
               <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#f59e0b] group-hover:bg-[#f59e0b]/5 transition-all">
                 <Mail size={20} className="text-white/40 group-hover:text-[#f59e0b]" />
               </div>
-              <span className="text-white font-black text-sm tracking-widest group-hover:text-[#f59e0b] transition-colors uppercase">info@naf.az</span>
+              <span className="text-white font-black text-sm tracking-widest group-hover:text-[#f59e0b] transition-colors uppercase">info@naftexnika.az</span>
             </a>
           </div>
         </motion.div>

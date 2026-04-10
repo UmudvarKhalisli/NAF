@@ -105,7 +105,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="text-[12px] font-black text-black/40 uppercase mb-1">E-poçt</h4>
-                  <p className="text-lg font-bold text-black">info@naf.az</p>
+                  <p className="text-lg font-bold text-black">info@naftexnika.az</p>
                 </div>
               </div>
               <div className="flex gap-4">
