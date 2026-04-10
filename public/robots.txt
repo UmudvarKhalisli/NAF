@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://naf-company.vercel.app/sitemap.xml
+Sitemap: https://www.naftexnika.az/sitemap.xml
