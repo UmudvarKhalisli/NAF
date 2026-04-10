@@ -7,7 +7,7 @@ export async function sendAdminNotification(data: { name: string, phone: string,
     const { name, phone, equipment, message } = data;
     
     await resend.emails.send({
-      from: 'NAF Texnika <onboarding@resend.dev>', // Resend pulsuz hesabı üçün bu standartdır
+      from: 'NAF Texnika <info@naftexnika.az>',
       to: 'info@naftexnika.az',
       subject: 'Yeni Sifariş / Müraciət (NAF Texnika)',
       html: `
