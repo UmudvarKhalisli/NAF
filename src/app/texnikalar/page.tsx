@@ -5,10 +5,13 @@ import Footer from '@/components/Footer';
 import { DUMMY_EQUIPMENT } from '@/components/equipment/EquipmentGrid';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: "Texnika Kataloqu | NAF Texnika",
-  description: "Bütün növ ağır tikinti texnikasının icarə kataloqu. Ekskavatorlar, kranlar, buldozerlər və digər texnikalar burada.",
-};
+import { constructMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = constructMetadata({
+  title: "Texnikalar | Tikinti Texnikası İcarəsi",
+  description: "İcarəyə verilən tikinti texnikalarına baxın. Kran, ekskavator, səbət maşını, forklift və digər xüsusi texnikalar NAF Texnika tərəfindən təqdim olunur.",
+  canonical: "https://naftexnika.az/texnikalar"
+});
 
 export const revalidate = 60;
 
@@ -30,7 +33,7 @@ export default async function EquipmentCatalogPage() {
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <div className="mb-12 border-b border-black/5 pb-8">
             <h1 className="text-4xl md:text-5xl font-serif font-black tracking-tighter text-black uppercase mb-2">
-              TEXNİKALARIMIZ
+              İcarəyə Verilən Texnikalar
             </h1>
             <p className="text-[10px] tracking-[0.4em] font-bold text-black/40 uppercase">
               BÜTÜN TEXNİKA PARKI

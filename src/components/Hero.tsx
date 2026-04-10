@@ -43,15 +43,16 @@ export default function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
         <FadeIn direction="up" duration={1.5}>
-          {/* Watermark Logo */}
-          <h1 className="text-[120px] md:text-[200px] lg:text-[280px] font-black leading-none tracking-tighter mb-8 select-none opacity-[0.03] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+          {/* Decorative Watermark (not semantic H1) */}
+          <div className="text-[120px] md:text-[200px] lg:text-[280px] font-black leading-none tracking-tighter mb-8 select-none opacity-[0.03] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
             NAF
-          </h1>
+          </div>
           
           <div className="relative mt-24">
-            <h2 className="text-3xl md:text-5xl lg:text-7xl tracking-[0.1em] font-black text-white leading-tight mb-8 drop-shadow-2xl">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl tracking-[0.1em] font-black text-white leading-tight mb-8 drop-shadow-2xl">
+              <span className="text-sm md:text-base block mb-4 text-[#f59e0b] tracking-[0.4em] uppercase opacity-80">Bakı və Ətraf Bölgələrdə Tikinti Texnikası İcarəsi</span>
               Sizin Layihə, <br /> Bizim Texnika
-            </h2>
+            </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/60 font-medium mb-12">
               Modern mühəndislik həlləri və peşəkar tikinti texnikasının icarəsi üzrə ixtisaslaşmış komanda.
             </p>

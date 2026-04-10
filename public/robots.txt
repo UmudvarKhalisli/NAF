@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.naftexnika.az/sitemap.xml
+Sitemap: https://naftexnika.az/sitemap.xml

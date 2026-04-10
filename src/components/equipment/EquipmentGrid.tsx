@@ -5,6 +5,7 @@ import EquipmentCard, { EquipmentItem } from './EquipmentCard';
 interface EquipmentGridProps {
   limit?: number;
   featuredOnly?: boolean;
+  category?: string;
 }
 
 export const DUMMY_EQUIPMENT: EquipmentItem[] = [
@@ -82,11 +83,14 @@ export const DUMMY_EQUIPMENT: EquipmentItem[] = [
   },
 ];
 
-export default async function EquipmentGrid({ limit, featuredOnly }: EquipmentGridProps) {
+export default async function EquipmentGrid({ limit, featuredOnly, category }: EquipmentGridProps) {
   let query = supabase.from('equipment').select('*');
 
   if (featuredOnly) {
     query = query.eq('is_featured', true);
+  }
+  if (category) {
+    query = query.eq('category', category);
   }
   if (limit) {
     query = query.limit(limit);
@@ -97,7 +101,11 @@ export default async function EquipmentGrid({ limit, featuredOnly }: EquipmentGr
   let finalEq = equipment as EquipmentItem[] | null;
 
   if (!finalEq || finalEq.length === 0 || error) {
-    finalEq = DUMMY_EQUIPMENT.slice(0, limit || 6);
+    finalEq = DUMMY_EQUIPMENT;
+    if (category) {
+      finalEq = finalEq.filter(item => item.category === category);
+    }
+    finalEq = finalEq.slice(0, limit || 6);
   }
 
   return (

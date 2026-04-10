@@ -6,6 +6,8 @@ import { headers } from "next/headers";
 import MaintenancePage from "@/components/MaintenancePage";
 import AdminReturnButton from "@/components/AdminReturnButton";
 
+import { constructMetadata } from "@/lib/seo";
+
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
@@ -18,13 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     .eq('id', 'main')
     .single();
 
-  return {
-    title: settings?.site_name || "Naf Company",
-    description: "Yanğın təhlükəsizliyi sistemləri",
-    verification: {
-      google: "9ZpZjOt1jjfndBksCT2eNtccK34O1HRcwXe6Qh1xM7c",
-    },
-  };
+  return constructMetadata();
 }
 
 export default async function RootLayout({

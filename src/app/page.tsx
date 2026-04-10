@@ -9,10 +9,91 @@ import Footer from "@/components/Footer";
 import Link from 'next/link';
 
 import ProjectsSection from "@/components/projects/ProjectsSection";
+import FAQ from "@/components/FAQ";
+import JsonLd from "@/components/JsonLd";
 
 export default function Home() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NAF Texnika",
+    "url": "https://naftexnika.az",
+    "logo": "https://naftexnika.az/icon.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+994-50-962-77-66",
+      "contactType": "customer service",
+      "email": "info@naftexnika.az",
+      "areaServed": "AZ",
+      "availableLanguage": ["Azerbaijani", "English", "Russian"]
+    }
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "NAF Texnika",
+    "image": "https://naftexnika.az/images/hero-grand.png",
+    "@id": "https://naftexnika.az",
+    "url": "https://naftexnika.az",
+    "telephone": "+994-50-962-77-66",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bakı ş.",
+      "addressLocality": "Baku",
+      "addressRegion": "Baku",
+      "postalCode": "AZ1000",
+      "addressCountry": "AZ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.4093,
+      "longitude": 49.8671
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Tikinti texnikası icarəsi qiymətləri necə hesablanır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Qiymətlər texnikanın növünə, icarə müddətinə (saatlıq, günlük və ya aylıq) və işin yerləşdiyi ünvana görə dəyişir. Uzunmüddətli icarələr üçün xüsusi endirimlər tətbiq olunur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Texnikalar operatorla təmin olunurmu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bəli, bütün texnikalarımız təcrübəli və peşəkar operatorlar tərəfindən idarə olunur. Operator xidməti icarə qiymətinə daxildir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hansı bölgələrdə xidmət göstərirsiniz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Biz əsasən Bakı, Sumqayıt, Xırdalan və Abşeron yarımadasında xidmət göstəririk. Layihənin həcmindən asılı olaraq digər rayonlara da texnika göndərilməsi mümkündür."
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <JsonLd data={organizationSchema} />
+      <JsonLd data={localBusinessSchema} />
+      <JsonLd data={faqSchema} />
       <Navbar />
       <Hero />
       <AboutUs />
@@ -51,6 +132,7 @@ export default function Home() {
 
       <Categories />
       <WhyUs />
+      <FAQ />
       <ContactForm />
       <Footer />
     </>

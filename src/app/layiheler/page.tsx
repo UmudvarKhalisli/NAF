@@ -4,10 +4,13 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: "Layihələrimiz | NAF Texnika",
+import { constructMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = constructMetadata({
+  title: "Layihələrimiz | Tikinti Texnikası İcarəsi",
   description: "İştirak etdiyimiz uğurlu layihələr və mühəndislik həlləri. Tikinti texnikasının real layihələrdə tətbiqi.",
-};
+  canonical: "https://naftexnika.az/layiheler"
+});
 
 export const revalidate = 60; // 1 minute revalidation
 
