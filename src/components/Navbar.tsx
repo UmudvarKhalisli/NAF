@@ -7,11 +7,10 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Ana Səhifə", href: "/#hero", id: "hero" },
+  { label: "Texnika", href: "/texnikalar", id: "equipment" },
+  { label: "Layihələr", href: "/layiheler", id: "layiheler" },
+  { label: "Bloq", href: "/blog", id: "blog" },
   { label: "Haqqımızda", href: "/#about", id: "about" },
-  { label: "Texnika", href: "/#equipment", id: "equipment" },
-  { label: "Layihələr", href: "/#layiheler", id: "layiheler" },
-  { label: "Kateqoriyalar", href: "/#categories", id: "categories" },
-  { label: "Üstünlüklər", href: "/#why-us", id: "why-us" },
   { label: "Əlaqə", href: "/#contact", id: "contact" },
 ];
 

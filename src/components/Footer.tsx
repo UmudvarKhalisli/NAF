@@ -115,7 +115,7 @@ export default function Footer() {
             &copy; 2026 NAF Tikinti Texnikaları. Bütün hüquqlar qorunur.
           </p>
           <div className="flex gap-8">
-            <span className="text-[10px] tracking-[0.2em] text-white/20 font-black uppercase transition-colors hover:text-white cursor-default">
+            <span className="text-[10px] tracking-[0.2em] text-white/10 font-black uppercase transition-all duration-500 hover:text-white/40 cursor-default">
               DESIGNED & DEVELOPED BY UMUDVAR
             </span>
           </div>
