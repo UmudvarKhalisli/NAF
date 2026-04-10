@@ -3,10 +3,10 @@ import bcrypt from 'bcryptjs'
 
 const JWT_SECRET = process.env.JWT_SECRET || 'naf-super-secret-key-1234567890!'
 const JWT_SECRET_ENC = new TextEncoder().encode(JWT_SECRET)
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'info@naftexnika.az'
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'info@naftikinti.az'
 
-// 'sifre123' üçün laboratoriya tərəfindən doğrulanmış sabit hash
-const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '$2b$12$vwdksWakNH/.RXkQuSStN.qEaN.ovaNmqUl2VplQ63jtaIexzQxY2'
+// 'Naftexnika7766' parolu üçün bcrypt hash
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '$2b$12$fqif.8ybe8KYEhyIK6Ei9uxif0dtrcj2vvTBZyc40ysm.NLxTAuKy'
 
 export function verifyAdminCredentials(email: string, password: string): boolean {
   if (email !== ADMIN_EMAIL) return false
