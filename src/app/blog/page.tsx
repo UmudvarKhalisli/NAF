@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import FadeIn from '@/components/FadeIn';
+import BackButton from '@/components/ui/BackButton';
 
 export const metadata = constructMetadata({
   title: "Bloq | Tikinti Texnikası Haqqında Faydalı Məlumatlar",
@@ -22,6 +23,9 @@ export default function BlogListingPage() {
 
       <main className="flex-grow pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="mb-6">
+            <BackButton href="/" />
+          </div>
           <div className="mb-16 border-b border-black/5 pb-12">
             <h1 className="text-4xl md:text-6xl font-black tracking-tight text-black mb-6">
               NAF Texnika Bloq

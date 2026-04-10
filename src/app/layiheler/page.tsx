@@ -14,6 +14,8 @@ export const metadata: Metadata = constructMetadata({
 
 export const revalidate = 60; // 1 minute revalidation
 
+import BackButton from '@/components/ui/BackButton';
+
 export default async function ProjectsPage() {
   const { data: projects, error } = await supabase
     .from('projects')
@@ -29,6 +31,9 @@ export default async function ProjectsPage() {
       
       <main className="flex-grow pt-32 pb-24">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+          <div className="mb-8">
+            <BackButton href="/" />
+          </div>
           <div className="mb-12 border-b border-black/5 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <h1 className="text-4xl md:text-5xl font-serif font-black tracking-tighter text-black uppercase mb-2">

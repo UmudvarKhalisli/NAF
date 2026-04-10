@@ -8,6 +8,7 @@ import EquipmentGrid from '@/components/equipment/EquipmentGrid';
 import ContactForm from '@/components/ContactForm';
 import FadeIn from '@/components/FadeIn';
 import JsonLd from '@/components/JsonLd';
+import BackButton from '@/components/ui/BackButton';
 
 interface PageProps {
   params: Promise<{
@@ -95,6 +96,9 @@ export default async function ServicePage({ params }: PageProps) {
         <section className="bg-neutral-50 py-24 border-b border-black/5">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <FadeIn direction="up">
+              <div className="mb-12">
+                <BackButton href="/texnikalar" />
+              </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-black mb-8">
                 {service.h1}
               </h1>
