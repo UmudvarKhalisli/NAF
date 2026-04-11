@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "Sifariş prosesi necədir?",
-    answer: "Siz bizimlə telefon və ya WhatsApp vasitəsilə əlaqə saxlayırsınız, mütəxəssisimiz layihənizi qiymətləndirir və sizə ən uyğun texnikanı məsləhət görür. Razılıq əldə olunduqdan sonra texnika təyin olunan vaxtda ünvana çatdırılır."
+    answer: "Siz bizimlə *7766 nömrəsi vasitəsilə əlaqə saxlayırsınız, mütəxəssisimiz layihənizi qiymətləndirir və sizə ən uyğun texnikanı məsləhət görür. Razılıq əldə olunduqdan sonra texnika təyin olunan vaxtda ünvana çatdırılır."
   }
 ];
 
