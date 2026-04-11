@@ -113,7 +113,7 @@ export default function Hero() {
               <div className="group relative bg-[#1c1b1b] p-8 rounded-xl border border-white/5 shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
 
                 <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-2xl font-bold text-white uppercase tracking-tight">Xüsusi Təklif</h3>
+                  <h3 className="text-2xl font-bold text-white uppercase tracking-tight">İcarə Et</h3>
                   <span className="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-black uppercase tracking-tighter">XÜSUSİ TƏKLİF</span>
                 </div>
 
@@ -126,7 +126,7 @@ export default function Hero() {
                         <img
                           src={featured.image_url}
                           alt={featured.name}
-                          className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+                          className="w-full h-full object-cover transition-all duration-700"
                         />
                       </div>
 

@@ -8,81 +8,6 @@ interface EquipmentGridProps {
   category?: string;
 }
 
-export const DUMMY_EQUIPMENT: EquipmentItem[] = [
-  {
-    id: 'dummy-1',
-    name: 'Cat 320 Ekskavator',
-    category: 'Ekskavatorlar',
-    price: 350,
-    price_unit: 'saatlıq',
-    status: 'available',
-    is_featured: true,
-    created_at: new Date().toISOString(),
-    specs: { "Çəki": "20 ton", "Güc": "162 a.g." },
-    image_url: '/machines/excavator.png'
-  },
-  {
-    id: 'dummy-2',
-    name: 'Liebherr LTM 1100',
-    category: 'Kranlar',
-    price: 800,
-    price_unit: 'saatlıq',
-    status: 'available',
-    is_featured: true,
-    created_at: new Date().toISOString(),
-    specs: { "Qaldırma": "100 ton", "Boom": "60 m" },
-    image_url: '/machines/crane.png'
-  },
-  {
-    id: 'dummy-3',
-    name: 'Komatsu D65EX',
-    category: 'Buldozerlər',
-    price: 400,
-    price_unit: 'saatlıq',
-    status: 'available',
-    is_featured: true,
-    created_at: new Date().toISOString(),
-    specs: { "Çəki": "20.5 ton", "Tutum": "5.4 m³" },
-    image_url: '/machines/bulldozer.png'
-  },
-  {
-    id: 'dummy-4',
-    name: 'Volvo FMX 8x4',
-    category: 'Yük Maşınları',
-    price: 250,
-    price_unit: 'saatlıq',
-    status: 'rented',
-    is_featured: true,
-    created_at: new Date().toISOString(),
-    specs: { "Yük": "25 ton", "Həcm": "16 m³" },
-    image_url: '/machines/truck.png'
-  },
-  {
-    id: 'dummy-5',
-    name: 'Putzmeister BSF 36',
-    category: 'Beton Nasosları',
-    price: 600,
-    price_unit: 'saatlıq',
-    status: 'available',
-    is_featured: true,
-    created_at: new Date().toISOString(),
-    specs: { "Boom": "36 m", "Məhsul": "160 m³/s" },
-    image_url: '/machines/pump.png'
-  },
-  {
-    id: 'dummy-6',
-    name: 'Cat C15 Generator',
-    category: 'Generatorlar',
-    price: 200,
-    price_unit: 'günlük',
-    status: 'available',
-    is_featured: true,
-    created_at: new Date().toISOString(),
-    specs: { "Güc": "400 kVA", "Gərginlik": "400V" },
-    image_url: '/machines/generator.png'
-  },
-];
-
 export default async function EquipmentGrid({ limit, featuredOnly, category }: EquipmentGridProps) {
   let query = supabase.from('equipment').select('*');
 
@@ -92,21 +17,27 @@ export default async function EquipmentGrid({ limit, featuredOnly, category }: E
   if (category) {
     query = query.eq('category', category);
   }
+  
+  // Sort by created_at descending to show newest first
+  query = query.order('created_at', { ascending: false });
+
   if (limit) {
     query = query.limit(limit);
   }
 
-  const { data: equipment, error } = await query.order('created_at', { ascending: false });
+  const { data: equipment, error } = await query;
 
-  let finalEq = equipment as EquipmentItem[] | null;
-
-  if (!finalEq || finalEq.length === 0 || error) {
-    finalEq = DUMMY_EQUIPMENT;
-    if (category) {
-      finalEq = finalEq.filter(item => item.category === category);
-    }
-    finalEq = finalEq.slice(0, limit || 6);
+  if (error || !equipment || equipment.length === 0) {
+    return (
+      <div className="py-20 text-center flex flex-col items-center justify-center border border-dashed border-black/10 rounded-xl col-span-full">
+        <p className="text-black/40 font-bold uppercase tracking-widest text-sm">
+          Texnika tapılmadı.
+        </p>
+      </div>
+    );
   }
+
+  const finalEq = equipment as EquipmentItem[];
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
