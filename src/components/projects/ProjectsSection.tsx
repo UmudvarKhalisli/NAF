@@ -34,6 +34,7 @@ export default async function ProjectsSection() {
     }
   ];
 
+  const hasProjects = !!(projects && projects.length > 0 && !error);
   const displayProjects = hasProjects ? projects : FALLBACK_PROJECTS;
 
   return (
