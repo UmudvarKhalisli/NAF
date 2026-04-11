@@ -33,8 +33,8 @@ const reasons = [
     icon: <FileText size={32} />
   },
   {
-    title: "10+ İl Təcrübə",
-    desc: "On ildən artıq mühəndislik təcrübəsi. 500-dən çox uğurlu dövlət və özəl tikinti layihəsində tərəfdaşıq.",
+    title: "İnnovativ Yanaşma",
+    desc: "Sənayenin ən son texnoloji yeniliklərini tətbiq edərək, layihələrinizə müasir və effektiv həllər gətiririk. Gənc və dinamik komandamızla sizin xidmətinizdəyik.",
     icon: <History size={32} />
   },
 ];

@@ -99,8 +99,8 @@ export default function Hero() {
                   <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest uppercase">Texnika Sayı</p>
                 </div>
                 <div>
-                  <h4 className="text-3xl font-bold text-[#f59e0b] mb-1">12+</h4>
-                  <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest uppercase">İllik Təcrübə</p>
+                  <h4 className="text-3xl font-bold text-[#f59e0b] mb-1">MÜASİR</h4>
+                  <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest uppercase">Texnika Parkı</p>
                 </div>
                 <div>
                   <h4 className="text-3xl font-bold text-[#f59e0b] mb-1">24/7</h4>

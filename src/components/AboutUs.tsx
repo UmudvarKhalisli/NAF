@@ -35,7 +35,7 @@ export default function AboutUs() {
             </h2>
             <div className="w-16 h-[3px] bg-black mb-10" />
             <p className="text-lg md:text-xl font-medium text-black/60 leading-relaxed mb-12">
-              {text || "NAF Tikinti Texnikaları - On ildən artıq təcrübə ilə müasir mühəndislik həlləri və peşəkar tikinti texnikası icarəsi sahəsində sizin qabaqcıl tərəfdaşınızdır."}
+              {text || "NAF Tikinti Texnikaları - Müasir mühəndislik yanaşması və yenilənmiş texnika parkı ilə tikinti sektorunda sizin innovativ tərəfdaşınızdır."}
             </p>
 
             <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-black/5">
