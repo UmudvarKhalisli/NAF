@@ -114,7 +114,7 @@ export default function Hero() {
                 
                 <div className="flex justify-between items-start mb-6">
                   <h3 className="text-2xl font-bold text-white uppercase tracking-tight">Xüsusi Təklif</h3>
-                  <span className="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-black uppercase tracking-tighter">Hot Deal</span>
+                  <span className="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-black uppercase tracking-tighter">XÜSUSİ TƏKLİF</span>
                 </div>
 
                 <div className="relative z-10">
