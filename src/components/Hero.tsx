@@ -58,7 +58,7 @@ export default function Hero() {
           <div className="lg:col-span-7 text-left space-y-8">
             <FadeIn direction="up" duration={1}>
               <div className="inline-flex items-center gap-3 px-3 py-1 bg-[#f59e0b]/10 border-l-2 border-[#f59e0b] rounded-sm">
-                <span className="material-symbols-outlined text-[#f59e0b] text-sm" style={{fontVariationSettings: "'FILL' 1"}}>construction</span>
+                <Settings className="text-[#f59e0b]" size={14} />
                 <span className="text-[11px] font-black text-[#f59e0b] uppercase tracking-[0.2em]">Sənaye Lideri</span>
               </div>
               
@@ -77,7 +77,7 @@ export default function Hero() {
                   className="group px-10 py-5 bg-[#f59e0b] text-black text-lg font-bold rounded-lg hover:bg-[#d97706] transition-all flex items-center gap-3 shadow-xl shadow-[#f59e0b]/10"
                 >
                   Kataloqa bax 
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
                 </a>
                 <a
                   href="https://wa.me/994509627766"
