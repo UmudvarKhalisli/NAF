@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Instagram, Facebook, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Ana Səhifə", href: "/#hero", id: "hero" },
@@ -18,12 +19,14 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const [mounted, setMounted] = useState(false);
 
   const pathname = usePathname();
   const isHome = pathname === "/";
   const forceSolid = !isHome || scrolled;
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
@@ -57,6 +60,8 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  if (!mounted) return null;
+
   return (
     <>
       {/* Navbar */}
@@ -69,7 +74,7 @@ export default function Navbar() {
       >
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
-            <a href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
+            <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
               <img src="/logo.png" alt="NAF" className={`w-9 h-9 sm:w-10 sm:h-10 object-contain transition-all duration-500 ${forceSolid ? 'scale-90 mix-blend-multiply' : 'brightness-0 invert'}`} />
               <div className="flex flex-col">
                 <span className={`text-xl font-black tracking-tight transition-colors duration-500 ${forceSolid || open ? "text-black" : "text-white"}`}>
@@ -79,11 +84,11 @@ export default function Navbar() {
                   Texnika İcarəsi
                 </span>
               </div>
-            </a>
+            </Link>
 
             <div className="hidden lg:flex items-center gap-8 xl:gap-10">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className={`relative text-[15px] font-bold tracking-wide transition-all duration-300 group ${
@@ -96,7 +101,7 @@ export default function Navbar() {
                   <span className={`absolute -bottom-1 left-0 h-[2px] bg-neutral-700 transition-all duration-300 ${
                     activeSection === link.id && isHome ? "w-full" : "w-0 group-hover:w-full"
                   }`} />
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -149,10 +154,10 @@ export default function Navbar() {
           >
             {/* Header: Logo left, X right */}
             <div className="flex items-center justify-between py-5 mb-6">
-              <a href="/#hero" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
+              <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
                 <img src="/logo.png" alt="NAF" className="w-8 h-8 object-contain mix-blend-multiply" />
                 <span className="text-lg font-black tracking-tight text-black">NAF</span>
-              </a>
+              </Link>
               <button onClick={() => setOpen(false)} className="p-2">
                 <X size={22} className="text-black" />
               </button>
@@ -161,19 +166,22 @@ export default function Navbar() {
             {/* Nav links */}
             <div className="flex flex-col gap-6 flex-grow">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.div
+                  key={link.label}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.04 }}
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`text-xl font-black tracking-tight transition-colors ${
-                    activeSection === link.id && isHome ? "text-neutral-400" : "text-black"
-                  }`}
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`text-xl font-black tracking-tight transition-colors block ${
+                      activeSection === link.id && isHome ? "text-neutral-400" : "text-black"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
             </div>
 

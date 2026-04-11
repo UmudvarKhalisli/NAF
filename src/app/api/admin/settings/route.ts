@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json()
-  const { site_name, contact_email, contact_phone, address, maintenance_mode } = body
+  const { site_name, contact_email, contact_phone, address, maintenance_mode, about_us_text } = body
 
   const { data, error } = await supabaseAdmin
     .from('site_settings')
@@ -35,6 +35,7 @@ export async function POST(req: NextRequest) {
       contact_phone, 
       address, 
       maintenance_mode,
+      about_us_text,
       updated_at: new Date().toISOString()
     })
     .eq('id', 'main')

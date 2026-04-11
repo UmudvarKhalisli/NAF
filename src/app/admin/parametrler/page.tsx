@@ -14,7 +14,8 @@ export default function AdminSettings() {
     contact_email: 'info@naftexnika.az',
     contact_phone: '+994 50 962 77 66',
     address: 'Bakı, Azərbaycan',
-    maintenance_mode: false
+    maintenance_mode: false,
+    about_us_text: ''
   });
 
   const fetchSettings = async () => {
@@ -28,7 +29,8 @@ export default function AdminSettings() {
           contact_email: data.contact_email,
           contact_phone: data.contact_phone,
           address: data.address,
-          maintenance_mode: data.maintenance_mode
+          maintenance_mode: data.maintenance_mode,
+          about_us_text: data.about_us_text || ''
         });
       }
     } catch (error) {
@@ -125,6 +127,17 @@ export default function AdminSettings() {
             <div>
               <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Ünvan</label>
               <input type="text" value={settings.address} onChange={e=>setSettings({...settings, address: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Haqqımızda Mətni</label>
+              <textarea 
+                value={settings.about_us_text} 
+                onChange={e=>setSettings({...settings, about_us_text: e.target.value})} 
+                rows={5}
+                className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20 resize-none"
+                placeholder="Haqqımızda bölməsində görünəcək mətn..."
+              />
             </div>
           </div>
         </div>

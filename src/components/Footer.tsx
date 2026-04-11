@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
 
 // Monochrome icons that show brand color on hover via CSS
 const InstagramIcon = ({ className }: { className?: string }) => (
@@ -49,10 +50,10 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <a href="#hero" className="flex items-center gap-3 mb-8 group">
+            <Link href="/#hero" className="flex items-center gap-3 mb-8 group">
               <img src="/logo.png" alt="NAF" className="w-10 h-10 object-contain brightness-0 invert" />
               <span className="text-3xl font-black tracking-tight text-white transition-colors duration-500">NAF</span>
-            </a>
+            </Link>
             <p className="text-[13px] leading-[1.8] text-white/40 mb-10 max-w-xs">
               Modern mühəndislik həlləri və peşəkar tikinti texnikası icarəsində etibarlı tərəfdaşınız.
             </p>
@@ -72,9 +73,9 @@ export default function Footer() {
           <div>
             <h4 className="text-[11px] font-black tracking-[0.2em] text-neutral-400 mb-8 uppercase">Xidmətlər</h4>
             <ul className="space-y-4">
-              <li><a href="#categories" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Kateqoriyalar</a></li>
-              <li><a href="#equipment" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Avadanlıqlar</a></li>
-              <li><a href="#why-us" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Üstünlüklər</a></li>
+              <li><Link href="/#categories" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Kateqoriyalar</Link></li>
+              <li><Link href="/#equipment" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Avadanlıqlar</Link></li>
+              <li><Link href="/#why-us" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Üstünlüklər</Link></li>
             </ul>
           </div>
 
@@ -82,10 +83,10 @@ export default function Footer() {
           <div>
             <h4 className="text-[11px] font-black tracking-[0.2em] text-neutral-400 mb-8 uppercase">Şirkət</h4>
             <ul className="space-y-4">
-              <li><a href="#about" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Haqqımızda</a></li>
-              <li><a href="/privacy" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Məxfilik Siyasəti</a></li>
-              <li><a href="/terms" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">İstifadə Şərtləri</a></li>
-              <li><a href="#contact" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Əlaqə</a></li>
+              <li><Link href="/#about" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Haqqımızda</Link></li>
+              <li><Link href="/privacy" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Məxfilik Siyasəti</Link></li>
+              <li><Link href="/terms" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">İstifadə Şərtləri</Link></li>
+              <li><Link href="/#contact" className="text-[14px] text-white/60 hover:text-white transition-colors font-medium">Əlaqə</Link></li>
             </ul>
           </div>
 

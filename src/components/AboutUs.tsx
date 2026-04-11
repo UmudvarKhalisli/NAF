@@ -12,12 +12,12 @@ export default function AboutUs() {
   useEffect(() => {
     async function fetchAbout() {
       const { data } = await supabase
-        .from("settings")
-        .select("value")
-        .eq("key", "about_us_text")
+        .from("site_settings")
+        .select("about_us_text")
+        .eq("id", "main")
         .single();
       
-      if (data) setText(data.value);
+      if (data?.about_us_text) setText(data.about_us_text);
     }
     fetchAbout();
   }, []);
