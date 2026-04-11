@@ -41,121 +41,111 @@ export default function Hero() {
       id="hero" 
       className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden pt-20"
     >
-      {/* Static Background Image with Gradient Overlay */}
+      {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img 
-          src="/images/hero-bg.png" 
-          alt="NAF Texnika - Background" 
-          className="w-full h-full object-cover scale-105"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_Y8ZPc-61_OCp0VhUuZldzXImIchxVu32WdJGNgG2_-VvOuioE2Jn-ZYe0DUGC--0ZQF_GZx83pruFndIt46z6nFk6rnAR4raTzLiaINuEgZcjd15o3y7TyLqHZzsKmPXNsWdrJJ-6z8fdajkyCjLGcHrI6ac39k1P1aeJVFUvQ-yvhh9rFJxmCCUa3AkmdQ5fHclohZyKnOuq-Gvn31F7-rTvdqbkSa_2ursZrfSZLiJW7qaX5H0LKNIVkR18vMypOGzyB9CAEJK" 
+          alt="Construction Site Heavy Machinery" 
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 py-20 lg:py-0">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Content */}
-          <div className="text-left">
+          {/* Left Column: Content (lg:col-span-7) */}
+          <div className="lg:col-span-7 text-left space-y-8">
             <FadeIn direction="up" duration={1}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#f59e0b]/10 border border-[#f59e0b]/20 rounded-full mb-8">
-                <div className="w-1.5 h-1.5 bg-[#f59e0b] rounded-full animate-pulse" />
-                <span className="text-[10px] font-black text-[#f59e0b] uppercase tracking-[0.2em]">Sənaye Lideri</span>
+              <div className="inline-flex items-center gap-3 px-3 py-1 bg-[#f59e0b]/10 border-l-2 border-[#f59e0b] rounded-sm">
+                <span className="material-symbols-outlined text-[#f59e0b] text-sm" style={{fontVariationSettings: "'FILL' 1"}}>construction</span>
+                <span className="text-[11px] font-black text-[#f59e0b] uppercase tracking-[0.2em]">Sənaye Lideri</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight mb-8">
+              <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8">
                 Sizin Layihə,<br />
                 <span className="text-[#f59e0b]">Bizim Texnika</span>
               </h1>
               
-              <p className="max-w-xl text-lg text-white/60 font-medium mb-12 leading-relaxed">
+              <p className="max-w-xl text-xl text-white/60 font-medium mb-10 leading-relaxed">
                 Modern mühəndislik həlləri və peşəkar tikinti texnikasının icarəsi üzrə ixtisaslaşmış komanda. Ən çətin şəraitlərdə belə yüksək performans.
               </p>
 
-              <div className="flex flex-wrap items-center gap-6 mb-20">
+              <div className="flex flex-wrap items-center gap-4 pt-4">
                 <a
                   href="#equipment"
-                  className="px-10 py-5 bg-[#f59e0b] text-black text-[12px] font-black tracking-[0.2em] uppercase rounded-xl hover:bg-[#d97706] transition-all flex items-center gap-3 shadow-xl shadow-[#f59e0b]/10"
+                  className="group px-10 py-5 bg-[#f59e0b] text-black text-lg font-bold rounded-lg hover:bg-[#d97706] transition-all flex items-center gap-3 shadow-xl shadow-[#f59e0b]/10"
                 >
-                  Kataloqa bax <ArrowRight size={16} />
+                  Kataloqa bax 
+                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
                 <a
                   href="https://wa.me/994509627766"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-10 py-5 bg-white/5 border border-white/10 text-white text-[12px] font-black tracking-[0.2em] uppercase rounded-xl hover:bg-white/10 transition-all"
+                  className="px-10 py-5 bg-transparent border border-white/20 text-white text-lg font-bold rounded-lg hover:bg-white/5 transition-all"
                 >
                   Bizimlə əlaqə
                 </a>
               </div>
 
               {/* Stats Row */}
-              <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10">
+              <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-12 max-w-2xl">
                 <div>
-                  <h4 className="text-3xl font-black text-white mb-1">500+</h4>
-                  <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest">Texnika Sayı</p>
+                  <h4 className="text-3xl font-bold text-[#f59e0b] mb-1">500+</h4>
+                  <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest uppercase">Texnika Sayı</p>
                 </div>
                 <div>
-                  <h4 className="text-3xl font-black text-white mb-1">12+</h4>
-                  <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest">İllik Təcrübə</p>
+                  <h4 className="text-3xl font-bold text-[#f59e0b] mb-1">12+</h4>
+                  <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest uppercase">İllik Təcrübə</p>
                 </div>
                 <div>
-                  <h4 className="text-3xl font-black text-white mb-1">24/7</h4>
-                  <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest">Texniki Dəstək</p>
+                  <h4 className="text-3xl font-bold text-[#f59e0b] mb-1">24/7</h4>
+                  <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest uppercase">Texniki Dəstək</p>
                 </div>
               </div>
             </FadeIn>
           </div>
 
-          {/* Right Column: Special Offer Card */}
-          <div className="flex justify-center lg:justify-end">
-            <FadeIn direction="left" delay={0.4} className="w-full max-w-md">
-              <div className="group relative bg-[#111111] p-8 md:p-10 rounded-3xl border border-white/10 shadow-3xl shadow-black/50 overflow-hidden transform hover:-translate-y-2 transition-all duration-700">
+          {/* Right Column: Special Offer Card (lg:col-span-5) */}
+          <div className="hidden lg:block lg:col-span-5 relative">
+            <FadeIn direction="left" delay={0.4} className="w-full">
+              <div className="group relative bg-[#1c1b1b] p-8 rounded-xl border border-white/5 shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
                 
-                {/* Hot Label */}
-                <div className="absolute top-6 right-6 z-20">
-                  <span className="bg-red-600 text-white text-[9px] font-black px-3 py-1 rounded-lg uppercase tracking-widest animate-pulse">HƏFTƏLİK</span>
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-2xl font-bold text-white uppercase tracking-tight">Xüsusi Təklif</h3>
+                  <span className="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-black uppercase tracking-tighter">Hot Deal</span>
                 </div>
 
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-8">Xüsusi Təklif</h3>
-                  
                   {loading ? (
-                    <div className="aspect-[4/3] bg-white/5 rounded-2xl animate-pulse mb-8" />
+                    <div className="aspect-square bg-white/5 rounded-lg animate-pulse mb-6" />
                   ) : featured ? (
                     <>
-                      <div className="relative aspect-[4/3] bg-white rounded-2xl overflow-hidden mb-8 shadow-inner">
+                      <div className="relative aspect-square bg-[#353535] rounded-lg overflow-hidden mb-6">
                         <img 
                           src={featured.image_url} 
                           alt={featured.name} 
-                          className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700" 
+                          className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" 
                         />
                       </div>
                       
-                      <div className="space-y-6">
-                        <div className="flex justify-between items-end border-b border-white/5 pb-4">
-                          <p className="text-[10px] text-white/40 font-bold uppercase tracking-widest">Model</p>
-                          <p className="text-lg font-black text-white">{featured.name}</p>
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-center py-2 border-b border-white/10">
+                          <p className="text-zinc-500 text-sm">Model</p>
+                          <p className="font-bold text-white">{featured.name}</p>
                         </div>
                         
-                        <div className="flex justify-between items-end border-b border-white/5 pb-4">
-                          <p className="text-[10px] text-white/40 font-bold uppercase tracking-widest">Kateqoriya</p>
-                          <p className="text-base font-bold text-white/80">{featured.category}</p>
+                        <div className="flex justify-between items-center py-2 border-b border-white/10">
+                          <p className="text-zinc-500 text-sm">Kateqoriya</p>
+                          <p className="font-bold text-white/80">{featured.category}</p>
                         </div>
-
-                        {featured.description && (
-                          <div className="flex justify-between items-start pt-2">
-                             <p className="text-xs text-white/50 italic font-medium leading-relaxed">
-                              {featured.description.length > 80 ? featured.description.substring(0, 80) + '...' : featured.description}
-                             </p>
-                          </div>
-                        )}
 
                         <a 
                           href={`https://wa.me/994509627766?text=Sizin saytda Hero hissəsindəki ${featured.name} texnikası ilə maraqlanıram.`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full py-5 bg-white/5 text-white/80 text-[11px] font-black tracking-[0.3em] uppercase rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-3 border border-white/10"
+                          className="w-full py-4 bg-[#353535] text-white hover:bg-[#f59e0b] hover:text-black transition-all rounded font-bold text-sm text-center block"
                         >
                           İNDİ İCARƏLƏ
                         </a>
@@ -163,7 +153,6 @@ export default function Hero() {
                     </>
                   ) : (
                     <div className="py-20 text-center text-white/20">
-                      <Settings className="mx-auto mb-4 opacity-20" size={48} />
                       <p className="text-xs uppercase font-bold tracking-widest">Təklif təyin olunmayıb</p>
                     </div>
                   )}
@@ -171,7 +160,7 @@ export default function Hero() {
 
                 {/* Decorative background logo */}
                 <div className="absolute -bottom-10 -right-10 opacity-[0.02] select-none pointer-events-none group-hover:opacity-[0.04] transition-opacity">
-                  <h2 className="text-[150px] font-black leading-none">NAF</h2>
+                  <h2 className="text-[120px] font-black leading-none">NAF</h2>
                 </div>
               </div>
             </FadeIn>
