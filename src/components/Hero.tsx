@@ -37,15 +37,15 @@ export default function Hero() {
   }, []);
 
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden pt-20"
     >
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        <img 
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_Y8ZPc-61_OCp0VhUuZldzXImIchxVu32WdJGNgG2_-VvOuioE2Jn-ZYe0DUGC--0ZQF_GZx83pruFndIt46z6nFk6rnAR4raTzLiaINuEgZcjd15o3y7TyLqHZzsKmPXNsWdrJJ-6z8fdajkyCjLGcHrI6ac39k1P1aeJVFUvQ-yvhh9rFJxmCCUa3AkmdQ5fHclohZyKnOuq-Gvn31F7-rTvdqbkSa_2ursZrfSZLiJW7qaX5H0LKNIVkR18vMypOGzyB9CAEJK" 
-          alt="Construction Site Heavy Machinery" 
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_Y8ZPc-61_OCp0VhUuZldzXImIchxVu32WdJGNgG2_-VvOuioE2Jn-ZYe0DUGC--0ZQF_GZx83pruFndIt46z6nFk6rnAR4raTzLiaINuEgZcjd15o3y7TyLqHZzsKmPXNsWdrJJ-6z8fdajkyCjLGcHrI6ac39k1P1aeJVFUvQ-yvhh9rFJxmCCUa3AkmdQ5fHclohZyKnOuq-Gvn31F7-rTvdqbkSa_2ursZrfSZLiJW7qaX5H0LKNIVkR18vMypOGzyB9CAEJK"
+          alt="Construction Site Heavy Machinery"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
@@ -53,7 +53,7 @@ export default function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 py-20 lg:py-0">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left Column: Content (lg:col-span-7) */}
           <div className="lg:col-span-7 text-left space-y-8">
             <FadeIn direction="up" duration={1}>
@@ -61,12 +61,12 @@ export default function Hero() {
                 <Settings className="text-[#f59e0b]" size={14} />
                 <span className="text-[11px] font-black text-[#f59e0b] uppercase tracking-[0.2em]">Sənaye Lideri</span>
               </div>
-              
+
               <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8">
                 Sizin Layihə,<br />
                 <span className="text-[#f59e0b]">Bizim Texnika</span>
               </h1>
-              
+
               <p className="max-w-xl text-xl text-white/60 font-medium mb-10 leading-relaxed">
                 Modern mühəndislik həlləri və peşəkar tikinti texnikasının icarəsi üzrə ixtisaslaşmış komanda. Ən çətin şəraitlərdə belə yüksək performans.
               </p>
@@ -76,7 +76,7 @@ export default function Hero() {
                   href="#equipment"
                   className="group px-10 py-5 bg-[#f59e0b] text-black text-lg font-bold rounded-lg hover:bg-[#d97706] transition-all flex items-center gap-3 shadow-xl shadow-[#f59e0b]/10"
                 >
-                  Kataloqa bax 
+                  Kataloqa bax
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
                 </a>
                 <a
@@ -111,9 +111,9 @@ export default function Hero() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <FadeIn direction="left" delay={0.4} className="w-full">
               <div className="group relative bg-[#1c1b1b] p-8 rounded-xl border border-white/5 shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
-                
+
                 <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-2xl font-bold text-white uppercase tracking-tight">Xüsusi Təklif</h3>
+                  <h3 className="text-2xl font-bold text-white uppercase tracking-tight">indi icarə et</h3>
                   <span className="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-black uppercase tracking-tighter">XÜSUSİ TƏKLİF</span>
                 </div>
 
@@ -123,25 +123,25 @@ export default function Hero() {
                   ) : featured ? (
                     <>
                       <div className="relative aspect-square bg-[#353535] rounded-lg overflow-hidden mb-6">
-                        <img 
-                          src={featured.image_url} 
-                          alt={featured.name} 
-                          className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" 
+                        <img
+                          src={featured.image_url}
+                          alt={featured.name}
+                          className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
                         />
                       </div>
-                      
+
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-2 border-b border-white/10">
                           <p className="text-zinc-500 text-sm">Model</p>
                           <p className="font-bold text-white">{featured.name}</p>
                         </div>
-                        
+
                         <div className="flex justify-between items-center py-2 border-b border-white/10">
                           <p className="text-zinc-500 text-sm">Kateqoriya</p>
                           <p className="font-bold text-white/80">{featured.category}</p>
                         </div>
 
-                        <a 
+                        <a
                           href={`https://wa.me/994509627766?text=Sizin saytda Hero hissəsindəki ${featured.name} texnikası ilə maraqlanıram.`}
                           target="_blank"
                           rel="noopener noreferrer"
