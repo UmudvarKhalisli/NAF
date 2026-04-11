@@ -42,10 +42,17 @@ export default function BlogListingPage() {
                   <Link href={`/blog/${post.slug}`} className="group block h-full bg-white border border-black/5 hover:border-black transition-all duration-500 rounded-3xl overflow-hidden hover:shadow-2xl">
                     <div className="aspect-[16/9] bg-neutral-100 overflow-hidden relative">
                       <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                      {/* Placeholder for real images */}
-                      <div className="w-full h-full flex items-center justify-center text-black/20 font-black text-2xl bg-neutral-200">
-                        {post.category || "NAF"}
-                      </div>
+                      {post.featuredImage ? (
+                        <img 
+                          src={post.featuredImage} 
+                          alt={post.title} 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-black/20 font-black text-2xl bg-neutral-200">
+                          {post.category || "NAF"}
+                        </div>
+                      )}
                     </div>
                     <div className="p-8">
                       <div className="flex items-center gap-4 mb-4">

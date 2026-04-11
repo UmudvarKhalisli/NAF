@@ -1,17 +1,12 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
-import EquipmentCard, { EquipmentItem } from '@/components/equipment/EquipmentCard';
-
-interface CatalogClientProps {
-  initialData: any[];
-}
+import FadeIn from '@/components/FadeIn';
 
 export default function CatalogClient({ initialData }: CatalogClientProps) {
   const [activeCategory, setActiveCategory] = useState<string>('Hamısı');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const categories = useMemo(() => {
     const cats = new Set(initialData.map(item => item.category));
@@ -19,9 +14,17 @@ export default function CatalogClient({ initialData }: CatalogClientProps) {
   }, [initialData]);
 
   const filteredData = useMemo(() => {
-    if (activeCategory === 'Hamısı') return initialData;
-    return initialData.filter(item => item.category === activeCategory);
+    const filtered = activeCategory === 'Hamısı' 
+      ? initialData 
+      : initialData.filter(item => item.category === activeCategory);
+    return filtered;
   }, [activeCategory, initialData]);
+
+  const hasMore = visibleCount < filteredData.length;
+
+  useEffect(() => {
+    setVisibleCount(6); // Reset visible count when category changes
+  }, [activeCategory]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -36,7 +39,7 @@ export default function CatalogClient({ initialData }: CatalogClientProps) {
   return (
     <div>
       {/* Category Dropdown Filter */}
-      <div className="mb-10 flex items-center gap-4">
+      <div className="mb-10 flex items-center justify-between gap-4">
         <div ref={dropdownRef} className="relative">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -71,20 +74,39 @@ export default function CatalogClient({ initialData }: CatalogClientProps) {
           )}
         </div>
 
-        <span className="text-xs text-black/30 font-bold">
-          {filteredData.length} texnika
+        <span className="text-[10px] text-black/30 font-bold uppercase tracking-widest hidden sm:block">
+          {filteredData.length} texnika mövcuddur
         </span>
       </div>
 
       {/* Grid */}
       {filteredData.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredData.map((item, idx) => (
-            <div key={item.id} className="h-full">
-              <EquipmentCard equipment={item as EquipmentItem} idx={idx} />
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredData.slice(0, visibleCount).map((item, idx) => (
+              <FadeIn key={item.id} delay={idx % 3 * 0.1} className="h-full">
+                <EquipmentCard equipment={item as EquipmentItem} idx={idx} />
+              </FadeIn>
+            ))}
+          </div>
+
+          {hasMore && (
+            <div className="flex justify-center mt-16">
+              <button 
+                onClick={() => setVisibleCount(prev => prev + 4)}
+                className="group relative inline-flex items-center gap-0 overflow-hidden border border-black/10 hover:border-black transition-all duration-500 hover:shadow-lg bg-white"
+              >
+                <span className="px-10 py-5 text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-500 group-hover:px-8">
+                  Daha çox göstər
+                </span>
+                <span className="w-0 group-hover:w-14 overflow-hidden transition-all duration-500 flex items-center justify-center bg-black text-white h-full absolute right-0 top-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14"/><path d="m5 12 7 7 7-7"/></svg>
+                </span>
+                <span className="w-0 group-hover:w-14 transition-all duration-500" />
+              </button>
             </div>
-          ))}
-        </div>
+          )}
+        </>
       ) : (
         <div className="py-20 text-center flex flex-col items-center justify-center border border-dashed border-black/10 rounded-xl">
           <p className="text-black/40 font-bold uppercase tracking-widest text-sm">
