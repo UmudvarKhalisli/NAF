@@ -4,7 +4,7 @@ import { servicePages } from '@/data/services';
 import { constructMetadata } from '@/lib/seo';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import EquipmentGrid, { DUMMY_EQUIPMENT } from '@/components/equipment/EquipmentGrid';
+import EquipmentGrid from '@/components/equipment/EquipmentGrid';
 import ContactForm from '@/components/ContactForm';
 import FadeIn from '@/components/FadeIn';
 import JsonLd from '@/components/JsonLd';
@@ -51,15 +51,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     });
   }
 
-  // 3. Fallback to Dummy Equipment
-  const dummy = DUMMY_EQUIPMENT.find(e => e.id === slug);
-  if (dummy) {
-    return constructMetadata({
-      title: `${dummy.name} | ${dummy.category} İcarəsi`,
-      description: dummy.description || `${dummy.name} texnikasının icarəsi haqqında ətraflı məlumat.`,
-      canonical: `https://naftexnika.az/texnikalar/${slug}`
-    });
-  }
 
   return {};
 }
@@ -175,13 +166,6 @@ export default async function EquipmentDynamicPage({ params }: PageProps) {
 
   if (data) {
     equipment = data;
-  } else {
-    // Fallback to dummy data
-    const dummy = DUMMY_EQUIPMENT.find(e => e.id === slug);
-    if (dummy) {
-      equipment = dummy;
-    }
-  }
 
   if (!equipment) {
     return notFound();
