@@ -1,19 +1,21 @@
-import { supabase } from '@/lib/supabase/client';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { FALLBACK_PROJECTS } from '@/data/fallback-projects';
 
 export const revalidate = 60;
 
 export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
   const { id } = await params;
-  const { data: project } = await supabase
+  
+  // Try to find in database first
+  const { data: dbProject } = await supabase
     .from('projects')
     .select('*')
     .eq('id', id)
     .single();
+
+  // If not in database, check fallback projects
+  const fallbackProject = !dbProject ? FALLBACK_PROJECTS.find(p => p.id === id) : null;
+  
+  const project = dbProject || fallbackProject;
 
   if (!project) {
     return notFound();

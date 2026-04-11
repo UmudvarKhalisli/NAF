@@ -1,6 +1,4 @@
-import { supabase } from '@/lib/supabase/client';
-import ProjectCard from './ProjectCard';
-import Link from 'next/link';
+import { FALLBACK_PROJECTS } from '@/data/fallback-projects';
 
 export default async function ProjectsSection() {
   const { data: projects, error } = await supabase
@@ -9,30 +7,6 @@ export default async function ProjectsSection() {
     .eq('is_published', true)
     .order('created_at', { ascending: false })
     .limit(6);
-
-  const FALLBACK_PROJECTS = [
-    {
-      id: 'road-reconstruction',
-      title: 'Bakı-Quba Yolunun Yenidən Qurulması',
-      location: 'Bakı-Quba Şosesi',
-      status: 'ongoing',
-      cover_image_url: '/images/projects/road.png'
-    },
-    {
-      id: 'white-city-foundation',
-      title: 'Ağ Şəhər Bünövrə Qazıntı İşləri',
-      location: 'Bakı, Ağ Şəhər',
-      status: 'completed',
-      cover_image_url: '/images/projects/white-city.png'
-    },
-    {
-      id: 'stp-industrial',
-      title: 'STP Sənaye Obyektinin Tikintisi',
-      location: 'Sumqayıt',
-      status: 'completed',
-      cover_image_url: '/images/projects/stp.png'
-    }
-  ];
 
   const hasProjects = !!(projects && projects.length > 0 && !error);
   const displayProjects = hasProjects ? projects : FALLBACK_PROJECTS;
