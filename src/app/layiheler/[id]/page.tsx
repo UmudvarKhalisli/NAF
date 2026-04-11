@@ -1,3 +1,9 @@
+import { supabase } from '@/lib/supabase/client';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { FALLBACK_PROJECTS } from '@/data/fallback-projects';
 
 export const revalidate = 60;

@@ -1,3 +1,6 @@
+import { supabase } from '@/lib/supabase/client';
+import ProjectCard from './ProjectCard';
+import Link from 'next/link';
 import { FALLBACK_PROJECTS } from '@/data/fallback-projects';
 
 export default async function ProjectsSection() {
