@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 export interface EquipmentItem {
   id: string;
@@ -25,15 +26,22 @@ interface EquipmentCardProps {
 }
 
 export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps) {
+  const router = useRouter();
   const isAvailable = equipment.status === 'available';
-  const isDummy = equipment.id.startsWith('dummy');
   
-  const cardContent = (
+  const handleCardClick = () => {
+    if (isAvailable) {
+      router.push(`/texnikalar/${equipment.id}`);
+    }
+  };
+  
+  return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: idx * 0.06 }}
+      onClick={handleCardClick}
       className={`group relative bg-white border border-black/[0.04] transition-all duration-500 overflow-hidden flex flex-col h-full rounded-xl ${
         isAvailable ? 'hover:border-black/10 hover:shadow-lg cursor-pointer' : 'opacity-75'
       }`}
@@ -103,21 +111,5 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
         )}
       </div>
     </motion.div>
-  );
-
-  // If busy, don't link anywhere
-  if (!isAvailable) {
-    return cardContent;
-  }
-
-  // All available cards (including dummy) link to detail
-  if (isDummy) {
-    return cardContent;
-  }
-
-  return (
-    <Link href={`/texnikalar/${equipment.id}`} className="block h-full">
-      {cardContent}
-    </Link>
   );
 }
