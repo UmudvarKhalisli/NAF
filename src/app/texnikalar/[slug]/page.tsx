@@ -166,6 +166,7 @@ export default async function EquipmentDynamicPage({ params }: PageProps) {
 
   if (data) {
     equipment = data;
+  }
 
   if (!equipment) {
     return notFound();
