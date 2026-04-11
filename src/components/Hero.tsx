@@ -62,9 +62,8 @@ export default function Hero() {
                 <span className="text-[11px] font-black text-[#f59e0b] uppercase tracking-[0.2em]">Sənaye Lideri</span>
               </div>
 
-              <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8">
-                Sizin Layihə,<br />
-                <span className="text-[#f59e0b]">Bizim Texnika</span>
+              <h1 className="text-[32px] sm:text-6xl md:text-8xl font-black text-white leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 whitespace-nowrap sm:whitespace-normal">
+                Sizin Layihə, <span className="text-[#f59e0b]">Bizim Texnika</span>
               </h1>
 
               <p className="max-w-xl text-xl text-white/60 font-medium mb-10 leading-relaxed">
