@@ -15,8 +15,10 @@ export default function AdminSettings() {
     contact_phone: '+994 50 962 77 66',
     address: 'Bakı, Azərbaycan',
     maintenance_mode: false,
-    about_us_text: ''
+    about_us_text: '',
+    featured_equipment_id: ''
   });
+  const [equipmentList, setEquipmentList] = useState<any[]>([]);
 
   const fetchSettings = async () => {
     setFetching(true);
@@ -30,8 +32,16 @@ export default function AdminSettings() {
           contact_phone: data.contact_phone,
           address: data.address,
           maintenance_mode: data.maintenance_mode,
-          about_us_text: data.about_us_text || ''
+          about_us_text: data.about_us_text || '',
+          featured_equipment_id: data.featured_equipment_id || ''
         });
+      }
+
+      // Fetch equipment list for the dropdown
+      const eqRes = await fetch('/api/admin/equipment');
+      if (eqRes.ok) {
+        const eqData = await eqRes.json();
+        setEquipmentList(eqData);
       }
     } catch (error) {
       console.error('Failed to fetch settings:', error);
@@ -140,6 +150,24 @@ export default function AdminSettings() {
                 className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20 resize-none"
                 placeholder="Haqqımızda bölməsində görünəcək mətn..."
               />
+            </div>
+
+            <div className="md:col-span-2">
+              <label htmlFor="settings-featured" className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Xüsusi Təklif (Hero Bölməsi)</label>
+              <select 
+                id="settings-featured"
+                value={settings.featured_equipment_id} 
+                onChange={e=>setSettings({...settings, featured_equipment_id: e.target.value})} 
+                className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors appearance-none cursor-pointer"
+              >
+                <option value="">Texnika seçin...</option>
+                {equipmentList.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.name} ({item.category})
+                  </option>
+                ))}
+              </select>
+              <p className="text-[9px] text-white/30 mt-2 uppercase tracking-widest font-bold">Hero bölməsindəki "Xüsusi Təklif" kartında görünəcək texnika</p>
             </div>
           </div>
         </div>
