@@ -1,6 +1,13 @@
 "use client";
 
+import { useState, useMemo, useRef, useEffect } from 'react';
+import { ChevronDown } from 'lucide-react';
+import EquipmentCard, { EquipmentItem } from '@/components/equipment/EquipmentCard';
 import FadeIn from '@/components/FadeIn';
+
+interface CatalogClientProps {
+  initialData: any[];
+}
 
 export default function CatalogClient({ initialData }: CatalogClientProps) {
   const [activeCategory, setActiveCategory] = useState<string>('Hamısı');
