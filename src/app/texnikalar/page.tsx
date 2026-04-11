@@ -2,7 +2,6 @@ import { supabase } from '@/lib/supabase/client';
 import CatalogClient from './CatalogClient';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { DUMMY_EQUIPMENT } from '@/components/equipment/EquipmentGrid';
 import type { Metadata } from 'next';
 
 import { constructMetadata } from '@/lib/seo';
@@ -23,7 +22,7 @@ export default async function EquipmentCatalogPage() {
     .select('*')
     .order('created_at', { ascending: false });
 
-  const displayData = (equipment && equipment.length > 0 && !error) ? equipment : DUMMY_EQUIPMENT;
+  const displayData = (equipment && !error) ? equipment : [];
 
   return (
     <div className="bg-[#fafafa] min-h-screen flex flex-col">
