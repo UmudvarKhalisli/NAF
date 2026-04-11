@@ -9,8 +9,8 @@ import Link from "next/link";
 const navLinks = [
   { label: "Ana Səhifə", href: "/#hero", id: "hero" },
   { label: "Haqqımızda", href: "/#about", id: "about" },
-  { label: "Texnika", href: "/texnikalar", id: "equipment" },
-  { label: "Layihələr", href: "/layiheler", id: "layiheler" },
+  { label: "Texnika", href: "/#equipment", id: "equipment" },
+  { label: "Layihələr", href: "/#layiheler", id: "layiheler" },
   { label: "Bloq", href: "/blog", id: "blog" },
   { label: "Əlaqə", href: "/#contact", id: "contact" },
 ];
