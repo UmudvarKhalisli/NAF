@@ -10,7 +10,31 @@ export default async function ProjectsSection() {
     .order('created_at', { ascending: false })
     .limit(6);
 
-  const hasProjects = projects && projects.length > 0 && !error;
+  const FALLBACK_PROJECTS = [
+    {
+      id: 'road-reconstruction',
+      title: 'Bakı-Quba Yolunun Yenidən Qurulması',
+      location: 'Bakı-Quba Şosesi',
+      status: 'ongoing',
+      cover_image_url: '/images/projects/road.png'
+    },
+    {
+      id: 'white-city-foundation',
+      title: 'Ağ Şəhər Bünövrə Qazıntı İşləri',
+      location: 'Bakı, Ağ Şəhər',
+      status: 'completed',
+      cover_image_url: '/images/projects/white-city.png'
+    },
+    {
+      id: 'stp-industrial',
+      title: 'STP Sənaye Obyektinin Tikintisi',
+      location: 'Sumqayıt',
+      status: 'completed',
+      cover_image_url: '/images/projects/stp.png'
+    }
+  ];
+
+  const displayProjects = hasProjects ? projects : FALLBACK_PROJECTS;
 
   return (
     <section className="w-full py-24 md:py-32 bg-[#fafafa] border-t border-black/5" id="layiheler">
@@ -28,36 +52,26 @@ export default async function ProjectsSection() {
           <div className="w-16 h-[3px] bg-black mx-auto mt-8" />
         </div>
         
-        {hasProjects ? (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <ProjectCard key={project.id} project={project as any} />
-              ))}
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayProjects.map((project) => (
+            <ProjectCard key={project.id} project={project as any} />
+          ))}
+        </div>
 
-            <div className="flex justify-center mt-16">
-              <Link 
-                href="/layiheler" 
-                className="group relative inline-flex items-center gap-0 overflow-hidden border border-black/10 hover:border-black transition-all duration-500 hover:shadow-lg bg-white"
-              >
-                <span className="px-10 py-5 text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-500 group-hover:px-8">
-                  Bütün Layihələrə Bax
-                </span>
-                <span className="w-0 group-hover:w-14 overflow-hidden transition-all duration-500 flex items-center justify-center bg-black text-white h-full absolute right-0 top-0">
-                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </span>
-                <span className="w-0 group-hover:w-14 transition-all duration-500" />
-              </Link>
-            </div>
-          </>
-        ) : (
-          <div className="text-center py-20 border border-dashed border-black/10 rounded-xl">
-             <p className="text-black/30 font-bold uppercase tracking-[0.3em] text-xs">
-               Hələ ki heç bir layihə əlavə edilməyib
-             </p>
-          </div>
-        )}
+        <div className="flex justify-center mt-16">
+          <Link 
+            href="/layiheler" 
+            className="group relative inline-flex items-center gap-0 overflow-hidden border border-black/10 hover:border-black transition-all duration-500 hover:shadow-lg bg-white"
+          >
+            <span className="px-10 py-5 text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-500 group-hover:px-8">
+              Bütün Layihələrə Bax
+            </span>
+            <span className="w-0 group-hover:w-14 overflow-hidden transition-all duration-500 flex items-center justify-center bg-black text-white h-full absolute right-0 top-0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+            <span className="w-0 group-hover:w-14 transition-all duration-500" />
+          </Link>
+        </div>
       </div>
     </section>
   );
