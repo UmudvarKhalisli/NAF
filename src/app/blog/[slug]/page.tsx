@@ -8,6 +8,7 @@ import ContactForm from '@/components/ContactForm';
 import FadeIn from '@/components/FadeIn';
 import JsonLd from '@/components/JsonLd';
 import BackButton from '@/components/ui/BackButton';
+import Image from 'next/image';
 
 interface PageProps {
   params: Promise<{
@@ -111,6 +112,20 @@ export default async function BlogPostPage({ params }: PageProps) {
               </FadeIn>
             </div>
           </section>
+
+          {/* Featured Image */}
+          {post.featuredImage && (
+            <section className="relative w-full aspect-[21/9] md:aspect-[3/1] overflow-hidden">
+              <Image 
+                src={post.featuredImage} 
+                alt={post.title} 
+                fill 
+                priority 
+                className="object-cover" 
+              />
+              <div className="absolute inset-0 bg-black/5" />
+            </section>
+          )}
 
           {/* Post Content */}
           <section className="py-24">

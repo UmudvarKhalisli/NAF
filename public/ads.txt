@@ -1,0 +1,3 @@
+# NAF Texnika Ads.txt
+# This file can be used to authorize advertising networks (e.g., Google AdSense)
+# If you join an ad network, follow their instructions to add lines here.

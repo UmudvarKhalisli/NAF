@@ -195,11 +195,13 @@ export default async function EquipmentDynamicPage({ params }: PageProps) {
             <div className="flex flex-col gap-6">
               <div className="relative aspect-[4/3] w-full bg-black/5 border border-black/10 overflow-hidden rounded-2xl">
                 {equipment.image_url ? (
-                  equipment.image_url.startsWith('/') ? (
-                    <img src={equipment.image_url} alt={equipment.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <Image src={equipment.image_url} alt={equipment.name} fill className="object-cover" />
-                  )
+                  <Image 
+                    src={equipment.image_url} 
+                    alt={equipment.name} 
+                    fill 
+                    className="object-cover" 
+                    priority 
+                  />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center font-black text-black/20 uppercase tracking-widest">Şəkil yoxdur</div>
                 )}

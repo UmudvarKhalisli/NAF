@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Instagram, Facebook, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Ana Səhifə", href: "/#hero", id: "hero" },
@@ -75,7 +76,13 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
             <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
-              <img src="/logo.png" alt="NAF" className={`w-9 h-9 sm:w-10 sm:h-10 object-contain transition-all duration-500 ${forceSolid ? 'scale-90 mix-blend-multiply' : 'brightness-0 invert'}`} />
+              <Image 
+                src="/logo.png" 
+                alt="NAF Logo" 
+                width={40} 
+                height={40} 
+                className={`transition-all duration-500 ${forceSolid ? 'scale-90 mix-blend-multiply' : 'brightness-0 invert'}`} 
+              />
               <div className="flex flex-col">
                 <span className={`text-xl font-black tracking-tight transition-colors duration-500 ${forceSolid || open ? "text-black" : "text-white"}`}>
                   NAF
@@ -155,7 +162,13 @@ export default function Navbar() {
             {/* Header: Logo left, X right */}
             <div className="flex items-center justify-between py-5 mb-6">
               <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
-                <img src="/logo.png" alt="NAF" className="w-8 h-8 object-contain mix-blend-multiply" />
+                <Image 
+                  src="/logo.png" 
+                  alt="NAF" 
+                  width={32} 
+                  height={32} 
+                  className="object-contain mix-blend-multiply" 
+                />
                 <span className="text-lg font-black tracking-tight text-black">NAF</span>
               </Link>
               <button onClick={() => setOpen(false)} className="p-2">

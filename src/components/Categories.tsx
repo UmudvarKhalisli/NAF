@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { 
   HardHat, 
@@ -51,10 +52,11 @@ export default function Categories() {
         style={{ y: backgroundY }}
         className="absolute inset-0 z-0 opacity-10 pointer-events-none flex items-center justify-center grayscale"
       >
-        <img 
+        <Image 
           src="/images/crane-bg.png" 
           alt="NAF Texnika - Kran Texniki Çizimi və Layihələndirmə Fonu" 
-          className="w-full h-full object-cover scale-110"
+          fill
+          className="object-cover scale-110"
         />
       </motion.div>
 

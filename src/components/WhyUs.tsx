@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Truck, ShieldCheck, Banknote, Wrench, FileText, History } from "lucide-react";
 import FadeIn from "./FadeIn";
@@ -58,10 +59,11 @@ export default function WhyUs() {
         style={{ y: backgroundY }}
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
       >
-        <img 
+        <Image 
           src="/images/site-bg.png" 
           alt="NAF Texnika - Müasir Mühəndislik Çizimi və Texnoloji Həllər" 
-          className="w-full h-full object-cover scale-110"
+          fill
+          className="object-cover scale-110"
         />
       </motion.div>
 

@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Monochrome icons that show brand color on hover via CSS
 const InstagramIcon = ({ className }: { className?: string }) => (
@@ -51,7 +52,13 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/#hero" className="flex items-center gap-3 mb-8 group">
-              <img src="/logo.png" alt="NAF" className="w-10 h-10 object-contain brightness-0 invert" />
+              <Image 
+                src="/logo.png" 
+                alt="NAF Logo" 
+                width={40} 
+                height={40} 
+                className="object-contain brightness-0 invert" 
+              />
               <span className="text-3xl font-black tracking-tight text-white transition-colors duration-500">NAF</span>
             </Link>
             <p className="text-[13px] leading-[1.8] text-white/40 mb-10 max-w-xs">

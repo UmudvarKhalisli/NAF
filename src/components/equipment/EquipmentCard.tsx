@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
@@ -50,10 +51,11 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
       <div className="relative aspect-[3/2] w-full overflow-hidden bg-neutral-50">
         <div className="absolute inset-0 bg-black/[0.03] group-hover:bg-transparent transition-colors duration-500 z-[1]" />
         {equipment.image_url ? (
-          <img
+          <Image
             src={equipment.image_url}
             alt={equipment.name}
-            className={`w-full h-full object-cover transition-transform duration-700 ${isAvailable ? 'transform group-hover:scale-105' : 'grayscale-[30%]'}`}
+            fill
+            className={`object-cover transition-transform duration-700 ${isAvailable ? 'transform group-hover:scale-105' : 'grayscale-[30%]'}`}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-black/15 font-bold uppercase tracking-widest text-[9px]">

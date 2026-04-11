@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { MessageCircle, ArrowRight, Gauge, Weight, Calendar, CheckCircle2, AlertCircle } from "lucide-react";
@@ -145,10 +146,11 @@ export default function EquipmentCards() {
               >
                 {/* Equipment Image */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                  <img
+                  <Image
                     src={item.image_url || item.image || "/machines/excavator.png"}
                     alt={item.name}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
                   

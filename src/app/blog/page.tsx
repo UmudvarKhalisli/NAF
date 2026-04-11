@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import FadeIn from '@/components/FadeIn';
 import BackButton from '@/components/ui/BackButton';
+import Image from 'next/image';
 
 export const metadata = constructMetadata({
   title: "Bloq | Tikinti Texnikası Haqqında Faydalı Məlumatlar",
@@ -43,10 +44,11 @@ export default function BlogListingPage() {
                     <div className="aspect-[16/9] bg-neutral-100 overflow-hidden relative">
                       <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
                       {post.featuredImage ? (
-                        <img 
+                        <Image 
                           src={post.featuredImage} 
                           alt={post.title} 
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-black/20 font-black text-2xl bg-neutral-200">

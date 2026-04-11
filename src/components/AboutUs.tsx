@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { supabase } from "@/lib/supabase";
+import Image from "next/image";
+import { supabase } from "@/lib/supabase/client";
 import { Target, Award, ShieldCheck } from "lucide-react";
 import FadeIn from "./FadeIn";
 
@@ -54,10 +55,11 @@ export default function AboutUs() {
           </FadeIn>
 
           <FadeIn direction="left" delay={0.3} className="relative aspect-square md:aspect-auto md:h-[600px] overflow-hidden rounded-3xl group shadow-2xl">
-            <img 
+            <Image 
               src="/machines/excavator.png" 
               alt="NAF Texnika - Müasir Ekskavator və Ağır Tikinti Texnikası İcarəsi" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              fill
+              className="object-cover transition-transform duration-1000 group-hover:scale-105"
             />
             {/* Dark glass element overlay */}
             <div className="absolute bottom-8 left-8 right-8 p-8 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl">

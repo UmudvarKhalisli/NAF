@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Send, CheckCircle2, ArrowRight, Settings, Info } from "lucide-react";
 import FadeIn from "./FadeIn";
+import Image from "next/image";
 
 interface FeaturedEquipment {
   id: string;
@@ -43,10 +44,12 @@ export default function Hero() {
     >
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        <img
+        <Image
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_Y8ZPc-61_OCp0VhUuZldzXImIchxVu32WdJGNgG2_-VvOuioE2Jn-ZYe0DUGC--0ZQF_GZx83pruFndIt46z6nFk6rnAR4raTzLiaINuEgZcjd15o3y7TyLqHZzsKmPXNsWdrJJ-6z8fdajkyCjLGcHrI6ac39k1P1aeJVFUvQ-yvhh9rFJxmCCUa3AkmdQ5fHclohZyKnOuq-Gvn31F7-rTvdqbkSa_2ursZrfSZLiJW7qaX5H0LKNIVkR18vMypOGzyB9CAEJK"
           alt="Construction Site Heavy Machinery"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
       </div>
@@ -123,10 +126,11 @@ export default function Hero() {
                   ) : featured ? (
                     <>
                       <div className="relative aspect-square bg-[#353535] rounded-lg overflow-hidden mb-6">
-                        <img
+                        <Image
                           src={featured.image_url}
                           alt={featured.name}
-                          className="w-full h-full object-cover transition-all duration-700"
+                          fill
+                          className="object-cover transition-all duration-700"
                         />
                       </div>
 
