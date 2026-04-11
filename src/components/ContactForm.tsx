@@ -148,8 +148,10 @@ export default function ContactForm() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Ad, Soyad</label>
+                    <label htmlFor="form-name" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Ad, Soyad</label>
                     <input
+                      id="form-name"
+                      name="name"
                       type="text"
                       value={form.name}
                       onChange={(e) => {
@@ -162,8 +164,10 @@ export default function ContactForm() {
                     {errors.name && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.name}</span>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Telefon</label>
+                    <label htmlFor="form-phone" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Telefon</label>
                     <input
+                      id="form-phone"
+                      name="phone"
                       type="tel"
                       value={form.phone}
                       onChange={(e) => {
@@ -178,8 +182,10 @@ export default function ContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Texnika Növü</label>
+                  <label htmlFor="form-equipment" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Texnika Növü</label>
                   <select
+                    id="form-equipment"
+                    name="equipment"
                     value={form.equipment}
                     onChange={(e) => {
                       setForm({ ...form, equipment: e.target.value });
@@ -201,8 +207,10 @@ export default function ContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Mesaj (İxtiyari)</label>
+                  <label htmlFor="form-message" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Mesaj (İxtiyari)</label>
                   <textarea
+                    id="form-message"
+                    name="message"
                     rows={4}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}

@@ -110,28 +110,30 @@ export default function AdminSettings() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Sayt başlığı (Title)</label>
-              <input type="text" value={settings.site_name} onChange={e=>setSettings({...settings, site_name: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
+              <label htmlFor="settings-site-name" className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Sayt başlığı (Title)</label>
+              <input id="settings-site-name" name="site_name" type="text" value={settings.site_name} onChange={e=>setSettings({...settings, site_name: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
             </div>
 
             <div>
-              <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Əlaqə E-poçt</label>
-              <input type="email" value={settings.contact_email} onChange={e=>setSettings({...settings, contact_email: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
+              <label htmlFor="settings-email" className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Əlaqə E-poçt</label>
+              <input id="settings-email" name="contact_email" type="email" value={settings.contact_email} onChange={e=>setSettings({...settings, contact_email: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
             </div>
 
             <div>
-              <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Əlaqə Nömrəsi</label>
-              <input type="text" value={settings.contact_phone} onChange={e=>setSettings({...settings, contact_phone: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
+              <label htmlFor="settings-phone" className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Əlaqə Nömrəsi</label>
+              <input id="settings-phone" name="contact_phone" type="text" value={settings.contact_phone} onChange={e=>setSettings({...settings, contact_phone: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
             </div>
 
             <div>
-              <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Ünvan</label>
-              <input type="text" value={settings.address} onChange={e=>setSettings({...settings, address: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
+              <label htmlFor="settings-address" className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Ünvan</label>
+              <input id="settings-address" name="address" type="text" value={settings.address} onChange={e=>setSettings({...settings, address: e.target.value})} className="w-full bg-[#2a2a2a] rounded-xl p-4 text-white outline-none border border-transparent focus:border-[#f59e0b]/30 transition-colors placeholder:text-white/20" />
             </div>
 
             <div className="md:col-span-2">
-              <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Haqqımızda Mətni</label>
+              <label htmlFor="settings-about" className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-2">Haqqımızda Mətni</label>
               <textarea 
+                id="settings-about"
+                name="about_us_text"
                 value={settings.about_us_text} 
                 onChange={e=>setSettings({...settings, about_us_text: e.target.value})} 
                 rows={5}
