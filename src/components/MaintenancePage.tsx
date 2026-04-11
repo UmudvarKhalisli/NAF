@@ -56,11 +56,11 @@ export default function MaintenancePage() {
         >
           <p className="text-xs font-black text-white/30 uppercase tracking-[0.4em] mb-8 select-none">Təcili Əlaqə Üçün</p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-16">
-            <a href="tel:*7766" className="group flex flex-col items-center gap-3">
+            <a href="https://wa.me/994509627766" className="group flex flex-col items-center gap-3">
               <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#f59e0b] group-hover:bg-[#f59e0b]/5 transition-all">
                 <Phone size={20} className="text-white/40 group-hover:text-[#f59e0b]" />
               </div>
-              <span className="text-white font-black text-sm tracking-widest group-hover:text-[#f59e0b] transition-colors uppercase">*7766</span>
+              <span className="text-white font-black text-sm tracking-widest group-hover:text-[#f59e0b] transition-colors uppercase">+994 50 962 77 66</span>
             </a>
             <a href="mailto:info@naftexnika.az" className="group flex flex-col items-center gap-3">
               <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#f59e0b] group-hover:bg-[#f59e0b]/5 transition-all">

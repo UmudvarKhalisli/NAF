@@ -80,7 +80,9 @@ export default function Hero() {
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
                 </a>
                 <a
-                  href="tel:*7766"
+                  href="https://wa.me/994509627766"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-10 py-5 bg-transparent border border-white/20 text-white text-lg font-bold rounded-lg hover:bg-white/5 transition-all"
                 >
                   Bizimlə əlaqə
@@ -140,10 +142,12 @@ export default function Hero() {
                         </div>
 
                         <a
-                          href="tel:*7766"
+                          href={`https://wa.me/994509627766?text=Sizin saytda Hero hissəsindəki ${featured.name} texnikası ilə maraqlanıram.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="w-full py-4 bg-[#353535] text-white hover:bg-[#f59e0b] hover:text-black transition-all rounded font-bold text-sm text-center block"
                         >
-                          İNDİ ZƏNG ET
+                          İNDİ İCARƏLƏ
                         </a>
                       </div>
                     </>
