@@ -145,7 +145,14 @@ export default function ContactForm() {
                 <p className="text-black/60 font-medium">Mütəxəssislərimiz ən qısa zamanda sizinlə əlaqə saxlayacaq.</p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-10">
+                <div>
+                  <span className="text-[11px] tracking-[0.3em] font-black text-neutral-500 uppercase mb-3 block">Sürətli Müraciət</span>
+                  <h3 className="text-2xl font-black tracking-tight text-black mb-4">Buradan sifariş edə bilərsiniz</h3>
+                  <div className="w-12 h-1 bg-black rounded-full" />
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="form-name" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Ad, Soyad</label>
@@ -227,6 +234,7 @@ export default function ContactForm() {
                   Sifariş Formunu Göndər
                 </button>
               </form>
+            </div>
             )}
 
             {/* Decorative background logo */}
