@@ -159,7 +159,7 @@ export default function ContactForm() {
                         if (errors.name) setErrors({ ...errors, name: "" });
                       }}
                       className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm`}
-                      placeholder="Məs: Elvin Məmmədov"
+                      placeholder="Məs: Eldəniz Niftəliyev"
                     />
                     {errors.name && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.name}</span>}
                   </div>
@@ -175,7 +175,7 @@ export default function ContactForm() {
                         if (errors.phone) setErrors({ ...errors, phone: "" });
                       }}
                       className={`w-full bg-white border ${errors.phone ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm`}
-                      placeholder="Məs: +994 50 962 77 66"
+                      placeholder="Məs: +994 55 210 00 08"
                     />
                     {errors.phone && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.phone}</span>}
                   </div>
