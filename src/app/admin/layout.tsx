@@ -82,24 +82,32 @@ export default function AdminLayoutComponent({
       <motion.aside
         initial={false}
         animate={{ 
-          width: isMobile ? (isOpen ? 256 : 0) : (isOpen ? 256 : 80),
-          x: isMobile && !isOpen ? -256 : 0
+          width: isMobile ? 256 : (isOpen ? 256 : 80),
+          x: isMobile ? (isOpen ? 0 : -256) : 0,
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         className={`fixed lg:sticky top-0 left-0 h-full bg-[#1a1a1a] border-r border-white/5 z-50 flex flex-col shrink-0 overflow-hidden shadow-2xl shadow-black/50`}
       >
         {/* Sidebar Header */}
         <div className="h-24 flex items-center justify-between px-6 border-b border-white/5 whitespace-nowrap overflow-hidden">
-          <Link href="/admin/dashboard" className="flex items-center gap-3">
+          <Link href="/admin/dashboard" className="flex items-center gap-3 w-full">
             {isOpen ? (
-              <Logo variant="gold" size="md" align="left" />
+              <Logo 
+                variant="gold" 
+                size={isMobile ? "sm" : "md"} 
+                align="left" 
+                className="transition-all duration-300"
+              />
             ) : (
               <div className="w-10 h-10 bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center shrink-0">N</div>
             )}
           </Link>
           {isMobile && isOpen && (
-            <button onClick={() => setIsOpen(false)} className="text-white/50 hover:text-white ml-2">
-              <ChevronLeft size={20} />
+            <button 
+              onClick={() => setIsOpen(false)} 
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 text-white/50 hover:text-white transition-colors"
+            >
+              <ChevronLeft size={22} />
             </button>
           )}
         </div>

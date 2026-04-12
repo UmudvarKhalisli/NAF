@@ -149,7 +149,7 @@ export default function Navbar() {
             {/* Header: Logo left, X right */}
             <div className="flex items-center justify-between py-5 mb-6">
               <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center">
-                <Logo variant="black" size="custom" width={160} height={48} />
+                <Logo variant="black" size="sm" align="left" />
               </Link>
               <button onClick={() => setOpen(false)} className="p-2">
                 <X size={22} className="text-black" />

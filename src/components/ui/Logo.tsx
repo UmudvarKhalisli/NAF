@@ -5,7 +5,7 @@ import React from 'react';
 interface LogoProps {
   variant?: 'gold' | 'gold-dark' | 'black' | 'white';
   className?: string;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'custom';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'custom';
   align?: 'left' | 'center';
   width?: number;
   height?: number;
@@ -22,14 +22,15 @@ export default function Logo({
   
   // Dimensions mapping
   const dimensions = {
-    sm: { w: 120, h: 40 },
-    md: { w: 180, h: 60 },
-    lg: { w: 240, h: 80 },
-    xl: { w: 320, h: 100 },
-    custom: { w: customWidth || 180, h: customHeight || 60 }
+    xs: { w: 100, h: 32, font: 32, sub: 8 },
+    sm: { w: 120, h: 40, font: 38, sub: 9 },
+    md: { w: 180, h: 60, font: 46, sub: 10 },
+    lg: { w: 240, h: 80, font: 56, sub: 12 },
+    xl: { w: 320, h: 100, font: 72, sub: 14 },
+    custom: { w: customWidth || 180, h: customHeight || 60, font: 46, sub: 10 }
   };
 
-  const { w, h } = dimensions[size];
+  const { w, h, font, sub } = dimensions[size];
 
   // Colors mapping
   const colors = {
@@ -41,7 +42,7 @@ export default function Logo({
 
   const fillColor = colors[variant];
   const isLeft = align === 'left';
-  const xPos = isLeft ? "0%" : "50%";
+  const xPos = isLeft ? "0" : "50%";
   const textAnchor = isLeft ? "start" : "middle";
 
   return (
@@ -49,42 +50,42 @@ export default function Logo({
       <svg 
         width={w} 
         height={h} 
-        viewBox="0 0 200 60" 
+        viewBox={`0 0 ${w} ${h}`}
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full"
+        className="w-full h-full overflow-visible"
       >
-        <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <filter id="logo-shadow" x="-30%" y="-30%" width="160%" height="160%">
           <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="rgba(0,0,0,0.15)" />
         </filter>
 
-        {/* NAF Header Main Text - Vertically centered more since lines are gone */}
+        {/* NAF Header Main Text */}
         <text 
           x={xPos} 
-          y="38" 
+          y={h * 0.65} 
           textAnchor={textAnchor}
           className="font-playfair"
           filter={variant === 'gold-dark' ? 'url(#logo-shadow)' : undefined}
           style={{ 
             fontFamily: 'var(--font-playfair), serif',
             fontWeight: 900,
-            fontSize: '48px',
+            fontSize: `${font}px`,
             fill: fillColor
           }}
         >
           NAF
         </text>
 
-        {/* Subtitle: TEXNIKA - Moved slightly down */}
+        {/* Subtitle: TEXNIKA */}
         <text 
           x={xPos} 
-          y="56" 
+          y={h * 0.95} 
           textAnchor={textAnchor}
           filter={variant === 'gold-dark' ? 'url(#logo-shadow)' : undefined}
           style={{ 
             fontFamily: 'var(--font-jakarta), sans-serif',
             fontWeight: 800,
-            fontSize: '10px',
+            fontSize: `${sub}px`,
             letterSpacing: '0.6em',
             fill: fillColor,
             textTransform: 'uppercase'
