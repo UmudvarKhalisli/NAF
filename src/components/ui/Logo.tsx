@@ -55,10 +55,6 @@ export default function Logo({
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full overflow-visible"
       >
-        <filter id="logo-shadow" x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodColor="rgba(0,0,0,0.25)" />
-        </filter>
-
         {/* NAF Header Main Text */}
         <text 
           x={xPos} 
