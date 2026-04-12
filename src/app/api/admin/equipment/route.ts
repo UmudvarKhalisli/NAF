@@ -33,5 +33,11 @@ export async function POST(req: NextRequest) {
   const { data, error } = await supabaseAdmin.from('equipment').insert([body]).select()
   
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  
+  // Revalidate public pages
+  const { revalidatePath } = await import('next/cache');
+  revalidatePath('/');
+  revalidatePath('/texnikalar');
+  
   return NextResponse.json(data[0])
 }

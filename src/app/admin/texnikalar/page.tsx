@@ -24,6 +24,7 @@ export default function AdminEquipment() {
     is_featured: false,
     sort_order: 999,
     image_url: '',
+    specs: {},
     description: ''
   };
   const [formData, setFormData] = useState(emptyForm);
@@ -50,15 +51,41 @@ export default function AdminEquipment() {
     const method = editItem ? 'PUT' : 'POST';
     const url = editItem ? `/api/admin/equipment/${editItem.id}` : '/api/admin/equipment';
 
-    await fetch(url, {
-      method,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
+    // Data cleaning for database compatibility
+    const payload = { ...formData };
+    
+    // Ensure numeric types
+    payload.price = Number(payload.price) || 0;
+    payload.sort_order = Number(payload.sort_order) || 999;
+    
+    // Remove non-DB fields
+    delete (payload as any).id;
+    delete (payload as any).created_at;
+    delete (payload as any).description;
+    
+    // Ensure specs exists
+    if (!payload.specs || Object.keys(payload.specs).length === 0) {
+      payload.specs = {};
+    }
 
-    setIsModalOpen(false);
-    setEditItem(null);
-    fetchEquipment();
+    try {
+      const res = await fetch(url, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.error || 'Yadda saxlayarkən xəta baş verdi.');
+      }
+
+      setIsModalOpen(false);
+      setEditItem(null);
+      fetchEquipment();
+    } catch (err: any) {
+      alert(err.message);
+    }
   };
 
   const openEdit = (item: any) => {
