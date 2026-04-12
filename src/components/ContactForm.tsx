@@ -44,6 +44,12 @@ export default function ContactForm() {
         });
 
         if (response.ok) {
+          // WhatsApp yönləndirməsi
+          const whatsappMsg = `*Yeni Sifariş*\n\n*Ad, Soyad:* ${form.name}\n*Telefon:* ${form.phone}\n*Texnika:* ${form.equipment}${form.message ? `\n*Mesaj:* ${form.message}` : ''}`;
+          const whatsappUrl = `https://wa.me/994509627766?text=${encodeURIComponent(whatsappMsg)}`;
+          
+          window.open(whatsappUrl, '_blank');
+
           setSubmitted(true);
           setTimeout(() => {
             setSubmitted(false);
