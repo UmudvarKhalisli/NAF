@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { MessageCircle, ArrowRight, Gauge, Weight, Calendar, CheckCircle2, AlertCircle } from "lucide-react";
+import Link from "next/link";
 import FadeIn from "./FadeIn";
 
 interface EquipmentItem {
@@ -21,57 +22,57 @@ interface EquipmentItem {
 
 const SAMPLE_EQUIPMENT: EquipmentItem[] = [
   {
-    id: 1,
-    name: "Cat 320 Ekskavator",
+    id: "1",
+    name: "Caterpillar 320 GC",
     category: "Ekskavatorlar",
     image: "/machines/excavator.png",
-    specs: { "Çəki": "20 ton", "Güc": "162 a.g.", "İstehsal ili": "2023" },
-    price: "350 AZN / Saat",
+    specs: { "Çəki": "21.9 ton", "Güc": "145 a.g.", "Dərinlik": "6.7 m", "İl": "2023" },
+    price: "0",
     available: true,
   },
   {
-    id: 2,
-    name: "Liebherr LTM 1100",
+    id: "2",
+    name: "Liebherr LTM 1100-4.2",
     category: "Kranlar",
     image: "/machines/crane.png",
-    specs: { "Maks. qaldırma": "100 ton", "Boom uzunluğu": "60 m", "İstehsal ili": "2022" },
-    price: "800 AZN / Saat",
+    specs: { "Yük": "100 ton", "Ox": "60 m", "Mühərrik": "476 a.g.", "İl": "2022" },
+    price: "0",
     available: true,
   },
   {
-    id: 3,
-    name: "Komatsu D65EX",
+    id: "3",
+    name: "Komatsu D65EX-16",
     category: "Buldozerlər",
     image: "/machines/bulldozer.png",
-    specs: { "Çəki": "20.5 ton", "Bıçaq tutumu": "5.4 m³", "İstehsal ili": "2023" },
-    price: "400 AZN / Saat",
+    specs: { "Çəki": "22.5 ton", "Bıçaq": "5.6 m³", "Eni": "3.4 m", "İl": "2023" },
+    price: "0",
     available: true,
   },
   {
-    id: 4,
-    name: "Volvo FMX 8x4",
+    id: "4",
+    name: "Volvo FMX 460 8x4",
     category: "Yük Maşınları",
     image: "/machines/truck.png",
-    specs: { "Yük tutumu": "25 ton", "Həcm": "16 m³", "İstehsal ili": "2024" },
-    price: "250 AZN / Saat",
+    specs: { "Həcm": "18 m³", "Güc": "460 a.g.", "Yük": "32 ton", "İl": "2024" },
+    price: "0",
     available: false,
   },
   {
-    id: 5,
-    name: "Putzmeister BSF 36",
+    id: "5",
+    name: "Putzmeister M36-4",
     category: "Beton Nasosları",
     image: "/machines/pump.png",
-    specs: { "Boom uzunluğu": "36 m", "Məhsuldarlıq": "160 m³/saat", "İstehsal ili": "2023" },
-    price: "600 AZN / Saat",
+    specs: { "Boom": "36 m", "Basqı": "160 bar", "Axın": "160 m³/h", "İl": "2023" },
+    price: "0",
     available: true,
   },
   {
-    id: 6,
-    name: "Cat C15 Generator",
+    id: "6",
+    name: "Caterpillar C15 DE500",
     category: "Generatorlar",
     image: "/machines/generator.png",
-    specs: { "Güc": "400 kVA", "Gərginlik": "400V", "İstehsal ili": "2024" },
-    price: "200 AZN / Gün",
+    specs: { "Güc": "500 kVA", "Yanacaq": "Dizel", "Faz": "3 Faz", "İl": "2024" },
+    price: "0",
     available: true,
   },
 ];
@@ -187,26 +188,25 @@ export default function EquipmentCards() {
                     ))}
                   </div>
 
-                  {/* Price and Action */}
-                  <div className="flex flex-col gap-6 pt-6 border-t border-black/5">
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase font-bold text-black/30 tracking-widest mb-1">Başlanğıc qiymət</span>
-                      <span className="text-2xl font-black text-neutral-700">
-                        {item.price}
-                      </span>
-                    </div>
-
+                  {/* Action Buttons */}
+                  <div className="flex gap-3 pt-6 border-t border-black/5">
+                    <Link
+                      href={`/texnikalar/${item.id}`}
+                      className="flex-1 py-3.5 text-center text-[10px] font-black tracking-[0.2em] uppercase border border-black/10 hover:border-black transition-all duration-300 rounded-lg"
+                    >
+                      ƏTRAFLI
+                    </Link>
                     <a
                       href={item.available ? `https://wa.me/994509627766?text=Salam, ${item.name} texnikası haqqında məlumat almaq istəyirəm.` : "#"}
                       target={item.available ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className={`w-full py-4 text-center text-[11px] font-black tracking-[0.3em] uppercase transition-all duration-300 ${
+                      className={`flex-1 py-3.5 text-center text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-300 rounded-lg ${
                         item.available 
-                        ? "bg-black text-white hover:bg-neutral-700 shadow-xl shadow-black/5" 
-                        : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                        ? "bg-black text-white hover:bg-neutral-800 shadow-xl shadow-black/5" 
+                        : "bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-100"
                       }`}
                     >
-                      {item.available ? "SİFARİŞ ET" : "MÖVCUD DEYİL"}
+                      {item.available ? "SİFARİŞ" : "MÖVCUD DEYİL"}
                     </a>
                   </div>
                 </div>

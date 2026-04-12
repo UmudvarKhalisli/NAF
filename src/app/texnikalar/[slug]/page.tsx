@@ -172,7 +172,7 @@ export default async function EquipmentDynamicPage({ params }: PageProps) {
     return notFound();
   }
 
-  const whatsappMsg = `Salam, mən ${equipment.name} (${equipment.category}) növlü texnika haqqında maraqlanıram. Qiyməti saytda ${equipment.price} AZN / ${equipment.price_unit} olaraq göstərilib.`;
+  const whatsappMsg = `Salam, mən ${equipment.name} (${equipment.category}) növlü texnika haqqında maraqlanıram. Ətraflı məlumat verə bilərsiniz?`;
   const whatsappUrl = `https://wa.me/994509627766?text=${encodeURIComponent(whatsappMsg)}`;
   const isAvailable = equipment.status === 'available';
   const specs = equipment.specs && typeof equipment.specs === 'object' ? equipment.specs : {};
@@ -235,10 +235,7 @@ export default async function EquipmentDynamicPage({ params }: PageProps) {
                 {equipment.name}
               </h1>
 
-              <div className="mb-8 border-b border-t border-black/10 py-6 flex items-baseline gap-2">
-                <span className="text-4xl md:text-5xl font-black text-black">{equipment.price}₼</span>
-                <span className="text-sm font-bold uppercase tracking-widest text-black/40">/ {equipment.price_unit}</span>
-              </div>
+
 
               {equipment.description && (
                 <div className="mb-8 text-sm md:text-base text-black/70 leading-relaxed font-medium">

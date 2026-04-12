@@ -82,11 +82,6 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
           {equipment.name}
         </h3>
 
-        <div className="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
-          <span className="text-base font-black text-black">{equipment.price}₼</span>
-          <span className="text-[9px] font-bold text-black/25 uppercase">/ {equipment.price_unit}</span>
-        </div>
-
         {isAvailable ? (
           <div className="mt-3 flex gap-2">
             <Link
@@ -97,7 +92,7 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
               Ətraflı Bax
             </Link>
             <a
-              href={`https://wa.me/994509627766?text=${encodeURIComponent(`Salam, "${equipment.name}" (${equipment.category}) texnikasını ${equipment.price}₼/${equipment.price_unit} qiymətlə sifariş etmək istəyirəm. Ətraflı məlumat verə bilərsinizmi?`)}`}
+              href={`https://wa.me/994509627766?text=${encodeURIComponent(`Salam, "${equipment.name}" (${equipment.category}) texnikası haqqında məlumat almaq istəyirəm.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
