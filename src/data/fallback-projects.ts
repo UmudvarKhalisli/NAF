@@ -46,7 +46,37 @@ export const FALLBACK_PROJECTS: FallbackProject[] = [
     start_date: '2020-11-17',
     is_featured: true,
     sort_order: 3,
-    description: 'Dağlıq və çətin relyef şəraitində Şuşaya çəkilən Zəfər Yolunun inşası. Layihə çərçivəsində yüksək performanslı ekskavatorlarımız və qaya parçalayan avadanlıqlarımız yol yatağının açılması və genişləndirilməsi işlərini uğurla icra etmişdir.'
+    description: 'Dağlıq ve çətin relyef şəraitində Şuşaya çəkilən Zəfər Yolunun inşası. Layihə çərçivəsində yüksək performanslı ekskavatorlarımız və qaya parçalayan avadanlıqlarımız yol yatağının açılması və genişləndirilməsi işlərini uğurla icra etmişdir.'
+  },
+  {
+    id: 'shusha-restoration',
+    title: 'Şuşa Şəhərinin Yenidənqurulması',
+    location: 'Şuşa, Qarabağ',
+    status: 'ongoing',
+    cover_image_url: '/images/projects/shusha-restoration.png',
+    client: 'Şuşa Şəhəri Dövlət Qoruğu',
+    start_date: '2022-05-10',
+    description: 'Azərbaycanın mədəniyyət paytaxtı Şuşada aparılan genişmiqyaslı bərpa və quruculuq işləri. Tarixi binaların restavrasiyası və yeni infrastrukturun qurulması prosesində NAF Texnikanın qaldırıcı kranları və texnikaları mühüm rol oynayır.'
+  },
+  {
+    id: 'kalbajar-tunnels',
+    title: 'Kəlbəcər-Laçın Tunelləri',
+    location: 'Kəlbəcər-Laçın',
+    status: 'ongoing',
+    cover_image_url: '/images/projects/kalbajar-tunnels.png',
+    client: 'AAYDA',
+    start_date: '2021-12-01',
+    description: 'Murovdağ silsiləsindən keçən və dünyada ən uzun avtomobil tunellərindən biri hesab olunan layihə. Sərt dağ şəraitində qayaların qazılması üçün NAF Texnikanın ağır qaya-parçalayan texnikaları səfərbər edilmişdir.'
+  },
+  {
+    id: 'zangilan-airport',
+    title: 'Zəngilan Beynəlxalq Hava Limanı',
+    location: 'Zəngilan, Qarabağ',
+    status: 'completed',
+    cover_image_url: '/images/projects/zangilan-airport.png',
+    client: 'Azərbaycan Hava Yolları (AZAL)',
+    start_date: '2021-04-26',
+    description: 'Şərqi Zəngəzurun loqistika mərkəzinə çevriləcək Zəngilan Hava Limanının inşası. Texnika parkımızdan olan asfalt-döşəyən maşınlar və yol katokları aerodromun beynəlxalq standartlara uyğun hazırlanmasını təmin etmişdir.'
   },
   {
     id: 'aghdam-industrial',
@@ -56,7 +86,7 @@ export const FALLBACK_PROJECTS: FallbackProject[] = [
     cover_image_url: '/images/projects/aghdam.png',
     client: 'Qarabağ Dirçəliş Fondu',
     start_date: '2022-08-10',
-    description: 'Ağdam şəhərinin yenidən qurulması proqramı çərçivəsində Sənaye Parkının infrastrukturunun qurulması. Ərazinin təmizlənməsi, mühəndis kommunikasiya xətlərinin çəkilməsi və yeni zavodların bünövrə qazıntıları NAF Texnikanın ağır texnika parkı ilə həyata keçirilir.'
+    description: 'Ağdam şəhərinin yenidən qurulması proqramı çərçivəsində Sənaye Parkının infrastrukturunun qurulması. Ərazinin təmizlənməsi və yeni zavodların bünövrə qazıntıları NAF Texnikanın ağır texnika parkı ilə həyata keçirilir.'
   },
   {
     id: 'port-baku-2',
@@ -66,7 +96,7 @@ export const FALLBACK_PROJECTS: FallbackProject[] = [
     cover_image_url: '/images/projects/port-baku.png',
     client: 'Pasha Construction',
     start_date: '2021-06-05',
-    description: 'Bakının ən müasir biznes mərkəzlərindən biri olan Port Baku Towers kompleksinin ikinci mərhələsinin tikintisi. Qülləli kranlarımızın və beton nasoslarımızın yüksək stabilliyi bu möhtəşəm göydələnin tikinti prosesinin sürətlənməsinə birbaşa töhfə verir.'
+    description: 'Bakının ən müasir biznes mərkəzlərindən biri olan Port Baku Towers kompleksinin ikinci mərhələsinin tikintisi. NAF Texnikanın qülləli kranları bu möhtəşəm göydələnin tikinti prosesinə birbaşa töhfə verir.'
   },
   {
     id: 'white-city-foundation',
