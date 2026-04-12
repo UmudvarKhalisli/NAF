@@ -92,7 +92,7 @@ export default function AdminLayoutComponent({
         <div className="h-24 flex items-center justify-between px-6 border-b border-white/5 whitespace-nowrap overflow-hidden">
           <Link href="/admin/dashboard" className="flex items-center gap-3">
             {isOpen ? (
-              <Logo variant="gold" size="md" />
+              <Logo variant="gold" size="md" align="left" />
             ) : (
               <div className="w-10 h-10 bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center shrink-0">N</div>
             )}

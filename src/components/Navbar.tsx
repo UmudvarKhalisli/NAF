@@ -76,7 +76,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between gap-4">
             <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
               <Logo 
-                variant="gold" 
+                variant={forceSolid ? 'gold-dark' : 'gold'} 
                 size="custom"
                 width={200}
                 height={60}

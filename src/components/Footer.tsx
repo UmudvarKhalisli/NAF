@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/#hero" className="group flex items-center mb-8">
-              <Logo variant="gold" size="lg" className="transition-all duration-300 group-hover:scale-105" />
+              <Logo variant="gold" size="lg" align="left" className="transition-all duration-300 group-hover:scale-105" />
             </Link>
             <p className="text-[13px] leading-[1.8] text-white/40 mb-10 max-w-xs">
               Modern mühəndislik həlləri və peşəkar tikinti texnikası icarəsində etibarlı tərəfdaşınız.
