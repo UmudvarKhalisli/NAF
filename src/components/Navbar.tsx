@@ -81,8 +81,9 @@ export default function Navbar() {
                 width={120}
                 height={48}
                 priority
-                className={`transition-all duration-500 h-10 w-auto object-contain ${forceSolid ? 'mix-blend-multiply' : 'drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]'
-                  }`}
+                className={`transition-all duration-500 h-10 w-auto object-contain ${
+                  forceSolid ? 'brightness-0' : 'brightness-0 invert'
+                }`} 
               />
               <div className="flex flex-col">
                 <span className={`text-xl font-black tracking-tight transition-colors duration-500 ${forceSolid || open ? "text-black" : "text-white"}`}>
@@ -160,11 +161,11 @@ export default function Navbar() {
             <div className="flex items-center justify-between py-5 mb-6">
               <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
                 <Image
-                  src="/logo-gold.png"
+                  src="/logo.png"
                   alt="NAF"
                   width={96}
                   height={32}
-                  className="h-8 w-auto object-contain mix-blend-multiply"
+                  className="h-8 w-auto object-contain brightness-0" 
                 />
                 <span className="text-lg font-black tracking-tight text-black">NAF</span>
               </Link>

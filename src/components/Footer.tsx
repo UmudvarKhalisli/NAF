@@ -57,7 +57,7 @@ export default function Footer() {
                 alt="NAF Logo"
                 width={120}
                 height={48}
-                className="h-10 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
+                className="h-10 w-auto object-contain brightness-0 invert" 
               />
               <span className="text-3xl font-black tracking-tight text-white transition-colors duration-500">NAF</span>
             </Link>
