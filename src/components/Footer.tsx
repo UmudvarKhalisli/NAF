@@ -51,15 +51,14 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/#hero" className="flex items-center gap-3 mb-8 group">
+            <Link href="/#hero" className="flex items-center mb-8 group">
               <Image 
-                src="/logo.png" 
+                src="/logo-gold.png" 
                 alt="NAF Logo" 
-                width={40} 
-                height={40} 
-                className="object-contain brightness-0 invert" 
+                width={180} 
+                height={70} 
+                className="object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" 
               />
-              <span className="text-3xl font-black tracking-tight text-white transition-colors duration-500">NAF</span>
             </Link>
             <p className="text-[13px] leading-[1.8] text-white/40 mb-10 max-w-xs">
               Modern mühəndislik həlləri və peşəkar tikinti texnikası icarəsində etibarlı tərəfdaşınız.
