@@ -52,7 +52,7 @@ export default function AdminEquipment() {
     const url = editItem ? `/api/admin/equipment/${editItem.id}` : '/api/admin/equipment';
 
     // Data cleaning for database compatibility
-    const payload = { ...formData };
+    const payload: any = { ...formData };
     
     // Ensure numeric types
     payload.price = Number(payload.price) || 0;
