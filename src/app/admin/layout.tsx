@@ -17,6 +17,7 @@ import {
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Logo from '@/components/ui/Logo';
+import BrandingGradients from '@/components/ui/BrandingGradients';
 
 export default function AdminLayoutComponent({
   children,
