@@ -183,19 +183,28 @@ export default function AdminEquipment() {
                     <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-1">Sıralama (1 = Ən birinci)</label>
                     <input type="number" value={formData.sort_order} onChange={e=>setFormData({...formData, sort_order: parseInt(e.target.value)})} className="w-full bg-[#2a2a2a] rounded-lg p-3 text-white outline-none" />
                   </div>
+                  <div className="flex">
+                    <div className="w-full">
+                      <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-1">Qiymət</label>
+                      <div className="flex">
+                        <input type="number" required value={formData.price} onChange={e=>setFormData({...formData, price: e.target.value})} className="w-2/3 bg-[#2a2a2a] rounded-l-lg p-3 text-white outline-none border-r border-white/5" />
+                        <select value={formData.price_unit} onChange={e=>setFormData({...formData, price_unit: e.target.value})} className="w-1/3 bg-[#2a2a2a] rounded-r-lg p-3 text-white outline-none">
+                          <option value="SAAT">SAAT</option><option value="GÜN">GÜN</option><option value="AY">AY</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="flex">
-                    <input type="number" required value={formData.price} onChange={e=>setFormData({...formData, price: e.target.value})} className="w-2/3 bg-[#2a2a2a] rounded-l-lg p-3 text-white outline-none border-r border-white/5" />
-                    <select value={formData.price_unit} onChange={e=>setFormData({...formData, price_unit: e.target.value})} className="w-1/3 bg-[#2a2a2a] rounded-r-lg p-3 text-white outline-none">
-                      <option value="SAAT">SAAT</option><option value="GÜN">GÜN</option><option value="AY">AY</option>
+                  <div>
+                    <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-1">Status</label>
+                    <select value={formData.status} onChange={e=>setFormData({...formData, status: e.target.value})} className="w-full bg-[#2a2a2a] rounded-lg p-3 text-white outline-none">
+                      <option value="available">Mövcuddur</option>
+                      <option value="rented">İcarədədir</option>
+                      <option value="maintenance">T. Baxış</option>
                     </select>
                   </div>
-                  <select value={formData.status} onChange={e=>setFormData({...formData, status: e.target.value})} className="w-full bg-[#2a2a2a] rounded-lg p-3 text-white outline-none">
-                    <option value="available">Mövcuddur</option>
-                    <option value="rented">İcarədədir</option>
-                    <option value="maintenance">T. Baxış</option>
-                  </select>
                 </div>
                 
                 <UploadWidget label="Şəkil" folder="equipment" defaultImage={formData.image_url} onUpload={url => setFormData({...formData, image_url: url})} />
