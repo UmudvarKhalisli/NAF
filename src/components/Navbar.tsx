@@ -79,10 +79,10 @@ export default function Navbar() {
               <Image 
                 src="/logo-gold.png" 
                 alt="NAF Logo" 
-                width={160} 
-                height={60} 
+                width={200} 
+                height={80} 
                 priority
-                className={`transition-all duration-500 h-12 md:h-14 lg:h-16 w-auto object-contain ${
+                className={`transition-all duration-500 h-14 md:h-16 lg:h-20 w-auto object-contain ${
                   forceSolid ? 'drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]' : 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]'
                 }`} 
               />
