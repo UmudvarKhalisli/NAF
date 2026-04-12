@@ -7,75 +7,7 @@ import { supabase } from "@/lib/supabase";
 import { MessageCircle, ArrowRight, Gauge, Weight, Calendar, CheckCircle2, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import FadeIn from "./FadeIn";
-
-interface EquipmentItem {
-  id: string | number;
-  name: string;
-  category: string;
-  image_url?: string;
-  image?: string;
-  specs: { [key: string]: string };
-  price: number | string;
-  status?: string;
-  available?: boolean;
-}
-
-const SAMPLE_EQUIPMENT: EquipmentItem[] = [
-  {
-    id: "1",
-    name: "Caterpillar 320 GC",
-    category: "Ekskavatorlar",
-    image: "/machines/excavator.png",
-    specs: { "Çəki": "21.9 ton", "Güc": "145 a.g.", "Dərinlik": "6.7 m", "İl": "2023" },
-    price: "0",
-    available: true,
-  },
-  {
-    id: "2",
-    name: "Liebherr LTM 1100-4.2",
-    category: "Kranlar",
-    image: "/machines/crane.png",
-    specs: { "Yük": "100 ton", "Ox": "60 m", "Mühərrik": "476 a.g.", "İl": "2022" },
-    price: "0",
-    available: true,
-  },
-  {
-    id: "3",
-    name: "Komatsu D65EX-16",
-    category: "Buldozerlər",
-    image: "/machines/bulldozer.png",
-    specs: { "Çəki": "22.5 ton", "Bıçaq": "5.6 m³", "Eni": "3.4 m", "İl": "2023" },
-    price: "0",
-    available: true,
-  },
-  {
-    id: "4",
-    name: "Volvo FMX 460 8x4",
-    category: "Yük Maşınları",
-    image: "/machines/truck.png",
-    specs: { "Həcm": "18 m³", "Güc": "460 a.g.", "Yük": "32 ton", "İl": "2024" },
-    price: "0",
-    available: false,
-  },
-  {
-    id: "5",
-    name: "Putzmeister M36-4",
-    category: "Beton Nasosları",
-    image: "/machines/pump.png",
-    specs: { "Boom": "36 m", "Basqı": "160 bar", "Axın": "160 m³/h", "İl": "2023" },
-    price: "0",
-    available: true,
-  },
-  {
-    id: "6",
-    name: "Caterpillar C15 DE500",
-    category: "Generatorlar",
-    image: "/machines/generator.png",
-    specs: { "Güc": "500 kVA", "Yanacaq": "Dizel", "Faz": "3 Faz", "İl": "2024" },
-    price: "0",
-    available: true,
-  },
-];
+import { EQUIPMENT_DATA, type EquipmentItem } from "@/data/equipment";
 
 export default function EquipmentCards() {
   const [dbEquipment, setDbEquipment] = useState<EquipmentItem[]>([]);
@@ -92,6 +24,7 @@ export default function EquipmentCards() {
       try {
         const { data } = await supabase.from("equipment").select("*").order("created_at", { ascending: false });
         if (data && data.length > 0) {
+          // Merge DB items with default data if needed, or prioritize DB
           setDbEquipment(data);
         }
       } catch (e) {
@@ -101,7 +34,7 @@ export default function EquipmentCards() {
     fetchEquipment();
   }, []);
 
-  const displayList = dbEquipment.length > 0 ? dbEquipment : SAMPLE_EQUIPMENT;
+  const displayList = dbEquipment.length > 0 ? dbEquipment : EQUIPMENT_DATA;
   const categories = ["Hamısı", ...Array.from(new Set(displayList.map((e) => e.category)))];
   const filtered = filter === "Hamısı" ? displayList : displayList.filter((e) => e.category === filter);
 
