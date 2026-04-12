@@ -75,17 +75,22 @@ export default function Navbar() {
       >
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
-            <Link href="/#hero" className="group flex items-center flex-shrink-0">
+            <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
               <Image 
-                src="/logo-gold.png" 
+                src="/logo.png" 
                 alt="NAF Logo" 
-                width={300} 
-                height={120} 
-                priority
-                className={`transition-all duration-500 h-24 md:h-28 lg:h-32 w-auto object-contain ${
-                  forceSolid ? 'drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]' : 'drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]'
-                }`} 
+                width={40} 
+                height={40} 
+                className={`transition-all duration-500 ${forceSolid ? 'scale-90 mix-blend-multiply' : 'brightness-0 invert'}`} 
               />
+              <div className="flex flex-col">
+                <span className={`text-xl font-black tracking-tight transition-colors duration-500 ${forceSolid || open ? "text-black" : "text-white"}`}>
+                  NAF
+                </span>
+                <span className={`text-[9px] font-bold tracking-[0.2em] transition-colors duration-500 ${forceSolid || open ? "text-black/40" : "text-white/40"} uppercase`}>
+                  Texnika İcarəsi
+                </span>
+              </div>
             </Link>
 
             <div className="hidden lg:flex items-center gap-8 xl:gap-10">
@@ -156,14 +161,15 @@ export default function Navbar() {
           >
             {/* Header: Logo left, X right */}
             <div className="flex items-center justify-between py-5 mb-6">
-              <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center">
+              <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
                 <Image 
-                src="/logo-gold.png" 
-                alt="NAF Logo" 
-                width={240} 
-                height={100} 
-                className="object-contain drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]" 
-              />
+                  src="/logo.png" 
+                  alt="NAF" 
+                  width={32} 
+                  height={32} 
+                  className="object-contain mix-blend-multiply" 
+                />
+                <span className="text-lg font-black tracking-tight text-black">NAF</span>
               </Link>
               <button onClick={() => setOpen(false)} className="p-2">
                 <X size={22} className="text-black" />
