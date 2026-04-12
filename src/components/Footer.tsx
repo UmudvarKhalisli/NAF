@@ -52,12 +52,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/#hero" className="flex items-center gap-3 mb-8 group">
-              <Image 
-                src="/logo.png" 
-                alt="NAF Logo" 
-                width={40} 
-                height={40} 
-                className="object-contain brightness-0 invert" 
+              <Image
+                src="/logo.png"
+                alt="NAF Logo"
+                width={120}
+                height={48}
+                className="h-10 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
               />
               <span className="text-3xl font-black tracking-tight text-white transition-colors duration-500">NAF</span>
             </Link>
