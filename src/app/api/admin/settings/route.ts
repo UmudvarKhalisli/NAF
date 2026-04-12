@@ -43,5 +43,12 @@ export async function POST(req: NextRequest) {
     .select()
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+
+  // Revalidate public pages for instant updates
+  const { revalidatePath } = await import('next/cache');
+  revalidatePath('/');
+  revalidatePath('/about');
+  revalidatePath('/contact');
+
   return NextResponse.json(data[0])
 }

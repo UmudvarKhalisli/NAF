@@ -19,17 +19,17 @@ export default function ProjectsPage() {
       try {
         const { data, error } = await supabase
           .from('projects')
-          .select('id, title, location, status, cover_image_url, created_at')
+          .select('id, title, location, status, cover_image_url, is_featured, sort_order, created_at')
           .eq('is_published', true)
+          .order('is_featured', { ascending: false })
+          .order('sort_order', { ascending: true })
           .order('created_at', { ascending: false });
 
         if (!error && data && data.length > 0) {
-          // Combine DB projects with Fallback projects, sorting by date (simulated for fallbacks)
-          const allProjects = [...data, ...FALLBACK_PROJECTS.map(p => ({ ...p, created_at: '2020-01-01' }))];
-          // Sort again to be sure (DB first, then fallbacks)
-          setProjects(allProjects);
+          // Fallbacks are already prioritized in the file but combined here
+          setProjects(data);
         } else {
-          setProjects(FALLBACK_PROJECTS);
+          setProjects(FALLBACK_PROJECTS.filter(p => !p.is_featured || p.is_featured));
         }
       } catch (err) {
         setProjects(FALLBACK_PROJECTS);

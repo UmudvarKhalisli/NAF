@@ -1,42 +1,52 @@
 import { supabase } from '@/lib/supabase/client';
 import ProjectCard from './ProjectCard';
 import Link from 'next/link';
-import { FALLBACK_PROJECTS } from '@/data/fallback-projects';
+import { FALLBACK_PROJECTS, FallbackProject } from '@/data/fallback-projects';
 
 export default async function ProjectsSection() {
+  // Fetch only featured projects for the landing page
   const { data: projects, error } = await supabase
     .from('projects')
-    .select('id, title, location, status, cover_image_url')
+    .select('id, title, location, status, cover_image_url, is_featured, sort_order')
     .eq('is_published', true)
+    .eq('is_featured', true)
+    .order('sort_order', { ascending: true })
     .order('created_at', { ascending: false })
-    .limit(6);
+    .limit(3);
 
   const hasProjects = !!(projects && projects.length > 0 && !error);
-  const displayProjects = hasProjects ? projects : FALLBACK_PROJECTS;
+  
+  // Use fallback projects if none are found in the DB, filtered to show top 3 featured
+  const displayProjects = hasProjects 
+    ? projects 
+    : FALLBACK_PROJECTS
+        .filter(p => p.is_featured)
+        .sort((a, b) => (a.sort_order || 999) - (b.sort_order || 999))
+        .slice(0, 3);
 
   return (
     <section className="w-full py-24 md:py-32 bg-[#fafafa] border-t border-black/5" id="layiheler">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16">
           <span className="text-[11px] tracking-[0.4em] font-black text-neutral-500 uppercase mb-6 block">
-            İşlərimiz
+            Nüfuzlu İşlərimiz
           </span>
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-black mb-8">
-            Son Layihələrimiz
+            Dövlət Əhəmiyyətli Layihələr
           </h2>
-          <p className="text-black/40 text-[11px] font-bold tracking-[0.2em] uppercase max-w-2xl mx-auto">
-            Tikinti texnikasının real layihələrdə tətbiqi və mühəndislik həllərimiz.
+          <p className="text-black/40 text-[11px] font-bold tracking-[0.2em] uppercase max-w-2xl mx-auto leading-loose">
+            NAF Texnika Azərbaycanın ən iri infrastruktur layihələrində <br/> ağır texnika təminatçısı kimi iştirak edir.
           </p>
           <div className="w-16 h-[3px] bg-black mx-auto mt-8" />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {displayProjects.map((project) => (
             <ProjectCard key={project.id} project={project as any} />
           ))}
         </div>
 
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center">
           <Link 
             href="/layiheler" 
             className="group relative inline-flex items-center gap-0 overflow-hidden border border-black/10 hover:border-black transition-all duration-500 hover:shadow-lg bg-white"
