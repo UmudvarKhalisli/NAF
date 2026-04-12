@@ -88,21 +88,16 @@ export default function AdminLayoutComponent({
         className={`fixed lg:sticky top-0 left-0 h-full bg-[#1a1a1a] border-r border-white/5 z-50 flex flex-col shrink-0 overflow-hidden shadow-2xl shadow-black/50`}
       >
         {/* Sidebar Header */}
-        <div className="h-20 flex items-center justify-between px-6 border-b border-white/5 whitespace-nowrap">
+        <div className="h-24 flex items-center justify-between px-6 border-b border-white/5 whitespace-nowrap overflow-hidden">
           <Link href="/admin/dashboard" className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center shrink-0">N</div>
-            <AnimatePresence>
-              {isOpen && (
-                <motion.span 
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  className="font-black tracking-widest text-[#f59e0b] uppercase"
-                >
-                  Admin
-                </motion.span>
-              )}
-            </AnimatePresence>
+            <div className={`relative transition-all duration-300 ${isOpen ? 'w-40 h-12' : 'w-10 h-10'}`}>
+              <Image
+                src="/images/brand/logo-gold.png"
+                alt="NAF TEXNIKA"
+                fill
+                className="object-contain"
+              />
+            </div>
           </Link>
           {isMobile && isOpen && (
             <button onClick={() => setIsOpen(false)} className="text-white/50 hover:text-white ml-2">

@@ -162,9 +162,14 @@ export default function Hero() {
                   )}
                 </div>
 
-                {/* Decorative background logo */}
-                <div className="absolute -bottom-10 -right-10 opacity-[0.02] select-none pointer-events-none group-hover:opacity-[0.04] transition-opacity">
-                  <h2 className="text-[120px] font-black leading-none">NAF</h2>
+                {/* Decorative background logo watermark */}
+                <div className="absolute -bottom-10 -right-10 opacity-[0.05] select-none pointer-events-none group-hover:opacity-[0.08] transition-opacity w-64 h-24">
+                  <Image
+                    src="/images/brand/logo-gold.png"
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
             </FadeIn>

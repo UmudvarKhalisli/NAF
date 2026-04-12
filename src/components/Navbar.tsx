@@ -75,23 +75,25 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
             <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
-              <Image
-                src="/logo.png"
-                alt="NAF Logo"
-                width={120}
-                height={48}
-                priority
-                className={`transition-all duration-500 h-10 w-auto object-contain ${
-                  forceSolid ? 'brightness-0' : 'brightness-0 invert'
-                }`} 
-              />
-              <div className="flex flex-col">
-                <span className={`text-xl font-black tracking-tight transition-colors duration-500 ${forceSolid || open ? "text-black" : "text-white"}`}>
-                  NAF
-                </span>
-                <span className={`text-[9px] font-bold tracking-[0.2em] transition-colors duration-500 ${forceSolid || open ? "text-black/40" : "text-white/40"} uppercase`}>
-                  Texnika İcarəsi
-                </span>
+              <div className="relative h-12 w-48 transition-all duration-500">
+                <Image
+                  src="/images/brand/logo-gold.png"
+                  alt="NAF TEXNIKA Logo"
+                  fill
+                  priority
+                  className={`object-contain transition-opacity duration-500 ${
+                    forceSolid ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+                <Image
+                  src="/images/brand/logo-black.png"
+                  alt="NAF TEXNIKA Logo"
+                  fill
+                  priority
+                  className={`object-contain transition-opacity duration-500 ${
+                    forceSolid ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
               </div>
             </Link>
 
