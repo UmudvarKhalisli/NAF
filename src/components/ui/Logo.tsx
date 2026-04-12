@@ -20,13 +20,13 @@ export default function Logo({
   height: customHeight
 }: LogoProps) {
   
-  // Dimensions mapping
+  // Dimensions mapping - Slightly enlarged for better presence on white backgrounds
   const dimensions = {
-    xs: { w: 100, h: 32, font: 32, sub: 8 },
-    sm: { w: 120, h: 40, font: 38, sub: 9 },
-    md: { w: 180, h: 60, font: 46, sub: 10 },
-    lg: { w: 240, h: 80, font: 56, sub: 12 },
-    xl: { w: 320, h: 100, font: 72, sub: 14 },
+    xs: { w: 100, h: 32, font: 32, sub: 9 },
+    sm: { w: 140, h: 48, font: 40, sub: 10 },
+    md: { w: 200, h: 64, font: 48, sub: 11 },
+    lg: { w: 260, h: 84, font: 58, sub: 13 },
+    xl: { w: 340, h: 110, font: 74, sub: 15 },
     custom: { w: customWidth || 180, h: customHeight || 60, font: 46, sub: 10 }
   };
 
@@ -80,7 +80,7 @@ export default function Logo({
           filter="url(#logo-shadow)"
           style={{ 
             fontFamily: 'var(--font-jakarta), sans-serif',
-            fontWeight: 800,
+            fontWeight: 900, // Boosted to extra black
             fontSize: `${sub}px`,
             letterSpacing: '0.6em',
             fill: fillColor,

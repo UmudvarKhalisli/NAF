@@ -26,9 +26,7 @@ export default async function EquipmentCatalogPage() {
 
   return (
     <div className="bg-[#fafafa] min-h-screen flex flex-col">
-      <div className="bg-black">
-        <Navbar />
-      </div>
+      <Navbar />
       
       <main className="flex-grow pt-32 pb-24">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
