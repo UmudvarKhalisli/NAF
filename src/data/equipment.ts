@@ -15,7 +15,7 @@ export interface EquipmentItem {
 export const EQUIPMENT_DATA: EquipmentItem[] = [
   // 1. Torpaq İşləri (Earthmoving) - PREMIUM SET
   {
-    id: "crawler-excavator-1",
+    id: "a53b4b09-2d69-4762-81c1-0f6bf5a4b2af",
     name: "Ekskavator (Paletli) / Crawler Excavator",
     category: "Torpaq İşləri",
     image: "/machines/crawler_excavator_premium.png",
@@ -25,7 +25,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     description_az: "Ağır torpaq qazma və xəndək açma işləri üçün ən vacib texnika. Güclü hidravlik sistemi və paletləri ilə çətin ərazilərdə sabit hərəkət edir.",
   },
   {
-    id: "wheeled-excavator-1",
+    id: "b9bb07f7-28a3-4932-86a8-84f477889203",
     name: "Ekskavator (Təkərli) / Wheeled Excavator",
     category: "Torpaq İşləri",
     image: "/machines/wheeled_excavator_premium.png",
@@ -35,7 +35,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     description_az: "Şəhər daxili tikinti sahələrində sürətli mobillik və manevr qabiliyyəti təmin edir. Asfalt və beton səthlərə zərər vermədən hərəkət edir.",
   },
   {
-    id: "mini-excavator-1",
+    id: "88d77c06-4c95-49be-adde-63ee2e904ed7",
     name: "Mini Ekskavator / Mini Excavator",
     category: "Torpaq İşləri",
     image: "/machines/mini_excavator_premium.png",
@@ -44,7 +44,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "bulldozer-1",
+    id: "73647305-3e46-4f0d-97e0-17d53d06fb7d",
     name: "Buldozer / Bulldozer",
     category: "Torpaq İşləri",
     image: "/machines/bulldozer_premium.png",
@@ -53,7 +53,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "grader-1",
+    id: "a5103dbd-62f0-45ce-80f2-2623431174d5",
     name: "Qreyder / Motor Grader",
     category: "Torpaq İşləri",
     image: "/machines/motor_grader_premium.png",
@@ -64,7 +64,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
 
   // 2. Daşıma Texnikası (Transport) - PREMIUM SET
   {
-    id: "dump-truck-1",
+    id: "daa7da63-f3b4-4d80-867e-5fc2f50f4292",
     name: "Samasval / Dump Truck",
     category: "Daşıma Texnikası",
     image: "/machines/dump_truck_premium.png",
@@ -73,7 +73,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "flatbed-truck-1",
+    id: "2093c646-2151-406f-ac1f-332424dcf485",
     name: "Yük Maşını (Flatbed) / Flatbed Truck",
     category: "Daşıma Texnikası",
     image: "/machines/truck.png",
@@ -82,7 +82,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "concrete-mixer-1",
+    id: "0c4e2e5c-f0b4-45dd-81fd-4fc0a76dbe90",
     name: "Beton Mikser / Concrete Mixer Truck",
     category: "Daşıma Texnikası",
     image: "/machines/mixer.png",
@@ -93,7 +93,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
 
   // 3. Qaldırıcı Texnikalar (Lifting) - PREMIUM SET
   {
-    id: "mobile-crane-1",
+    id: "f34a8c8d-8958-4891-b657-ca90ba19d5b8",
     name: "Avtokran / Mobile Crane",
     category: "Qaldırıcı Texnikalar",
     image: "/machines/mobile_crane_premium.png",
@@ -102,7 +102,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "knuckle-boom-1",
+    id: "acd9545f-56ab-4035-9e00-956efad71e8f",
     name: "Manipulyator / Knuckle Boom Crane",
     category: "Qaldırıcı Texnikalar",
     image: "/machines/knuckle_boom_premium.png",
@@ -111,7 +111,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "boom-lift-1",
+    id: "4df3eba7-1836-43ab-8fd9-57bd13921407",
     name: "Manlift (Səbətli) / Boom Lift",
     category: "Qaldırıcı Texnikalar",
     image: "/machines/boom_lift_premium.png",
@@ -122,7 +122,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
 
   // 4. Beton və Tikinti (Concrete) - PREMIUM SET
   {
-    id: "concrete-pump-1",
+    id: "f3d3130d-52b4-4856-a7f9-3d4ebecd924e",
     name: "Beton Nasosu / Concrete Pump",
     category: "Beton və Tikinti",
     image: "/machines/concrete_pump_premium.png",
@@ -131,7 +131,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "road-saw-1",
+    id: "69938821-c267-4219-9cd7-b19c1a6dc903",
     name: "Beton Kəsən / Road Saw",
     category: "Beton və Tikinti",
     image: "/machines/road_saw.png",
@@ -142,7 +142,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
 
   // 5. Yol Tikinti (Road Construction) - PREMIUM SET (Road Roller)
   {
-    id: "road-roller-1",
+    id: "d5502348-5368-49ff-9399-f2207827be07",
     name: "Yol Katoku / Road Roller",
     category: "Yol Tikinti",
     image: "/machines/road_roller_premium.png",
@@ -151,7 +151,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "asphalt-paver-1",
+    id: "5b568334-6068-4f71-abe9-1f5c661af86f",
     name: "Asfalt Döşəyən / Asphalt Paver",
     category: "Yol Tikinti",
     image: "/machines/asphalt_paver.png",
@@ -162,7 +162,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
 
   // 6. Yükləmə və Köməkçi (Loading & Utility) - PREMIUM SET (Telehandler)
   {
-    id: "telescopic-handler-1",
+    id: "4f71673b-6fd3-4d5b-b7a4-4f79a91a578b",
     name: "Teleskopik Yükləyici / Telehandler",
     category: "Yükləmə və Köməkçi",
     image: "/machines/telehandler_premium.png",
@@ -171,7 +171,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "forklift-1",
+    id: "c8e50f61-f2b9-4dd0-bac5-802675b2b9ab",
     name: "Avtoyükləyici / Forklift",
     category: "Yükləmə və Köməkçi",
     image: "/machines/forklift.png",
@@ -180,7 +180,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "generator-1",
+    id: "b26a27d9-76ac-4783-b0fa-843fc8ad818e",
     name: "Generator / Diesel Generator",
     category: "Yükləmə və Köməkçi",
     image: "/machines/generator.png",
@@ -191,7 +191,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
 
   // 7. Xüsusi Texnikalar (Specialized)
   {
-    id: "piling-rig-1",
+    id: "be28b4dc-b502-4f2d-97f1-7552491ec9ac",
     name: "Payvuran / Piling Rig",
     category: "Xüsusi Texnikalar",
     image: "/machines/piling_rig.png",
@@ -200,7 +200,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
   {
-    id: "tower-crane-1",
+    id: "3597644e-e817-4951-8bf4-da2be352aa2e",
     name: "Qülləli Kran / Tower Crane",
     category: "Xüsusi Texnikalar",
     image: "/machines/tower_crane.png",
@@ -211,7 +211,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
 
   // 8. Yeraltı və Kommunikasiya (Underground)
   {
-    id: "trenchcher-1",
+    id: "15c031e9-56a5-4a09-a7a7-5d4b9a2a0260",
     name: "Xəndəkqazan / Trencher",
     category: "Yeraltı və Kommunikasiya",
     image: "/machines/trencher.png",
@@ -222,7 +222,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
 
   // 9. Dağıtma (Demolition)
   {
-    id: "hydraulic-breaker-1",
+    id: "3343bfd2-34fd-45d7-8817-a123e281d77a",
     name: "Hidravlik Çəkic / Hydraulic Breaker",
     category: "Dağıtma (Demolition)",
     image: "/machines/breaker.png",
