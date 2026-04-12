@@ -55,9 +55,9 @@ export default function Footer() {
               <Image 
                 src="/logo-gold.png" 
                 alt="NAF Logo" 
-                width={180} 
-                height={70} 
-                className="object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" 
+                width={240} 
+                height={100} 
+                className="object-contain drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]" 
               />
             </Link>
             <p className="text-[13px] leading-[1.8] text-white/40 mb-10 max-w-xs">

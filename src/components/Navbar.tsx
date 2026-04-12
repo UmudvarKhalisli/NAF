@@ -79,11 +79,11 @@ export default function Navbar() {
               <Image 
                 src="/logo-gold.png" 
                 alt="NAF Logo" 
-                width={200} 
-                height={80} 
+                width={300} 
+                height={120} 
                 priority
-                className={`transition-all duration-500 h-14 md:h-16 lg:h-20 w-auto object-contain ${
-                  forceSolid ? 'drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]' : 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]'
+                className={`transition-all duration-500 h-24 md:h-28 lg:h-32 w-auto object-contain ${
+                  forceSolid ? 'drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]' : 'drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]'
                 }`} 
               />
             </Link>
@@ -158,12 +158,12 @@ export default function Navbar() {
             <div className="flex items-center justify-between py-5 mb-6">
               <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center">
                 <Image 
-                  src="/logo-gold.png" 
-                  alt="NAF" 
-                  width={120} 
-                  height={45} 
-                  className="h-10 w-auto object-contain drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]" 
-                />
+                src="/logo-gold.png" 
+                alt="NAF Logo" 
+                width={240} 
+                height={100} 
+                className="object-contain drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]" 
+              />
               </Link>
               <button onClick={() => setOpen(false)} className="p-2">
                 <X size={22} className="text-black" />
