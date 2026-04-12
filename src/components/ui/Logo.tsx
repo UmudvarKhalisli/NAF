@@ -48,46 +48,26 @@ export default function Logo({
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full"
       >
-        {/* NAF Header Main Text */}
+        {/* NAF Header Main Text - Vertically centered more since lines are gone */}
         <text 
           x="50%" 
-          y="35" 
+          y="38" 
           textAnchor="middle" 
           className="font-playfair"
           style={{ 
             fontFamily: 'var(--font-playfair), serif',
             fontWeight: 900,
-            fontSize: '44px',
+            fontSize: '48px',
             fill: fillColor
           }}
         >
           NAF
         </text>
 
-        {/* Framing Lines */}
-        <line 
-          x1="10" 
-          y1="10" 
-          x2="190" 
-          y2="10" 
-          stroke={fillColor} 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
-        />
-        <line 
-          x1="10" 
-          y1="41" 
-          x2="190" 
-          y2="41" 
-          stroke={fillColor} 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
-        />
-
-        {/* Subtitle: TEXNIKA */}
+        {/* Subtitle: TEXNIKA - Moved slightly down */}
         <text 
           x="50%" 
-          y="54" 
+          y="56" 
           textAnchor="middle" 
           style={{ 
             fontFamily: 'var(--font-jakarta), sans-serif',
