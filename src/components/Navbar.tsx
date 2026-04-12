@@ -72,14 +72,13 @@ export default function Navbar() {
             : "bg-transparent py-6"
           }`}
       >
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
             <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
               <Logo 
                 variant={forceSolid ? 'gold-dark' : 'gold'} 
-                size="custom"
-                width={200}
-                height={60}
+                size="sm"
+                align="left"
                 className="transition-all duration-500"
               />
             </Link>

@@ -42,7 +42,7 @@ export default function Logo({
 
   const fillColor = colors[variant];
   const isLeft = align === 'left';
-  const xPos = isLeft ? "0" : "50%";
+  const xPos = isLeft ? "-4" : "50%";
   const textAnchor = isLeft ? "start" : "middle";
 
   return (
