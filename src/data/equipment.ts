@@ -7,6 +7,7 @@ export interface EquipmentItem {
   specs: { [key: string]: string };
   price: number | string;
   available: boolean;
+  sort_order?: number;
   description_az?: string;
   description_en?: string;
 }

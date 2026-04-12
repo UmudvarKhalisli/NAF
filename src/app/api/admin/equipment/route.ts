@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
   const category = searchParams.get('category')
   const status = searchParams.get('status')
   
-  let query = supabaseAdmin.from('equipment').select('*').order('created_at', { ascending: false })
+  let query = supabaseAdmin.from('equipment').select('*').order('sort_order', { ascending: true }).order('created_at', { ascending: false })
   
   if (category) query = query.eq('category', category)
   if (status) query = query.eq('status', status)

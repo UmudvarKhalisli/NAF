@@ -22,6 +22,7 @@ export default function AdminEquipment() {
     price_unit: 'SAAT',
     status: 'available',
     is_featured: false,
+    sort_order: 999,
     image_url: '',
     description: ''
   };
@@ -90,9 +91,15 @@ export default function AdminEquipment() {
         </div>
         <select value={filterCategory} onChange={e=>setFilterCategory(e.target.value)} className="bg-[#1a1a1a] text-white px-4 py-2.5 rounded-xl border border-white/10 outline-none">
           <option value="all">Bütün Kat.</option>
-          <option value="Ekskavator">Ekskavator</option>
-          <option value="Buldozer">Buldozer</option>
-          <option value="Kran">Kran</option>
+          <option value="Torpaq İşləri">Torpaq İşləri</option>
+          <option value="Daşıma Texnikası">Daşıma Texnikası</option>
+          <option value="Qaldırıcı Texnikalar">Qaldırıcı Texnikalar</option>
+          <option value="Beton və Tikinti">Beton və Tikinti</option>
+          <option value="Yol Tikinti">Yol Tikinti</option>
+          <option value="Yükləmə və Köməkçi">Yükləmə və Köməkçi</option>
+          <option value="Xüsusi Texnikalar">Xüsusi Texnikalar</option>
+          <option value="Yeraltı və Kommunikasiya">Yeraltı və Kommunikasiya</option>
+          <option value="Dağıtma (Demolition)">Dağıtma</option>
         </select>
       </div>
 
@@ -103,6 +110,7 @@ export default function AdminEquipment() {
               <th className="p-4">Şəkil</th>
               <th className="p-4">Ad / Kateqoriya</th>
               <th className="p-4">Qiymət</th>
+              <th className="p-4">Sıra</th>
               <th className="p-4">Status</th>
               <th className="p-4 text-center">Önə Ç.</th>
               <th className="p-4 text-right">Əməliyyat</th>
@@ -123,6 +131,9 @@ export default function AdminEquipment() {
                 </td>
                 <td className="p-4 font-black">
                   <span className="text-[#f59e0b]">{item.price}₼</span><span className="text-white/50 text-[10px]">/{item.price_unit}</span>
+                </td>
+                <td className="p-4">
+                  <span className="text-white/60 text-xs font-mono">{item.sort_order ?? '-'}</span>
                 </td>
                 <td className="p-4 text-[10px] uppercase font-black tracking-widest text-white/70">{item.status}</td>
                 <td className="p-4 text-center">{item.is_featured && <Star size={16} className="mx-auto text-yellow-500"/>}</td>
@@ -154,12 +165,24 @@ export default function AdminEquipment() {
                   <div>
                     <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-1">Kateqoriya *</label>
                     <select required value={formData.category} onChange={e=>setFormData({...formData, category: e.target.value})} className="w-full bg-[#2a2a2a] rounded-lg p-3 text-white outline-none">
-                      <option value="Ekskavator">Ekskavator</option>
-                      <option value="Buldozer">Buldozer</option>
-                      <option value="Kran">Kran</option>
+                      <option value="Torpaq İşləri">Torpaq İşləri</option>
+                      <option value="Daşıma Texnikası">Daşıma Texnikası</option>
+                      <option value="Qaldırıcı Texnikalar">Qaldırıcı Texnikalar</option>
+                      <option value="Beton və Tikinti">Beton və Tikinti</option>
+                      <option value="Yol Tikinti">Yol Tikinti</option>
+                      <option value="Yükləmə və Köməkçi">Yükləmə və Köməkçi</option>
+                      <option value="Xüsusi Texnikalar">Xüsusi Texnikalar</option>
+                      <option value="Yeraltı və Kommunikasiya">Yeraltı və Kommunikasiya</option>
+                      <option value="Dağıtma (Demolition)">Dağıtma</option>
                     </select>
                   </div>
                 </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-[10px] text-white/50 uppercase tracking-widest font-black block mb-1">Sıralama (1 = Ən birinci)</label>
+                    <input type="number" value={formData.sort_order} onChange={e=>setFormData({...formData, sort_order: parseInt(e.target.value)})} className="w-full bg-[#2a2a2a] rounded-lg p-3 text-white outline-none" />
+                  </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex">

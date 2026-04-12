@@ -18,8 +18,8 @@ export default async function EquipmentGrid({ limit, featuredOnly, category }: E
     query = query.eq('category', category);
   }
   
-  // Sort by created_at descending to show newest first
-  query = query.order('created_at', { ascending: false });
+  // Sort by custom sort_order first, then by date
+  query = query.order('sort_order', { ascending: true }).order('created_at', { ascending: false });
 
   if (limit) {
     query = query.limit(limit);
