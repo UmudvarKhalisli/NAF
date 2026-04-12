@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Instagram, Facebook, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "./ui/Logo";
 
 const navLinks = [
   { label: "Ana Səhifə", href: "/#hero", id: "hero" },
@@ -75,26 +75,13 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
             <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
-              <div className="relative h-12 w-48 transition-all duration-500">
-                <Image
-                  src="/images/brand/logo-gold.png"
-                  alt="NAF TEXNIKA Logo"
-                  fill
-                  priority
-                  className={`object-contain transition-opacity duration-500 ${
-                    forceSolid ? 'opacity-0' : 'opacity-100'
-                  }`}
-                />
-                <Image
-                  src="/images/brand/logo-black.png"
-                  alt="NAF TEXNIKA Logo"
-                  fill
-                  priority
-                  className={`object-contain transition-opacity duration-500 ${
-                    forceSolid ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              </div>
+              <Logo 
+                variant={forceSolid ? 'black' : 'gold'} 
+                size="custom"
+                width={200}
+                height={60}
+                className="transition-all duration-500"
+              />
             </Link>
 
             <div className="hidden lg:flex items-center gap-8 xl:gap-10">
@@ -161,15 +148,8 @@ export default function Navbar() {
           >
             {/* Header: Logo left, X right */}
             <div className="flex items-center justify-between py-5 mb-6">
-              <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
-                <Image
-                  src="/logo.png"
-                  alt="NAF"
-                  width={96}
-                  height={32}
-                  className="h-8 w-auto object-contain brightness-0" 
-                />
-                <span className="text-lg font-black tracking-tight text-black">NAF</span>
+              <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center">
+                <Logo variant="black" size="custom" width={160} height={48} />
               </Link>
               <button onClick={() => setOpen(false)} className="p-2">
                 <X size={22} className="text-black" />

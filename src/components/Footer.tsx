@@ -2,7 +2,7 @@
 
 import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "./ui/Logo";
 
 // Monochrome icons that show brand color on hover via CSS
 const InstagramIcon = ({ className }: { className?: string }) => (
@@ -52,13 +52,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/#hero" className="group flex items-center mb-8">
-              <Image
-                src="/images/brand/logo-gold.png"
-                alt="NAF TEXNIKA Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto object-contain" 
-              />
+              <Logo variant="gold" size="lg" className="transition-all duration-300 group-hover:scale-105" />
             </Link>
             <p className="text-[13px] leading-[1.8] text-white/40 mb-10 max-w-xs">
               Modern mühəndislik həlləri və peşəkar tikinti texnikası icarəsində etibarlı tərəfdaşınız.

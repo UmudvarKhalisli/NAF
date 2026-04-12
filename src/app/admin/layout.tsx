@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import Logo from '@/components/ui/Logo';
 
 export default function AdminLayoutComponent({
   children,
@@ -91,14 +91,11 @@ export default function AdminLayoutComponent({
         {/* Sidebar Header */}
         <div className="h-24 flex items-center justify-between px-6 border-b border-white/5 whitespace-nowrap overflow-hidden">
           <Link href="/admin/dashboard" className="flex items-center gap-3">
-            <div className={`relative transition-all duration-300 ${isOpen ? 'w-40 h-12' : 'w-10 h-10'}`}>
-              <Image
-                src="/images/brand/logo-gold.png"
-                alt="NAF TEXNIKA"
-                fill
-                className="object-contain"
-              />
-            </div>
+            {isOpen ? (
+              <Logo variant="gold" size="md" />
+            ) : (
+              <div className="w-10 h-10 bg-[#f59e0b] text-black font-black text-xl flex items-center justify-center shrink-0">N</div>
+            )}
           </Link>
           {isMobile && isOpen && (
             <button onClick={() => setIsOpen(false)} className="text-white/50 hover:text-white ml-2">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { supabaseAdmin } from "@/lib/supabase/client";
 import { headers } from "next/headers";
@@ -10,6 +10,11 @@ import { constructMetadata } from "@/lib/seo";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
+  subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
@@ -44,7 +49,7 @@ export default async function RootLayout({
   return (
     <html
       lang="az"
-      className={`${jakarta.variable} h-full antialiased`}
+      className={`${jakarta.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f8f9fa] text-[#1a1a1a] selection:bg-neutral-700 selection:text-white">
         {isMaintenance ? <MaintenancePage /> : children}

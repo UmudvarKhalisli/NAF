@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Send, CheckCircle2, ArrowRight, Settings, Info } from "lucide-react";
 import FadeIn from "./FadeIn";
 import Image from "next/image";
+import Logo from "./ui/Logo";
 
 interface FeaturedEquipment {
   id: string;
@@ -163,13 +164,8 @@ export default function Hero() {
                 </div>
 
                 {/* Decorative background logo watermark */}
-                <div className="absolute -bottom-10 -right-10 opacity-[0.05] select-none pointer-events-none group-hover:opacity-[0.08] transition-opacity w-64 h-24">
-                  <Image
-                    src="/images/brand/logo-gold.png"
-                    alt=""
-                    fill
-                    className="object-contain"
-                  />
+                <div className="absolute -bottom-10 -right-10 opacity-[0.05] select-none pointer-events-none group-hover:opacity-[0.08] transition-opacity w-72 h-32">
+                  <Logo variant="gold" size="xl" />
                 </div>
               </div>
             </FadeIn>
