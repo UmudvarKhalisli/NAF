@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import BrandingGradients from "@/components/ui/BrandingGradients";
 import { supabaseAdmin } from "@/lib/supabase/client";
 import { headers } from "next/headers";
 import MaintenancePage from "@/components/MaintenancePage";
@@ -52,6 +53,7 @@ export default async function RootLayout({
       className={`${jakarta.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f8f9fa] text-[#1a1a1a] selection:bg-neutral-700 selection:text-white">
+        <BrandingGradients />
         {isMaintenance ? <MaintenancePage /> : children}
         <AdminReturnButton />
       </body>

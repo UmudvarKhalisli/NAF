@@ -65,6 +65,7 @@ export default function AdminLayoutComponent({
 
   return (
     <div className="flex h-screen overflow-hidden bg-[#0a0a0a] text-white">
+      <BrandingGradients />
       {/* Mobile Sidebar Overlay */}
       <AnimatePresence>
         {isMobile && isOpen && (

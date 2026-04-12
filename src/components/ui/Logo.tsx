@@ -94,24 +94,6 @@ export default function Logo({
           TEXNIKA
         </text>
 
-        {/* Gold Gradient Definition */}
-        <defs>
-          <linearGradient id="logo-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#BF953F" />
-            <stop offset="25%" stopColor="#FCF6BA" />
-            <stop offset="50%" stopColor="#B38728" />
-            <stop offset="75%" stopColor="#FBF5B7" />
-            <stop offset="100%" stopColor="#AA771C" />
-          </linearGradient>
-
-          <linearGradient id="logo-gold-dark-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#8A6E2F" />
-            <stop offset="25%" stopColor="#C5A059" />
-            <stop offset="50%" stopColor="#8A6E2F" />
-            <stop offset="75%" stopColor="#AE8625" />
-            <stop offset="100%" stopColor="#8A6E2F" />
-          </linearGradient>
-        </defs>
       </svg>
     </div>
   );
