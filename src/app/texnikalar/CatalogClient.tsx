@@ -88,32 +88,13 @@ export default function CatalogClient({ initialData }: CatalogClientProps) {
 
       {/* Grid */}
       {filteredData.length > 0 ? (
-        <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredData.slice(0, visibleCount).map((item, idx) => (
-              <FadeIn key={item.id} delay={idx % 3 * 0.1} className="h-full">
-                <EquipmentCard equipment={item as EquipmentItem} idx={idx} />
-              </FadeIn>
-            ))}
-          </div>
-
-          {hasMore && (
-            <div className="flex justify-center mt-16">
-              <button 
-                onClick={() => setVisibleCount(prev => prev + 4)}
-                className="group relative inline-flex items-center gap-0 overflow-hidden border border-black/10 hover:border-black transition-all duration-500 hover:shadow-lg bg-white"
-              >
-                <span className="px-10 py-5 text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-500 group-hover:px-8">
-                  Daha çox göstər
-                </span>
-                <span className="w-0 group-hover:w-14 overflow-hidden transition-all duration-500 flex items-center justify-center bg-black text-white h-full absolute right-0 top-0">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14"/><path d="m5 12 7 7 7-7"/></svg>
-                </span>
-                <span className="w-0 group-hover:w-14 transition-all duration-500" />
-              </button>
-            </div>
-          )}
-        </>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredData.map((item, idx) => (
+            <FadeIn key={item.id} delay={idx % 4 * 0.05} className="h-full">
+              <EquipmentCard equipment={item as EquipmentItem} idx={idx} />
+            </FadeIn>
+          ))}
+        </div>
       ) : (
         <div className="py-20 text-center flex flex-col items-center justify-center border border-dashed border-black/10 rounded-xl">
           <p className="text-black/40 font-bold uppercase tracking-widest text-sm">

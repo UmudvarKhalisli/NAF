@@ -13,7 +13,7 @@ export interface EquipmentItem {
 }
 
 export const EQUIPMENT_DATA: EquipmentItem[] = [
-  // 1. Torpaq İşləri (Earthmoving) - PREMIUM SET
+  // 1. Torpaq İşləri (Earthmoving)
   {
     id: "crawler-excavator-1",
     name: "Ekskavator (Paletli) / Crawler Excavator",
@@ -22,7 +22,6 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     specs: { "Güc": "165 a.g.", "Çəki": "22 ton", "Qazma": "6.8 m", "Çömçə": "1.2 m³" },
     price: "0",
     available: true,
-    description_az: "Ağır torpaq qazma və xəndək açma işləri üçün ən vacib texnika. Güclü hidravlik sistemi və paletləri ilə çətin ərazilərdə sabit hərəkət edir.",
   },
   {
     id: "wheeled-excavator-1",
@@ -32,7 +31,6 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     specs: { "Güc": "140 a.g.", "Sürət": "30 km/s", "Qazma": "5.5 m", "Çəki": "18 ton" },
     price: "0",
     available: true,
-    description_az: "Şəhər daxili tikinti sahələrində sürətli mobillik və manevr qabiliyyəti təmin edir. Asfalt və beton səthlərə zərər vermədən hərəkət edir.",
   },
   {
     id: "mini-excavator-1",
@@ -62,7 +60,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
 
-  // 2. Daşıma Texnikası (Transport) - PREMIUM SET
+  // 2. Daşıma Texnikası (Transport)
   {
     id: "dump-truck-1",
     name: "Samasval / Dump Truck",
@@ -76,7 +74,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     id: "flatbed-truck-1",
     name: "Yük Maşını (Flatbed) / Flatbed Truck",
     category: "Daşıma Texnikası",
-    image: "/machines/dump_truck_real.jpg",
+    image: "/machines/flatbed_truck_real.jpg",
     specs: { "Uzunluq": "13 m", "Yük": "24 ton", "Güc": "460 a.g.", "İl": "2023" },
     price: "0",
     available: true,
@@ -91,7 +89,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
 
-  // 3. Qaldırıcı Texnikalar (Lifting) - PREMIUM SET
+  // 3. Qaldırıcı Texnikalar (Lifting)
   {
     id: "mobile-crane-1",
     name: "Avtokran / Mobile Crane",
@@ -120,7 +118,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     available: true,
   },
 
-  // 4. Beton və Tikinti (Concrete) - PREMIUM SET
+  // 4. Beton və Tikinti (Concrete)
   {
     id: "concrete-pump-1",
     name: "Beton Nasosu / Concrete Pump",
@@ -134,13 +132,13 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     id: "road-saw-1",
     name: "Beton Kəsən / Road Saw",
     category: "Beton və Tikinti",
-    image: "/machines/concrete_pump_real.jpg",
+    image: "/machines/road_saw_real.jpg",
     specs: { "Dərinlik": "200 mm", "Mühərrik": "13 a.g.", "Çəki": "120 kq", "İl": "2024" },
     price: "0",
     available: true,
   },
 
-  // 5. Yol Tikinti (Road Construction) - PREMIUM SET (Road Roller)
+  // 5. Yol Tikinti (Road Construction)
   {
     id: "road-roller-1",
     name: "Yol Katoku / Road Roller",
@@ -154,13 +152,13 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     id: "asphalt-paver-1",
     name: "Asfalt Döşəyən / Asphalt Paver",
     category: "Yol Tikinti",
-    image: "/machines/road_roller_real.jpg",
+    image: "/machines/asphalt_paver_real.jpg",
     specs: { "Eni": "8 m", "Hız": "20 m/dəq", "Güc": "160 a.g.", "İl": "2024" },
     price: "0",
     available: true,
   },
 
-  // 6. Yükləmə və Köməkçi (Loading & Utility) - PREMIUM SET (Telehandler)
+  // 6. Yükləmə və Köməkçi (Loading & Utility)
   {
     id: "telescopic-handler-1",
     name: "Teleskopik Yükləyici / Telehandler",
@@ -183,7 +181,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     id: "generator-1",
     name: "Generator / Diesel Generator",
     category: "Yükləmə və Köməkçi",
-    image: "/machines/forklift_real.jpg",
+    image: "/machines/generator_real.jpg",
     specs: { "Güc": "500 kVA", "Yanacaq": "Dizel", "Faz": "3 Faz", "İl": "2024" },
     price: "0",
     available: true,
@@ -194,7 +192,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     id: "piling-rig-1",
     name: "Payvuran / Piling Rig",
     category: "Xüsusi Texnikalar",
-    image: "/machines/concrete_pump_real.jpg",
+    image: "/machines/piling_rig_real.jpg",
     specs: { "Dərinlik": "40 m", "Diametr": "1.5 m", "Güc": "250 a.g.", "İl": "2023" },
     price: "0",
     available: true,
@@ -214,7 +212,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     id: "trenchcher-1",
     name: "Xəndəkqazan / Trencher",
     category: "Yeraltı və Kommunikasiya",
-    image: "/machines/crawler_excavator_real.jpg",
+    image: "/machines/trencher_real.jpg",
     specs: { "Dərinlik": "1.5 m", "Eni": "300 mm", "Güc": "120 a.g.", "İl": "2023" },
     price: "0",
     available: true,
@@ -225,7 +223,7 @@ export const EQUIPMENT_DATA: EquipmentItem[] = [
     id: "hydraulic-breaker-1",
     name: "Hidravlik Çəkic / Hydraulic Breaker",
     category: "Dağıtma (Demolition)",
-    image: "/machines/crawler_excavator_real.jpg",
+    image: "/machines/breaker_real.jpg",
     specs: { "Zərbə": "2500 J", "Çəki": "1.8 ton", "Uyğunluq": "20-25t", "İl": "2024" },
     price: "0",
     available: true,
