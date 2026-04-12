@@ -76,7 +76,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between gap-4">
             <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
               <Logo 
-                variant={forceSolid ? 'gold-dark' : 'gold'} 
+                variant="gold" 
                 size="sm"
                 align="left"
                 className="transition-all duration-500"

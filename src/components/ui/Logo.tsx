@@ -32,10 +32,10 @@ export default function Logo({
 
   const { w, h, font, sub } = dimensions[size];
 
-  // Colors mapping
+  // Colors mapping (Simplified to use only global gold for metallic variants)
   const colors = {
     gold: 'url(#logo-gold-gradient)',
-    'gold-dark': 'url(#logo-gold-dark-gradient)',
+    'gold-dark': 'url(#logo-gold-gradient)', // Use same robust gold
     black: '#000000',
     white: '#FFFFFF'
   };
@@ -56,7 +56,7 @@ export default function Logo({
         className="w-full h-full overflow-visible"
       >
         <filter id="logo-shadow" x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="rgba(0,0,0,0.15)" />
+          <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodColor="rgba(0,0,0,0.25)" />
         </filter>
 
         {/* NAF Header Main Text */}
@@ -65,7 +65,7 @@ export default function Logo({
           y={h * 0.65} 
           textAnchor={textAnchor}
           className="font-playfair"
-          filter={variant === 'gold-dark' ? 'url(#logo-shadow)' : undefined}
+          filter="url(#logo-shadow)"
           style={{ 
             fontFamily: 'var(--font-playfair), serif',
             fontWeight: 900,
@@ -81,7 +81,7 @@ export default function Logo({
           x={xPos} 
           y={h * 0.95} 
           textAnchor={textAnchor}
-          filter={variant === 'gold-dark' ? 'url(#logo-shadow)' : undefined}
+          filter="url(#logo-shadow)"
           style={{ 
             fontFamily: 'var(--font-jakarta), sans-serif',
             fontWeight: 800,
