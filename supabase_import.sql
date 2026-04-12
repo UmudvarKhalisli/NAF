@@ -1,7 +1,7 @@
 -- NAF Texnika - Bulk Equipment Import SQL
 -- Run this in your Supabase SQL Editor
 
-TRUNCATE TABLE equipment; -- WARNING: This clears existing items. Remove if you want to append.
+TRUNCATE TABLE equipment CASCADE; -- Clears equipment AND dependent tables (like orders) to prevent FK errors.
 
 INSERT INTO equipment (id, name, category, image_url, specs, price, available)
 VALUES
