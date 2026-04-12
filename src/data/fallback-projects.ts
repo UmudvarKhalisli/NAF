@@ -46,7 +46,7 @@ export const FALLBACK_PROJECTS: FallbackProject[] = [
     start_date: '2020-11-17',
     is_featured: true,
     sort_order: 3,
-    description: 'Dağlıq ve çətin relyef şəraitində Şuşaya çəkilən Zəfər Yolunun inşası. Layihə çərçivəsində yüksək performanslı ekskavatorlarımız və qaya parçalayan avadanlıqlarımız yol yatağının açılması və genişləndirilməsi işlərini uğurla icra etmişdir.'
+    description: 'Dağlıq və çətin relyef şəraitində Şuşaya çəkilən Zəfər Yolunun inşası. Layihə çərçivəsində yüksək performanslı ekskavatorlarımız və qaya parçalayan avadanlıqlarımız yol yatağının açılması və genişləndirilməsi işlərini uğurla icra etmişdir.'
   },
   {
     id: 'shusha-restoration',
@@ -77,6 +77,66 @@ export const FALLBACK_PROJECTS: FallbackProject[] = [
     client: 'Azərbaycan Hava Yolları (AZAL)',
     start_date: '2021-04-26',
     description: 'Şərqi Zəngəzurun loqistika mərkəzinə çevriləcək Zəngilan Hava Limanının inşası. Texnika parkımızdan olan asfalt-döşəyən maşınlar və yol katokları aerodromun beynəlxalq standartlara uyğun hazırlanmasını təmin etmişdir.'
+  },
+  {
+    id: 'shusha-hotel',
+    title: 'Şuşa Otel və Konfrans Mərkəzi',
+    location: 'Şuşa, Qarabağ',
+    status: 'ongoing',
+    cover_image_url: '/images/projects/shusha-hotel.png',
+    client: 'PMD Projects',
+    start_date: '2022-09-15',
+    description: 'Şuşanın turizm potensialını artıracaq müasir hotel və konfrans mərkəzinin inşası. Ağır yük qaldıran kranlarımızın və platformalarımızın istifadəsi ilə fasad işləri və ağır konstruksiyaların quraşdırılması peşəkar şəkildə icra olunur.'
+  },
+  {
+    id: 'khudaferin-dam',
+    title: 'Xudafərin Hidroqovşağı',
+    location: 'Cəbrayıl rayonu',
+    status: 'ongoing',
+    cover_image_url: '/images/projects/khudaferin-dam.png',
+    client: 'Meliorasiya ASC',
+    start_date: '2021-10-20',
+    description: 'Araz çayı üzərində yerləşən Xudafərin və Qız Qalası hidroqovşaqlarının tikintisi. Layihədə iştirak edən ekskavatorlarımız və özüboşaldan maşınlarımız bəndin bərkidilməsi və torpaq işlərində mühüm rol oynamışdır.'
+  },
+  {
+    id: 'zangilan-village',
+    title: 'Zəngilan "Ağıllı Kənd" (Ağalı)',
+    location: 'Zəngilan, Qarabağ',
+    status: 'completed',
+    cover_image_url: '/images/projects/zangilan-village.png',
+    client: 'Kənd Təsərrüfatı Nazirliyi',
+    start_date: '2021-05-15',
+    description: 'Azərbaycanın ilk "Ağıllı Kənd" layihəsinin inşası. Müasir yaşayış binalarının bünövrə işlərində və küçələrin asfaltlanmasında NAF Texnikanın texnika parkı yüksək keyfiyyəti təmin etmişdir.'
+  },
+  {
+    id: 'lachin-airport',
+    title: 'Laçın Beynəlxalq Hava Limanı',
+    location: 'Laçın, Qarabağ',
+    status: 'ongoing',
+    cover_image_url: '/images/projects/lachin-airport.png',
+    client: 'AZAL',
+    start_date: '2021-08-15',
+    description: 'Ən çətin relyefə malik olan Laçın Hava Limanının inşası. Dağların yarılaraq uçuş-enmə zolağının açılması üçün NAF Texnikanın ağır texnikaları və qaya-parçalayan avadanlıqları cəlb edilmişdir.'
+  },
+  {
+    id: 'railway-project',
+    title: 'Dəmir Yolu İnfrastrukturunun Bərpası',
+    location: 'Azərbaycan',
+    status: 'ongoing',
+    cover_image_url: '/images/projects/railway-project.png',
+    client: 'ADY',
+    start_date: '2022-02-10',
+    description: 'Ölkənin dəmir yolu şəbəkəsinin modernləşdirilməsi layihəsi. Relslərin döşənməsi və yol yatağının ballastla doldurulmasında NAF Texnikanın ixtisaslaşmış texnikaları istifadə olunur.'
+  },
+  {
+    id: 'industrial-plant',
+    title: 'SOCAR Polymer Sənaye Kompleksi',
+    location: 'Sumqayıt',
+    status: 'ongoing',
+    cover_image_url: '/images/projects/industrial-plant.png',
+    client: 'SOCAR Polymer',
+    start_date: '2021-11-15',
+    description: 'Cənubi Qafqazın ən böyük kimya müəssisələrindən biri olan SOCAR Polymer zavodunun genişləndirilməsi. Ağır sənaye avadanlıqlarının qaldırılmasında bizim mobil kranlarımız yüksək təhlükəsizliklə çalışır.'
   },
   {
     id: 'aghdam-industrial',
