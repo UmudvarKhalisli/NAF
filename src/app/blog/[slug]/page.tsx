@@ -9,6 +9,7 @@ import FadeIn from '@/components/FadeIn';
 import JsonLd from '@/components/JsonLd';
 import BackButton from '@/components/ui/BackButton';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface PageProps {
   params: Promise<{
@@ -132,6 +133,20 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="max-w-4xl mx-auto px-6 lg:px-8">
               <FadeIn className="prose prose-lg prose-neutral max-w-none prose-headings:font-black prose-headings:tracking-tight prose-p:font-medium prose-p:text-black/70 prose-strong:font-black">
                 <div dangerouslySetInnerHTML={{ __html: post.contentHtml || "" }} />
+              </FadeIn>
+
+              {/* Dynamic CTA for Blog */}
+              <FadeIn className="mt-24 bg-black text-white rounded-3xl p-12 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-white/10 transition-colors duration-700" />
+                <div className="relative z-10">
+                  <h3 className="text-3xl font-black mb-4 uppercase tracking-tighter">Layihəniz üçün <span className="text-white/40 italic">Texnika Lazımdır?</span></h3>
+                  <p className="text-white/60 mb-8 font-medium max-w-xl">
+                    Bu yazıda bəhs etdiyimiz texnikaların və daha çoxunun icarəsi üçün NAF Texnika sizə ən sərfəli şərtləri təklif edir.
+                  </p>
+                  <Link href="/texnikalar" className="inline-flex items-center justify-center bg-white text-black py-3 px-8 font-black uppercase tracking-widest text-xs rounded-xl hover:bg-neutral-200 transition-colors">
+                    Texnikalara Baxın
+                  </Link>
+                </div>
               </FadeIn>
             </div>
           </section>

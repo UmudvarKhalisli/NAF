@@ -12,21 +12,27 @@ import BackButton from '@/components/ui/BackButton';
 import { supabase } from '@/lib/supabase/client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { equipmentSeoMapping } from '@/data/seo-mapping';
+import SeoContentBlocks from '@/components/seo/SeoContentBlocks';
 
-interface PageProps {
+interface TPageProps {
   params: Promise<{
     slug: string;
   }>;
 }
 
-/**
- * Metadata Generation
- * Handles both Service Category pages and individual Equipment pages
- */
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: TPageProps): Promise<Metadata> {
   const { slug } = await params;
   
-  // 1. Check if it's a Service Page
+  const seoData = equipmentSeoMapping[slug];
+  if (seoData) {
+    return constructMetadata({
+      title: seoData.metaTitle,
+      description: seoData.metaDescription,
+      canonical: `https://naftexnika.az/texnikalar/${slug}`
+    });
+  }
+
   const service = servicePages[slug];
   if (service) {
     return constructMetadata({
@@ -36,7 +42,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     });
   }
 
-  // 2. Check if it's an Equipment Page
   const { data: equipment } = await supabase
     .from('equipment')
     .select('name, description, category')
@@ -44,6 +49,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .single();
 
   if (equipment) {
+    const categoryMapping = Object.entries(equipmentSeoMapping).find(([key]) => 
+      equipment.category?.toLowerCase().includes(key.split('-')[0])
+    );
+
+    if (categoryMapping) {
+      const [_, mapping] = categoryMapping;
+      return constructMetadata({
+        title: `${equipment.name} İcarəsi Bakıda | ${mapping.h1} - NAF`,
+        description: `${equipment.name} üçün sərfəli icarə qiyməti və operativ xidmət. ${mapping.primaryKeyword} üçün bizimlə əlaqə saxlayın.`,
+        canonical: `https://naftexnika.az/texnikalar/${slug}`
+      });
+    }
+
     return constructMetadata({
       title: `${equipment.name} | ${equipment.category} İcarəsi`,
       description: equipment.description || `${equipment.name} texnikasının icarəsi haqqında ətraflı məlumat.`,
@@ -51,12 +69,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     });
   }
 
-
   return {};
 }
 
-export default async function EquipmentDynamicPage({ params }: PageProps) {
+export default async function EquipmentDynamicPage({ params }: TPageProps) {
   const { slug } = await params;
+
+  // SEO mapping check for both categories and equipment
+  const seoData = equipmentSeoMapping[slug];
 
   // --- LOGIC 1: SERVICE CATEGORY LANDING PAGE ---
   const service = servicePages[slug];
@@ -119,23 +139,39 @@ export default async function EquipmentDynamicPage({ params }: PageProps) {
             </div>
           </section>
 
-          {/* Content Sections */}
-          <section className="py-24">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                {service.sections.map((section: any, idx: number) => (
-                  <FadeIn key={idx} delay={idx * 0.1}>
-                    <h2 className="text-2xl md:text-3xl font-black text-black mb-6">
-                      {section.title}
-                    </h2>
-                    <p className="text-lg text-black/60 leading-relaxed font-medium">
-                      {section.content}
-                    </p>
-                  </FadeIn>
-                ))}
+          {/* New Programmatic SEO Content Section */}
+          {seoData && (
+            <section className="py-24 border-b border-black/5">
+              <div className="max-w-7xl mx-auto px-6 lg:px-12">
+                <SeoContentBlocks 
+                  primaryKeyword={seoData.primaryKeyword}
+                  usage={seoData.usage}
+                  benefits={seoData.benefits}
+                  faqs={seoData.faqs}
+                />
               </div>
-            </div>
-          </section>
+            </section>
+          )}
+
+          {/* Legacy Content Sections */}
+          {!seoData && (
+            <section className="py-24">
+              <div className="max-w-7xl mx-auto px-6 lg:px-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                  {service.sections.map((section: any, idx: number) => (
+                    <FadeIn key={idx} delay={idx * 0.1}>
+                      <h2 className="text-2xl md:text-3xl font-black text-black mb-6">
+                        {section.title}
+                      </h2>
+                      <p className="text-lg text-black/60 leading-relaxed font-medium">
+                        {section.content}
+                      </p>
+                    </FadeIn>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
 
           {/* Equipment Grid for this category */}
           <section className="py-24 bg-neutral-50">
@@ -172,10 +208,16 @@ export default async function EquipmentDynamicPage({ params }: PageProps) {
     return notFound();
   }
 
+  // Try to find mapping for individual equipment category
+  const categorySeoData = Object.entries(equipmentSeoMapping).find(([key]) => 
+    equipment.category?.toLowerCase().includes(key.split('-')[0])
+  )?.[1];
+
   const whatsappMsg = `Salam, mən ${equipment.name} (${equipment.category}) növlü texnika haqqında maraqlanıram. Ətraflı məlumat verə bilərsiniz?`;
   const whatsappUrl = `https://wa.me/994509627766?text=${encodeURIComponent(whatsappMsg)}`;
   const isAvailable = equipment.status === 'available';
   const specs = equipment.specs && typeof equipment.specs === 'object' ? equipment.specs : {};
+
 
   return (
     <div className="bg-[#fafafa] min-h-screen flex flex-col">
@@ -268,6 +310,20 @@ export default async function EquipmentDynamicPage({ params }: PageProps) {
               )}
             </div>
           </div>
+
+          {/* New Programmatic SEO Content Section for Individual Equipment */}
+          {categorySeoData && (
+            <section className="mt-32 pt-24 border-t border-black/5">
+              <SeoContentBlocks 
+                primaryKeyword={categorySeoData.primaryKeyword}
+                usage={categorySeoData.usage}
+                benefits={categorySeoData.benefits}
+                faqs={categorySeoData.faqs}
+              />
+            </section>
+          )}
+
+          <ContactForm />
         </div>
       </main>
       <Footer />

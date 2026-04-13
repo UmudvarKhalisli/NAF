@@ -8,6 +8,7 @@ import ContactForm from '@/components/ContactForm';
 import FadeIn from '@/components/FadeIn';
 import JsonLd from '@/components/JsonLd';
 import BackButton from '@/components/ui/BackButton';
+import Link from 'next/link';
 
 interface PageProps {
   params: Promise<{
@@ -100,10 +101,10 @@ export default async function LocationPage({ params }: PageProps) {
         {/* Content Sections */}
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
               {location.sections.map((section, idx) => (
                 <FadeIn key={idx} delay={idx * 0.1}>
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6">
+                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 uppercase tracking-tight leading-none">
                     {section.title}
                   </h2>
                   <p className="text-lg text-black/60 leading-relaxed font-medium">
@@ -112,6 +113,24 @@ export default async function LocationPage({ params }: PageProps) {
                 </FadeIn>
               ))}
             </div>
+
+            {/* Localized Equipment CTA */}
+            <FadeIn className="bg-neutral-50 rounded-3xl p-12 md:p-16 border border-black/5">
+              <h2 className="text-3xl font-black text-black mb-8 uppercase">
+                {location.h1.split(' ')[0]} üzrə <span className="text-black/30 italic">Populyar Texnikalar</span>
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {['Kran', 'Ekskavator', 'Avtokran', 'Manlift'].map((item) => (
+                  <Link 
+                    key={item}
+                    href={`/texnikalar/${item.toLowerCase()}-icaresi`}
+                    className="flex items-center justify-center p-6 bg-white border border-black/10 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-black hover:text-white transition-all duration-300 shadow-sm"
+                  >
+                    {item} İcarəsi
+                  </Link>
+                ))}
+              </div>
+            </FadeIn>
           </div>
         </section>
 

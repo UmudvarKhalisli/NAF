@@ -8,7 +8,7 @@ export function constructMetadata({
   description,
   image = "/icon.png",
   noIndex = false,
-  canonical = SITE_URL,
+  canonical,
 }: {
   title?: string;
   description?: string;
@@ -19,13 +19,17 @@ export function constructMetadata({
   const defaultTitle = "Tikinti Texnikası İcarəsi Bakı | Kran, Ekskavator, Səbət Maşını - NAF Texnika";
   const defaultDesc = "Bakı və ətraf bölgələrdə tikinti texnikası icarəsi xidməti. Kran, ekskavator, avtokran, səbət maşını və digər texnikalar üçün NAF Texnika ilə əlaqə saxlayın.";
 
+  const finalTitle = title ? `${title} | ${SITE_NAME}` : defaultTitle;
+  const finalDesc = description || defaultDesc;
+  const finalCanonical = canonical || SITE_URL;
+
   return {
-    title: title ? `${title} | ${SITE_NAME}` : defaultTitle,
-    description: description || defaultDesc,
+    title: finalTitle,
+    description: finalDesc,
     openGraph: {
-      title: title || defaultTitle,
-      description: description || defaultDesc,
-      url: SITE_URL,
+      title: finalTitle,
+      description: finalDesc,
+      url: finalCanonical,
       siteName: SITE_NAME,
       images: [
         {
@@ -37,13 +41,14 @@ export function constructMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: title || defaultTitle,
-      description: description || defaultDesc,
+      title: finalTitle,
+      description: finalDesc,
       images: [image],
+      creator: "@naftexnika",
     },
     metadataBase: new URL(SITE_URL),
     alternates: {
-      canonical: canonical,
+      canonical: finalCanonical,
     },
     verification: {
       google: "9ZpZjOt1jjfndBksCT2eNtccK34O1HRcwXe6Qh1xM7c",
@@ -51,6 +56,13 @@ export function constructMetadata({
     robots: {
       index: !noIndex,
       follow: !noIndex,
+      googleBot: {
+        index: !noIndex,
+        follow: !noIndex,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
