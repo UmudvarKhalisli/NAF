@@ -12,12 +12,12 @@ export interface SeoMapping {
 
 export const equipmentSeoMapping: Record<string, SeoMapping> = {
   "kran-icaresi": {
-    primaryKeyword: "kran icarəsi bakı",
-    secondaryKeywords: ["kran sifarişi", "mobil kran kirayəsi", "kran qiyməti"],
-    metaTitle: "Kran İcarəsi Bakı | Saatlıq və Günlük Kran Sifarişi",
-    metaDescription: "Bakıda münasib qiymətə kran icarəsi xidməti. Saatlıq və günlük kran sifarişi, peşəkar operator xidməti ilə layihəniz üçün ən uyğun texnikalar.",
-    h1: "Kran İcarəsi Bakı",
-    intro: "NAF Texnika yüksək tonnajlı yükqaldırma işləri üçün peşəkar kran icarəsi xidməti təklif edir. Bizim kran parkımız müasir və saz vəziyyətdə olan texnikalardan ibarətdir.",
+    primaryKeyword: "kran icarəsi azərbaycan",
+    secondaryKeywords: ["kran sifarişi bakı", "mobil kran kirayəsi", "qarabağda kran icarəsi"],
+    metaTitle: "Kran İcarəsi Bakı və Azərbaycan | Bütün Rayonlar üzrə Xidmət",
+    metaDescription: "Bütün Azərbaycan ərazisində saatlıq və günlük kran icarəsi xidməti. Bakıdan Qarabağa qədər operativ kran sifarişi, peşəkar operator xidməti ilə.",
+    h1: "Kran İcarəsi Azərbaycan",
+    intro: "NAF Texnika bütün Azərbaycan ərazisində, o cümlədən Qarabağ və ətraf rayonlarda yüksək tonnajlı kran icarəsi xidməti təklif edir.",
     usage: "Kranlar ağır yüklərin qaldırılması, hündürmərtəbəli binaların tikintisi, sənaye avadanlıqlarının montajı və iri həcmli konstruksiyaların yerləşdirilməsi üçün əvəzolunmazdır.",
     benefits: [
       "Müxtəlif tonnajlı kran seçimi",
@@ -37,12 +37,12 @@ export const equipmentSeoMapping: Record<string, SeoMapping> = {
     ]
   },
   "avtokran-icaresi": {
-    primaryKeyword: "avtokran icarəsi bakı",
-    secondaryKeywords: ["avtokran sifarişi", "mobil kran icarəsi", "yükqaldırma xidməti"],
-    metaTitle: "Avtokran İcarəsi Bakı | Operativ Yükqaldırma Xidməti",
-    metaDescription: "Hər tonnajda avtokranların icarəsi. Tikinti və sənaye işləri üçün sürətli və etibarlı texnika. Bakı daxilində eyni gün çatdırılma.",
-    h1: "Avtokran İcarəsi Bakı",
-    intro: "Avtokranlar mobilliyi və sürəti ilə fərqlənir. Şəhərdaxili və dar sahələrdə işləmək üçün NAF Texnika-nın avtokran parkı ideal seçimdir.",
+    primaryKeyword: "avtokran icarəsi azərbaycan",
+    secondaryKeywords: ["avtokran sifarişi bakı", "mobil kran icarəsi", "regionlarda yükqaldırma"],
+    metaTitle: "Avtokran İcarəsi Azərbaycan | Bakı və Bütün Bölgələr",
+    metaDescription: "Bütün Azərbaycan üzrə, o cümlədən Qarabağda hər tonnajda avtokranların icarəsi. Tikinti və sənaye işləri üçün sürətli və etibarlı texnika.",
+    h1: "Avtokran İcarəsi Azərbaycan",
+    intro: "Avtokranlarımız Azərbaycanın istənilən nöqtəsinə, şəhərdaxili və çətin relyefli bölgələrə sürətli çatdırılma imkanı ilə fərqlənir.",
     usage: "Avtokranlar əsasən tikinti konstruksiyalarının quraşdırılması, ağır avadanlıqların daşınması və qısa müddətli yükqaldırma işləri üçün istifadə olunur.",
     benefits: [
       "Yüksək manevr qabiliyyəti",
@@ -58,12 +58,12 @@ export const equipmentSeoMapping: Record<string, SeoMapping> = {
     ]
   },
   "ekskavator-icaresi": {
-    primaryKeyword: "ekskavator icarəsi bakı",
-    secondaryKeywords: ["qazıntı işləri", "tırtıllı ekskavator icarəsi", "ekskavator kirayəsi"],
-    metaTitle: "Ekskavator İcarəsi Bakı | Qazıntı və Söküntü İşləri",
-    metaDescription: "Bünövrə qazıntısı və torpaq işləri üçün ekskavator icarəsi. Münasib qiymət, yüksək performans və təcrübəli operatorlarla xidmətinizdəyik.",
-    h1: "Ekskavator İcarəsi Bakı",
-    intro: "Torpaq qazıntı, söküntü və bünövrə işlərində NAF Texnika-nın müasir ekskavatorları səmərəliliyi artırır.",
+    primaryKeyword: "ekskavator icarəsi azərbaycan",
+    secondaryKeywords: ["qazıntı işləri bakı", "tırtıllı ekskavator icarəsi", "regionlarda ekskavator kirayəsi"],
+    metaTitle: "Ekskavator İcarəsi Azərbaycan | Qazıntı və Söküntü İşləri",
+    metaDescription: "Bütün Azərbaycan ərazisində bünövrə qazıntısı və torpaq işləri üçün ekskavator icarəsi. Bakı, Gəncə və Qarabağda professional xidmət.",
+    h1: "Ekskavator İcarəsi Azərbaycan",
+    intro: "Azərbaycanın bütün bölgələrində torpaq qazıntı, söküntü və bünövrə işlərində NAF Texnika-nın müasir ekskavatorları xidmətinizdədir.",
     usage: "Ekskavatorlar xəndəklərin qazılması, binaların bünövrə işləri, ərazinin təmizlənməsi və köhnə tikililərin sökülməsi üçün istifadə olunur.",
     benefits: [
       "Güclü mühərrik və hidravlik sistem",
@@ -79,12 +79,12 @@ export const equipmentSeoMapping: Record<string, SeoMapping> = {
     ]
   },
   "buldozer-icaresi": {
-    primaryKeyword: "buldozer icarəsi bakı",
-    secondaryKeywords: ["torpaq hamarlama", "dozer kirayəsi", "buldozer qiyməti"],
-    metaTitle: "Buldozer İcarəsi Bakı | Torpaq Hamarlama və Yol İşləri",
-    metaDescription: "Torpaq işləri və ərazi hamarlanması üçün buldozer icarəsi. Bakı və ətraf bölgələrdə müasir texnika və təcrübəli operatorlar.",
-    h1: "Buldozer İcarəsi Bakı",
-    intro: "Yol tikintisi və böyük ərazilərin hamarlanması üçün NAF Texnika-nın güclü buldozerləri ən yaxşı seçimdir.",
+    primaryKeyword: "buldozer icarəsi azərbaycan",
+    secondaryKeywords: ["torpaq hamarlama bakı", "dozer kirayəsi", "qarabağda yol tikintisi"],
+    metaTitle: "Buldozer İcarəsi Azərbaycan | Torpaq Hamarlama və Yol İşləri",
+    metaDescription: "Bütün Azərbaycan üzrə torpaq işləri və ərazi hamarlanması üçün buldozer icarəsi. Müasir texnika və təcrübəli operatorlar.",
+    h1: "Buldozer İcarəsi Azərbaycan",
+    intro: "Azərbaycanın bütün bölgələrində yol tikintisi və böyük ərazilərin hamarlanması üçün NAF Texnika-nın güclü buldozerləri ən yaxşı seçimdir.",
     usage: "Buldozerlər əsasən torpağın qat-qat yayılması, ərazinin təmizlənməsi, daş və qayaların itələnməsi üçün istifadə olunur.",
     benefits: [
       "Yüksək itələmə gücü",

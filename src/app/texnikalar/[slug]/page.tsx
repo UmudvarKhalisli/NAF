@@ -91,11 +91,10 @@ export default async function EquipmentDynamicPage({ params }: TPageProps) {
         "name": "NAF Texnika",
         "url": "https://naftexnika.az"
       },
-      "areaServed": [
-        { "@type": "City", "name": "Baku" },
-        { "@type": "City", "name": "Sumqayit" },
-        { "@type": "City", "name": "Khirdalan" }
-      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Azerbaijan"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": service.category,

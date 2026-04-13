@@ -83,7 +83,7 @@ export default function Home() {
         "name": "Hansı bölgələrdə xidmət göstərirsiniz?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Biz əsasən Bakı, Sumqayıt, Xırdalan və Abşeron yarımadasında xidmət göstəririk. Layihənin həcmindən asılı olaraq digər rayonlara da texnika göndərilməsi mümkündür."
+          "text": "Biz bütün Azərbaycan ərazisində, xüsusilə Bakı, Sumqayıt, Gəncə və azad edilmiş Qarabağ bölgəsi daxil olmaqla bütün rayonlarda xidmət göstəririk. Texnikalarımız istənilən ünvana operativ şəkildə çatdırılır."
         }
       }
     ]

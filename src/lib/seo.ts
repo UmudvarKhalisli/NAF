@@ -16,8 +16,8 @@ export function constructMetadata({
   noIndex?: boolean;
   canonical?: string;
 } = {}): Metadata {
-  const defaultTitle = "Tikinti Texnikası İcarəsi Bakı | Kran, Ekskavator, Səbət Maşını - NAF Texnika";
-  const defaultDesc = "Bakı və ətraf bölgələrdə tikinti texnikası icarəsi xidməti. Kran, ekskavator, avtokran, səbət maşını və digər texnikalar üçün NAF Texnika ilə əlaqə saxlayın.";
+  const defaultTitle = "Tikinti Texnikası İcarəsi Bakı və Azərbaycan | Kran, Ekskavator - NAF Texnika";
+  const defaultDesc = "Bütün Azərbaycan ərazisində, Bakıdan Qarabağa qədər peşəkar tikinti texnikası icarəsi. Kran, ekskavator, avtokran və digər texnikalar üçün 24/7 xidmət.";
 
   const finalTitle = title ? `${title} | ${SITE_NAME}` : defaultTitle;
   const finalDesc = description || defaultDesc;

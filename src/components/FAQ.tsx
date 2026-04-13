@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Hansı bölgələrdə xidmət göstərirsiniz?",
-    answer: "Biz əsasən Bakı, Sumqayıt, Xırdalan və Abşeron yarımadasında xidmət göstəririk. Layihənin həcmindən asılı olaraq digər rayonlara da texnika göndərilməsi mümkündür."
+    answer: "Biz bütün Azərbaycan ərazisində, xüsusilə Bakı, Sumqayıt, Gəncə və azad edilmiş Qarabağ bölgəsi daxil olmaqla bütün rayonlarda xidmət göstəririk. Textnikalarımız istənilən ünvana operativ şəkildə çatdırılır."
   },
   {
     question: "Texnika nasazlıq halında nə baş verir?",

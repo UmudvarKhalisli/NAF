@@ -18,9 +18,9 @@ export interface ServicePageContent {
 export const servicePages: Record<string, ServicePageContent> = {
   "kran-icaresi": {
     slug: "kran-icaresi",
-    title: "Kran İcarəsi Bakı | Saatlıq və Günlük Kran Sifarişi",
-    description: "Bakı və ətraf bölgələrdə saatlıq və günlük kran icarəsi. Yükqaldırma işləri üçün etibarlı və operativ kran sifarişi xidməti.",
-    h1: "Kran İcarəsi Bakı",
+    title: "Kran İcarəsi Bakı və Azərbaycan | Qarabağ daxil olmaqla bütün rayonlar",
+    description: "Bütün Azərbaycan ərazisində, Bakıdan Qarabağa qədər saatlıq və günlük kran icarəsi. Yükqaldırma işləri üçün etibarlı və operativ kran sifarişi.",
+    h1: "Kran İcarəsi Azərbaycan",
     category: "Kranlar",
     intro: "NAF Texnika yüksək tonnajlı yükqaldırma işləri üçün peşəkar kran icarəsi xidməti təklif edir. Bizim kran parkımız müasir və saz vəziyyətdə olan texnikalardan ibarətdir.",
     sections: [
@@ -42,9 +42,9 @@ export const servicePages: Record<string, ServicePageContent> = {
   },
   "avtokran-icaresi": {
     slug: "avtokran-icaresi",
-    title: "Avtokran İcarəsi Bakı | Operativ və Etibarlı Xidmət",
-    description: "Tikinti və yükqaldırma işləri üçün avtokran icarəsi xidməti. Bakı və ətraf bölgələrdə operativ sifariş və sərfəli şərtlər.",
-    h1: "Avtokran İcarəsi Bakı",
+    title: "Avtokran İcarəsi Azərbaycan | Bakı və Bütün Bölgələr",
+    description: "Tikinti və yükqaldırma işləri üçün bütün Azərbaycan üzrə avtokran icarəsi. Qarabağ və digər rayonlara operativ çatdırılma.",
+    h1: "Avtokran İcarəsi Azərbaycan",
     category: "Avtokranlar",
     intro: "Avtokranlar mobilliyi və sürəti ilə fərqlənir. Şəhərdaxili və dar sahələrdə işləmək üçün NAF Texnika-nın avtokran parkı ideal seçimdir.",
     sections: [
@@ -57,9 +57,9 @@ export const servicePages: Record<string, ServicePageContent> = {
   },
   "ekskavator-icaresi": {
     slug: "ekskavator-icaresi",
-    title: "Ekskavator İcarəsi Bakı | Qazıntı və Tikinti İşləri",
-    description: "Qazıntı, söküntü və torpaq işləri üçün ekskavator icarəsi. Bakı və ətrafında münasib qiymət və sürətli sifariş imkanı.",
-    h1: "Ekskavator İcarəsi Bakı",
+    title: "Ekskavator İcarəsi Azərbaycan | Qazıntı və Söküntü İşləri",
+    description: "Qazıntı, söküntü və torpaq işləri üçün bütün Azərbaycan üzrə ekskavator icarəsi. Bakı, Gəncə, Qarabağ və digər bölgələr.",
+    h1: "Ekskavator İcarəsi Azərbaycan",
     category: "Ekskavatorlar",
     intro: "Torpaq qazıntı, söküntü və bünövrə işlərində NAF Texnika-nın müasir ekskavatorları səmərəliliyi artırır.",
     sections: [
@@ -72,9 +72,9 @@ export const servicePages: Record<string, ServicePageContent> = {
   },
   "sebet-masini-icaresi": {
     slug: "sebet-masini-icaresi",
-    title: "Səbət Maşını İcarəsi Bakı | Hündürlük İşləri üçün Texnika",
-    description: "Hündürlükdə işlər, montaj və servis üçün səbət maşını icarəsi. Bakı və ətrafında etibarlı və çevik xidmət.",
-    h1: "Səbət Maşını İcarəsi Bakı",
+    title: "Səbət Maşını İcarəsi Azərbaycan | Bakı və Bölgələrdə Hündürlük İşləri",
+    description: "Hündürlükdə işlər, montaj və servis üçün bütün Azərbaycan üzrə səbət maşını icarəsi. Təhlükəsiz və operativ xidmət.",
+    h1: "Səbət Maşını İcarəsi Azərbaycan",
     category: "Qaldırıcılar",
     intro: "Hündürlük işlərində təhlükəsizlik və sürət üçün səbət maşınları (avtokule) əvəzolunmazdır.",
     sections: [
