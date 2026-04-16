@@ -13,7 +13,7 @@ export default function EquipmentCards() {
   const [dbEquipment, setDbEquipment] = useState<EquipmentItem[]>([]);
   const [filter, setFilter] = useState("Hamısı");
   const sectionRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
@@ -46,17 +46,16 @@ export default function EquipmentCards() {
             Mövcud Texnikalar
           </h2>
           <div className="w-20 h-[3px] bg-neutral-500 mx-auto mb-10" />
-          
+
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full text-[13px] font-bold transition-all duration-300 ${
-                  filter === cat 
-                  ? "bg-black text-white shadow-lg" 
-                  : "bg-white text-black/60 hover:bg-black/5"
-                }`}
+                className={`px-6 py-2 rounded-full text-[13px] font-bold transition-all duration-300 ${filter === cat
+                    ? "bg-black text-white shadow-lg"
+                    : "bg-white text-black/60 hover:bg-black/5"
+                  }`}
               >
                 {cat}
               </button>
@@ -74,9 +73,8 @@ export default function EquipmentCards() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 key={item.id}
-                className={`group relative bg-white border border-black/5 hover:border-neutral-500/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] ${
-                  !item.available ? "opacity-75" : ""
-                }`}
+                className={`group relative bg-white border border-black/5 hover:border-neutral-500/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] ${!item.available ? "opacity-75" : ""
+                  }`}
               >
                 {/* Equipment Image */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
@@ -87,7 +85,7 @@ export default function EquipmentCards() {
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
-                  
+
                   {/* Category Tag */}
                   <div className="absolute top-4 left-4">
                     <span className="bg-black/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider">
@@ -133,11 +131,10 @@ export default function EquipmentCards() {
                       href={item.available ? `https://wa.me/994509627766?text=Salam, ${item.name} texnikası haqqında məlumat almaq istəyirəm.` : "#"}
                       target={item.available ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className={`flex-1 py-3.5 text-center text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-300 rounded-lg ${
-                        item.available 
-                        ? "bg-black text-white hover:bg-neutral-800 shadow-xl shadow-black/5" 
-                        : "bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-100"
-                      }`}
+                      className={`flex-1 py-3.5 text-center text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-300 rounded-lg ${item.available
+                          ? "bg-black text-white hover:bg-neutral-800 shadow-xl shadow-black/5"
+                          : "bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-100"
+                        }`}
                     >
                       {item.available ? "SİFARİŞ" : "MÖVCUD DEYİL"}
                     </a>

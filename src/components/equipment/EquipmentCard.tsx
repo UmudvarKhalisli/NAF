@@ -30,13 +30,13 @@ interface EquipmentCardProps {
 export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps) {
   const router = useRouter();
   const isAvailable = equipment.status === 'available';
-  
+
   const handleCardClick = () => {
     if (isAvailable) {
       router.push(`/texnikalar/${equipment.id}`);
     }
   };
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -44,9 +44,8 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: idx * 0.06 }}
       onClick={handleCardClick}
-      className={`group relative bg-white border border-black/[0.04] transition-all duration-500 overflow-hidden flex flex-col h-full rounded-xl ${
-        isAvailable ? 'hover:border-black/10 hover:shadow-lg cursor-pointer' : 'opacity-75'
-      }`}
+      className={`group relative bg-white border border-black/[0.04] transition-all duration-500 overflow-hidden flex flex-col h-full rounded-xl ${isAvailable ? 'hover:border-black/10 hover:shadow-lg cursor-pointer' : 'opacity-75'
+        }`}
     >
       {/* Image */}
       <div className="relative aspect-[3/2] w-full overflow-hidden bg-neutral-50">

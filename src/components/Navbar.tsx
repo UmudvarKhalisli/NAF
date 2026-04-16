@@ -102,12 +102,12 @@ export default function Navbar() {
 
             <div className="flex items-center gap-4 lg:gap-8 flex-shrink-0">
               <a
-                href="tel:*7766"
+                href="tel:*7767"
                 className={`hidden sm:flex items-center gap-2 text-[13px] font-bold tracking-tighter transition-colors ${forceSolid || open ? "text-black" : "text-white"
                   }`}
               >
                 <Phone size={14} className={forceSolid || open ? "text-neutral-700" : "text-neutral-400"} />
-                *7766
+                *7767
               </a>
 
               <a
@@ -179,9 +179,9 @@ export default function Navbar() {
             {/* Bottom: divider + links + icons */}
             <div className="pt-6 pb-8 border-t border-black/5 space-y-5">
               {/* Phone */}
-              <a href="tel:*7766" className="flex items-center gap-2 text-base font-black text-black">
+              <a href="tel:*7767" className="flex items-center gap-2 text-base font-black text-black">
                 <Phone size={15} className="text-black/40" />
-                *7766
+                *7767
               </a>
 
               {/* Legal links */}

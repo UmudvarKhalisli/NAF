@@ -30,7 +30,7 @@ export default function MaintenancePage() {
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-tight">
             SAYTDA <span className="text-[#f59e0b]">TEXNİKİ</span> <br /> İŞLƏR GEDİR
           </h1>
-          
+
           <p className="text-lg md:text-xl text-white/60 font-medium mb-10 leading-relaxed max-w-lg mx-auto">
             Sizə daha yaxşı xidmət göstərmək üçün saytımızda qısamüddətli yenilənmə işləri aparırıq. Tezliklə yanınızdayıq!
           </p>

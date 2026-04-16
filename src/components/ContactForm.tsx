@@ -47,7 +47,7 @@ export default function ContactForm() {
           // WhatsApp yönləndirməsi
           const whatsappMsg = `*Yeni Sifariş*\n\n*Ad, Soyad:* ${form.name}\n*Telefon:* ${form.phone}\n*Texnika:* ${form.equipment}${form.message ? `\n*Mesaj:* ${form.message}` : ''}`;
           const whatsappUrl = `https://wa.me/994509627766?text=${encodeURIComponent(whatsappMsg)}`;
-          
+
           window.open(whatsappUrl, '_blank');
 
           setSubmitted(true);
@@ -91,7 +91,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="text-[12px] font-black text-black/40 uppercase mb-1">Zəng Edin</h4>
-                  <p className="text-lg font-bold text-black">*7766</p>
+                  <p className="text-lg font-bold text-black">*7767</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -159,88 +159,88 @@ export default function ContactForm() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="form-name" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Ad, Soyad</label>
-                    <input
-                      id="form-name"
-                      name="name"
-                      type="text"
-                      value={form.name}
-                      onChange={(e) => {
-                        setForm({ ...form, name: e.target.value });
-                        if (errors.name) setErrors({ ...errors, name: "" });
-                      }}
-                      className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm`}
-                      placeholder="Məs: Eldəniz Niftəliyev"
-                    />
-                    {errors.name && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.name}</span>}
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="form-name" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Ad, Soyad</label>
+                      <input
+                        id="form-name"
+                        name="name"
+                        type="text"
+                        value={form.name}
+                        onChange={(e) => {
+                          setForm({ ...form, name: e.target.value });
+                          if (errors.name) setErrors({ ...errors, name: "" });
+                        }}
+                        className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm`}
+                        placeholder="Məs: Eldəniz Niftəliyev"
+                      />
+                      {errors.name && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.name}</span>}
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="form-phone" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Telefon</label>
+                      <input
+                        id="form-phone"
+                        name="phone"
+                        type="tel"
+                        value={form.phone}
+                        onChange={(e) => {
+                          setForm({ ...form, phone: e.target.value });
+                          if (errors.phone) setErrors({ ...errors, phone: "" });
+                        }}
+                        className={`w-full bg-white border ${errors.phone ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm`}
+                        placeholder="Məs: +994 55 210 00 08"
+                      />
+                      {errors.phone && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.phone}</span>}
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <label htmlFor="form-phone" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Telefon</label>
-                    <input
-                      id="form-phone"
-                      name="phone"
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => {
-                        setForm({ ...form, phone: e.target.value });
-                        if (errors.phone) setErrors({ ...errors, phone: "" });
-                      }}
-                      className={`w-full bg-white border ${errors.phone ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm`}
-                      placeholder="Məs: +994 55 210 00 08"
-                    />
-                    {errors.phone && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.phone}</span>}
-                  </div>
-                </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="form-equipment" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Texnika Növü</label>
-                  <select
-                    id="form-equipment"
-                    name="equipment"
-                    value={form.equipment}
-                    onChange={(e) => {
-                      setForm({ ...form, equipment: e.target.value });
-                      if (errors.equipment) setErrors({ ...errors, equipment: "" });
-                    }}
-                    className={`w-full bg-white border ${errors.equipment ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm appearance-none cursor-pointer`}
+                  <div className="space-y-2">
+                    <label htmlFor="form-equipment" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Texnika Növü</label>
+                    <select
+                      id="form-equipment"
+                      name="equipment"
+                      value={form.equipment}
+                      onChange={(e) => {
+                        setForm({ ...form, equipment: e.target.value });
+                        if (errors.equipment) setErrors({ ...errors, equipment: "" });
+                      }}
+                      className={`w-full bg-white border ${errors.equipment ? 'border-red-500' : 'border-black/5'} px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm appearance-none cursor-pointer`}
+                    >
+                      <option value="">Kateqoriya seçin</option>
+                      <option>Ekskavatorlar</option>
+                      <option>Buldozerlər</option>
+                      <option>Kranlar</option>
+                      <option>Beton Nasosları</option>
+                      <option>Yük Maşınları</option>
+                      <option>Generatorlar</option>
+                      <option>Kompaktorlar</option>
+                      <option>Qaldırıcılar</option>
+                    </select>
+                    {errors.equipment && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.equipment}</span>}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="form-message" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Mesaj (İxtiyari)</label>
+                    <textarea
+                      id="form-message"
+                      name="message"
+                      rows={4}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      className="w-full bg-white border border-black/5 px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm resize-none"
+                      placeholder="Əlavə qeydləriniz və ya tələbləriniz..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-5 bg-black text-white text-[12px] font-black tracking-[0.3em] uppercase hover:bg-neutral-700 rounded-xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/10 group"
                   >
-                    <option value="">Kateqoriya seçin</option>
-                    <option>Ekskavatorlar</option>
-                    <option>Buldozerlər</option>
-                    <option>Kranlar</option>
-                    <option>Beton Nasosları</option>
-                    <option>Yük Maşınları</option>
-                    <option>Generatorlar</option>
-                    <option>Kompaktorlar</option>
-                    <option>Qaldırıcılar</option>
-                  </select>
-                  {errors.equipment && <span className="text-[10px] text-red-500 font-bold pl-1">{errors.equipment}</span>}
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="form-message" className="text-[11px] font-black text-black/40 uppercase tracking-widest pl-1">Mesaj (İxtiyari)</label>
-                  <textarea
-                    id="form-message"
-                    name="message"
-                    rows={4}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-white border border-black/5 px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm resize-none"
-                    placeholder="Əlavə qeydləriniz və ya tələbləriniz..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-5 bg-black text-white text-[12px] font-black tracking-[0.3em] uppercase hover:bg-neutral-700 rounded-xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/10 group"
-                >
-                  <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  Sifariş Formunu Göndər
-                </button>
-              </form>
-            </div>
+                    <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    Sifariş Formunu Göndər
+                  </button>
+                </form>
+              </div>
             )}
 
             {/* Decorative background logo */}
