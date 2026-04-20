@@ -55,7 +55,7 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
             src={equipment.image_url}
             alt={equipment.name}
             fill
-            priority={idx < 4}
+            priority={idx < 2}
             className={`object-cover transition-transform duration-700 ${isAvailable ? 'transform group-hover:scale-105' : 'grayscale-[30%]'}`}
           />
         ) : (
