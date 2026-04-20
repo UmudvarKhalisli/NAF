@@ -117,7 +117,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-8">
             <span className="text-[10px] tracking-[0.2em] text-white/10 font-black uppercase transition-all duration-500 hover:text-white/40 cursor-default">
-              established by umudvar
+              established by umudvar khalisli
             </span>
           </div>
         </div>

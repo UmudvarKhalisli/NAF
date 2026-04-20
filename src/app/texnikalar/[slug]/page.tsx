@@ -184,8 +184,8 @@ export default async function EquipmentDynamicPage({ params }: TPageProps) {
             </div>
           </section>
 
-          <ContactForm />
         </main>
+        <ContactForm />
         <Footer />
       </div>
     );
@@ -321,9 +321,9 @@ export default async function EquipmentDynamicPage({ params }: TPageProps) {
             </section>
           )}
 
-          <ContactForm />
         </div>
       </main>
+      <ContactForm />
       <Footer />
     </div>
   );

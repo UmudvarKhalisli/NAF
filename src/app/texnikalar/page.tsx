@@ -15,6 +15,7 @@ export const metadata: Metadata = constructMetadata({
 export const revalidate = 60;
 
 import BackButton from '@/components/ui/BackButton';
+import ContactForm from '@/components/ContactForm';
 
 export default async function EquipmentCatalogPage() {
   const { data: equipment, error } = await supabase
@@ -46,6 +47,7 @@ export default async function EquipmentCatalogPage() {
         </div>
       </main>
 
+      <ContactForm />
       <Footer />
     </div>
   );
