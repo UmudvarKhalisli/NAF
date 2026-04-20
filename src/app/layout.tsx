@@ -6,7 +6,7 @@ import { supabaseAdmin } from "@/lib/supabase/client";
 import { headers } from "next/headers";
 import MaintenancePage from "@/components/MaintenancePage";
 import AdminReturnButton from "@/components/AdminReturnButton";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { constructMetadata } from "@/lib/seo";
 
@@ -54,22 +54,12 @@ export default async function RootLayout({
       className={`${jakarta.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f8f9fa] text-[#1a1a1a] selection:bg-neutral-700 selection:text-white">
-        {/* Google Analytics */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-FCN5SPLJVW"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-FCN5SPLJVW');
-          `}
-        </Script>
-
+        {/* Google Analytics 4 integration using @next/third-parties/google. 
+            Measurement ID is configured in .env.local as NEXT_PUBLIC_GA_ID. */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
+        
         <BrandingGradients />
         {isMaintenance ? <MaintenancePage /> : children}
         <AdminReturnButton />
