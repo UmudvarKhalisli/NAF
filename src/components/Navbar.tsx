@@ -195,7 +195,7 @@ export default function Navbar() {
                 <a href="https://www.instagram.com/naftexnika.az?igsh=ODF1Ym1tN2dlaGxy&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-black/5 flex items-center justify-center text-black/40 hover:bg-black/10 transition-colors">
                   <Instagram size={16} />
                 </a>
-                <a href="https://www.facebook.com/share/1JuP71pdcC/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-black/5 flex items-center justify-center text-black/40 hover:bg-black/10 transition-colors">
+                <a href="https://www.facebook.com/people/Naf-Texnika-Az/61570786507582/?mibextid=wwXIfr&rdid=uPsc2RhEdPAKRaG8&share_url=https%253A%252F%252Fwww.facebook.com%252Fshare%252F14Zj2zCgtDZ%252F%253Fmibextid%253DwwXIfr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-black/5 flex items-center justify-center text-black/40 hover:bg-black/10 transition-colors">
                   <Facebook size={16} />
                 </a>
                 <a href="https://wa.me/994509627766" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-black/5 flex items-center justify-center text-black/40 hover:bg-black/10 transition-colors">

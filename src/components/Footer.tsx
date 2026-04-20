@@ -34,7 +34,7 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 export default function Footer() {
   const socialLinks = [
     { icon: "instagram", href: "https://www.instagram.com/naftexnika.az?igsh=ODF1Ym1tN2dlaGxy&utm_source=qr", hoverColor: "hover:text-pink-500" },
-    { icon: "facebook", href: "https://www.facebook.com/share/1JuP71pdcC/?mibextid=wwXIfr", hoverColor: "hover:text-[#1877F2]" },
+    { icon: "facebook", href: "https://www.facebook.com/people/Naf-Texnika-Az/61570786507582/?mibextid=wwXIfr&rdid=uPsc2RhEdPAKRaG8&share_url=https%253A%252F%252Fwww.facebook.com%252Fshare%252F14Zj2zCgtDZ%252F%253Fmibextid%253DwwXIfr", hoverColor: "hover:text-[#1877F2]" },
     { icon: "whatsapp", href: "https://wa.me/994509627766", hoverColor: "hover:text-[#25D366]" },
     { icon: "tiktok", href: "https://www.tiktok.com/@naftexnika.az?_r=1&_t=ZS-95VApVTzIfA", hoverColor: "hover:text-white" },
   ];
