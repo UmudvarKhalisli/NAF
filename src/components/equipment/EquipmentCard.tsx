@@ -53,7 +53,7 @@ export default function EquipmentCard({ equipment, idx = 0 }: EquipmentCardProps
         {equipment.image_url ? (
           <Image
             src={equipment.image_url}
-            alt={equipment.name}
+            alt={`NAF Texnika ${equipment.name} İcarəsi Bakı`}
             fill
             priority={idx < 2}
             className={`object-cover transition-transform duration-700 ${isAvailable ? 'transform group-hover:scale-105' : 'grayscale-[30%]'}`}

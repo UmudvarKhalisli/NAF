@@ -119,7 +119,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <section className="relative w-full aspect-[21/9] md:aspect-[3/1] overflow-hidden">
               <Image 
                 src={post.featuredImage} 
-                alt={post.title} 
+                alt={`NAF Texnika ${post.title} İcarəsi Bakı`} 
                 fill 
                 priority 
                 className="object-cover" 

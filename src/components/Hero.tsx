@@ -47,7 +47,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <Image
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_Y8ZPc-61_OCp0VhUuZldzXImIchxVu32WdJGNgG2_-VvOuioE2Jn-ZYe0DUGC--0ZQF_GZx83pruFndIt46z6nFk6rnAR4raTzLiaINuEgZcjd15o3y7TyLqHZzsKmPXNsWdrJJ-6z8fdajkyCjLGcHrI6ac39k1P1aeJVFUvQ-yvhh9rFJxmCCUa3AkmdQ5fHclohZyKnOuq-Gvn31F7-rTvdqbkSa_2ursZrfSZLiJW7qaX5H0LKNIVkR18vMypOGzyB9CAEJK"
-          alt="Construction Site Heavy Machinery"
+          alt="NAF Texnika Tikinti Texnikası İcarəsi Bakı"
           fill
           priority
           className="object-cover"
@@ -129,7 +129,7 @@ export default function Hero() {
                       <div className="relative aspect-square bg-[#353535] rounded-lg overflow-hidden mb-6">
                         <Image
                           src={featured.image_url}
-                          alt={featured.name}
+                          alt={`NAF Texnika ${featured.name} İcarəsi Bakı`}
                           fill
                           className="object-cover transition-all duration-700"
                         />

@@ -166,6 +166,7 @@ export default function ContactForm() {
                         id="form-name"
                         name="name"
                         type="text"
+                        aria-label="Ad və Soyad"
                         value={form.name}
                         onChange={(e) => {
                           setForm({ ...form, name: e.target.value });
@@ -182,6 +183,7 @@ export default function ContactForm() {
                         id="form-phone"
                         name="phone"
                         type="tel"
+                        aria-label="Telefon nömrəsi"
                         value={form.phone}
                         onChange={(e) => {
                           setForm({ ...form, phone: e.target.value });
@@ -199,6 +201,7 @@ export default function ContactForm() {
                     <select
                       id="form-equipment"
                       name="equipment"
+                      aria-label="Texnika növünü seçin"
                       value={form.equipment}
                       onChange={(e) => {
                         setForm({ ...form, equipment: e.target.value });
@@ -225,6 +228,7 @@ export default function ContactForm() {
                       id="form-message"
                       name="message"
                       rows={4}
+                      aria-label="Mesajınız"
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full bg-white border border-black/5 px-6 py-4 rounded-xl outline-none focus:border-neutral-700 transition-all text-sm resize-none"

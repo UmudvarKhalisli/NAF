@@ -44,7 +44,7 @@ export default function BlogListingPage() {
                       {post.featuredImage ? (
                         <Image 
                           src={post.featuredImage} 
-                          alt={post.title} 
+                          alt={`NAF Texnika ${post.title} İcarəsi Bakı`} 
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />

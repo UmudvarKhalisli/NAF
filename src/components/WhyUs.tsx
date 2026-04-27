@@ -61,7 +61,7 @@ export default function WhyUs() {
       >
         <Image 
           src="/images/site-bg.png" 
-          alt="NAF Texnika - Müasir Mühəndislik Çizimi və Texnoloji Həllər" 
+          alt="NAF Texnika Tikinti Texnikası İcarəsi Bakı" 
           fill
           className="object-cover scale-110"
         />

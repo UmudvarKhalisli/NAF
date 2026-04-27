@@ -110,7 +110,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             <div className="absolute inset-0 z-0">
                 <Image 
                     src={project.cover_image_url || '/images/project-placeholder.jpg'}
-                    alt=""
+                    alt={`NAF Texnika ${project.title} İcarəsi Bakı`}
                     fill
                     className="object-cover opacity-30 blur-2xl scale-110"
                     priority
@@ -133,7 +133,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 <div className="relative w-full h-full">
                     <Image 
                         src={project.cover_image_url || '/images/project-placeholder.jpg'}
-                        alt={project.title}
+                        alt={`NAF Texnika ${project.title} İcarəsi Bakı`}
                         fill
                         className="object-cover"
                         priority

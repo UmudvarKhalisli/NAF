@@ -238,7 +238,7 @@ export default async function EquipmentDynamicPage({ params }: TPageProps) {
                 {equipment.image_url ? (
                   <Image
                     src={equipment.image_url}
-                    alt={equipment.name}
+                    alt={`NAF Texnika ${equipment.name} İcarəsi Bakı`}
                     fill
                     className="object-cover"
                     priority

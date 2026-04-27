@@ -54,7 +54,7 @@ export default function Categories() {
       >
         <Image 
           src="/images/crane-bg.png" 
-          alt="NAF Texnika - Kran Texniki Çizimi və Layihələndirmə Fonu" 
+          alt="NAF Texnika Tikinti Texnikası İcarəsi Bakı" 
           fill
           className="object-cover scale-110"
         />
