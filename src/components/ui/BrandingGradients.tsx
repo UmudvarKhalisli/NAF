@@ -18,7 +18,7 @@ export default function BrandingGradients() {
 
         {/* Global High-Performance Logo Shadow - Strategic for Legibility */}
         <filter id="logo-shadow" x="-50%" y="-50%" width="200%" height="200%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="rgba(0,0,0,0.8)" />
+          <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="rgba(0,0,0,0.9)" />
         </filter>
       </defs>
     </svg>

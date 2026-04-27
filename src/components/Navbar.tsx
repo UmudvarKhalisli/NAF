@@ -79,6 +79,7 @@ export default function Navbar() {
                 variant="gold" 
                 size="sm"
                 align="left"
+                isLightBackground={forceSolid}
                 className="transition-all duration-500"
               />
             </Link>
