@@ -63,7 +63,7 @@ export default function Logo({
         {/* Line 1: NAF */}
         <text 
           x={xPos} 
-          y={h * 0.45} 
+          y={h * 0.52} 
           textAnchor={textAnchor}
           textLength={targetWidth}
           lengthAdjust="spacing"
@@ -79,10 +79,10 @@ export default function Logo({
           NAF
         </text>
 
-        {/* Line 2: TEXNİKA */}
+        {/* Line 2: TEXNİKA *7767 */}
         <text 
           x={xPos} 
-          y={h * 0.72} 
+          y={h * 0.85} 
           textAnchor={textAnchor}
           textLength={targetWidth}
           lengthAdjust="spacing"
@@ -92,28 +92,11 @@ export default function Logo({
             fontSize: `${sub}px`,
             fill: fillColor,
             filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em'
           }}
         >
-          TEXNİKA
-        </text>
-
-        {/* Line 3: *7767 */}
-        <text 
-          x={xPos} 
-          y={h * 0.95} 
-          textAnchor={textAnchor}
-          textLength={targetWidth}
-          lengthAdjust="spacing"
-          style={{ 
-            fontFamily: 'var(--font-jakarta), sans-serif',
-            fontWeight: 800,
-            fontSize: `${sub}px`,
-            fill: fillColor,
-            filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)'
-          }}
-        >
-          *7767
+          TEXNİKA *7767
         </text>
 
       </svg>
