@@ -43,7 +43,7 @@ export default function Footer() {
     <footer className="bg-[#0a0a0a] text-white border-t border-white/5 pt-24 pb-12 overflow-hidden relative">
       {/* Decorative large logo watermark */}
       <div className="absolute -bottom-20 -left-20 opacity-[0.02] select-none pointer-events-none">
-        <h2 className="text-[300px] font-black leading-none">NAF</h2>
+        <h2 className="text-[300px] font-black leading-none font-playfair">NAF</h2>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
