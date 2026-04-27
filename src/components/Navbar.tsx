@@ -74,13 +74,29 @@ export default function Navbar() {
       >
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex items-center justify-between gap-4">
-            <Link href="/#hero" className="group flex items-center gap-3 flex-shrink-0">
+            <Link href="/#hero" className="group flex items-center gap-2 flex-shrink-0">
               <Logo 
                 variant="gold" 
                 size="sm"
                 align="left"
                 className="transition-all duration-500"
               />
+              <span 
+                className="transition-all duration-500 select-none font-black"
+                style={{
+                  writingMode: 'vertical-rl',
+                  textOrientation: 'mixed',
+                  fontSize: '10px',
+                  color: '#B8960C',
+                  lineHeight: 1,
+                  height: '32px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                *7767
+              </span>
             </Link>
 
             <div className="hidden lg:flex items-center gap-8 xl:gap-10">
