@@ -172,7 +172,7 @@ export default function Navbar() {
                     writingMode: 'vertical-rl',
                     textOrientation: 'mixed',
                     fontSize: '11px',
-                    color: '#B8960C',
+                    color: '#000000',
                     letterSpacing: '0.1em',
                     lineHeight: 1,
                     height: '45px',
