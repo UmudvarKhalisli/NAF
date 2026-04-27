@@ -22,14 +22,14 @@ export default function Logo({
   isLightBackground = false
 }: LogoProps) {
   
-  // Dimensions mapping - Optimized for the new double-line structure
+  // Dimensions mapping - Optimized for 3-line vertical layout
   const dimensions = {
-    xs: { w: 100, h: 32, font: 28, sub: 7 },
-    sm: { w: 160, h: 48, font: 44, sub: 10 },
-    md: { w: 220, h: 74, font: 64, sub: 13 },
-    lg: { w: 320, h: 100, font: 88, sub: 18 },
-    xl: { w: 450, h: 140, font: 120, sub: 24 },
-    custom: { w: customWidth || 180, h: customHeight || 60, font: 46, sub: 10 }
+    xs: { w: 100, h: 40, font: 24, sub: 6 },
+    sm: { w: 160, h: 64, font: 38, sub: 9 },
+    md: { w: 220, h: 90, font: 56, sub: 12 },
+    lg: { w: 320, h: 130, font: 80, sub: 16 },
+    xl: { w: 450, h: 180, font: 110, sub: 22 },
+    custom: { w: customWidth || 180, h: customHeight || 80, font: 40, sub: 10 }
   };
 
   const { w, h, font, sub } = dimensions[size];
@@ -47,10 +47,6 @@ export default function Logo({
   const xPos = isLeft ? "0" : "50%";
   const textAnchor = isLeft ? "start" : "middle";
 
-  // Calculate a consistent width for both text elements to ensure they align at start and end
-  // We use about 95% of the SVG width to prevent clipping
-  const targetWidth = w * 0.95;
-
   return (
     <div className={`flex items-center ${isLeft ? 'justify-start' : 'justify-center'} ${className}`}>
       <svg 
@@ -61,13 +57,11 @@ export default function Logo({
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full overflow-visible"
       >
-        {/* NAF Header Main Text */}
+        {/* Line 1: NAF */}
         <text 
           x={xPos} 
-          y={h * 0.62} 
+          y={h * 0.45} 
           textAnchor={textAnchor}
-          textLength={targetWidth}
-          lengthAdjust="spacing"
           style={{ 
             fontFamily: 'var(--font-playfair), serif',
             fontWeight: 900,
@@ -80,23 +74,39 @@ export default function Logo({
           NAF
         </text>
 
-        {/* Subtitle: TEXNİKA *7767 */}
+        {/* Line 2: TEXNİKA */}
         <text 
           x={xPos} 
-          y={h * 0.95} 
+          y={h * 0.72} 
           textAnchor={textAnchor}
-          textLength={targetWidth}
-          lengthAdjust="spacing"
           style={{ 
             fontFamily: 'var(--font-jakarta), sans-serif',
             fontWeight: 800,
             fontSize: `${sub}px`,
             fill: fillColor,
             filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+            letterSpacing: '0.2em'
           }}
         >
-          TEXNİKA *7767
+          TEXNİKA
+        </text>
+
+        {/* Line 3: *7767 */}
+        <text 
+          x={xPos} 
+          y={h * 0.95} 
+          textAnchor={textAnchor}
+          style={{ 
+            fontFamily: 'var(--font-jakarta), sans-serif',
+            fontWeight: 800,
+            fontSize: `${sub}px`,
+            fill: fillColor,
+            filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
+            letterSpacing: '0.3em'
+          }}
+        >
+          *7767
         </text>
 
       </svg>
