@@ -29,11 +29,13 @@ export default function Navbar() {
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      // Use a slightly smaller threshold for more responsive transition
+      const scrollPos = window.scrollY;
+      setScrolled(scrollPos > 10);
 
       if (isHome) {
         const sections = navLinks.map(link => document.getElementById(link.id));
-        const scrollPosition = window.scrollY + 100;
+        const scrollPosition = scrollPos + 100;
 
         sections.forEach(section => {
           if (section) {
@@ -47,7 +49,7 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);

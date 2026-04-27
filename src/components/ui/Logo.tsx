@@ -72,7 +72,8 @@ export default function Logo({
             fontSize: `${font}px`,
             fill: fillColor,
             filter: isLightBackground ? 'drop-shadow(0px 2px 3px rgba(0,0,0,0.4))' : 'url(#logo-shadow)',
-            letterSpacing: '-0.02em' // Tightened as requested
+            letterSpacing: '-0.02em', // Tightened as requested
+            transition: 'fill 0.5s ease, filter 0.5s ease'
           }}
         >
           NAF
@@ -92,6 +93,7 @@ export default function Logo({
             fill: fillColor,
             filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
             textTransform: 'uppercase',
+            transition: 'fill 0.5s ease, filter 0.5s ease'
           }}
         >
           TEXNİKA
@@ -110,6 +112,7 @@ export default function Logo({
             fontSize: `${sub}px`,
             fill: fillColor,
             filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
+            transition: 'fill 0.5s ease, filter 0.5s ease'
           }}
         >
           *7767
