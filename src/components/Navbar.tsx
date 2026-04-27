@@ -82,14 +82,15 @@ export default function Navbar() {
                 className="transition-all duration-500"
               />
               <span 
-                className="transition-all duration-500 select-none font-black ml-[-45px] mb-[-4px]"
+                className="transition-all duration-500 select-none font-black ml-[-55px] mb-[-4px]"
                 style={{
                   writingMode: 'vertical-rl',
                   textOrientation: 'mixed',
-                  fontSize: '10px',
+                  fontSize: '11px',
                   color: '#B8960C',
+                  letterSpacing: '0.1em',
                   lineHeight: 1,
-                  height: '38px',
+                  height: '45px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
@@ -165,6 +166,23 @@ export default function Navbar() {
             <div className="flex items-center justify-between py-5 mb-6">
               <Link href="/#hero" onClick={() => setOpen(false)} className="flex items-center">
                 <Logo variant="black" size="sm" align="left" />
+                <span 
+                  className="transition-all duration-500 select-none font-black ml-[-55px] mb-[-4px]"
+                  style={{
+                    writingMode: 'vertical-rl',
+                    textOrientation: 'mixed',
+                    fontSize: '11px',
+                    color: '#B8960C',
+                    letterSpacing: '0.1em',
+                    lineHeight: 1,
+                    height: '45px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  *7767
+                </span>
               </Link>
               <button onClick={() => setOpen(false)} className="p-2">
                 <X size={22} className="text-black" />
