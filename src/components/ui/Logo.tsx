@@ -47,6 +47,9 @@ export default function Logo({
   const xPos = isLeft ? "0" : "50%";
   const textAnchor = isLeft ? "start" : "middle";
 
+  // Calculate a consistent width for all text elements to ensure they align perfectly
+  const targetWidth = w * 0.92; // Using 92% to leave a tiny bit of breathing room
+
   return (
     <div className={`flex items-center ${isLeft ? 'justify-start' : 'justify-center'} ${className}`}>
       <svg 
@@ -62,6 +65,8 @@ export default function Logo({
           x={xPos} 
           y={h * 0.45} 
           textAnchor={textAnchor}
+          textLength={targetWidth}
+          lengthAdjust="spacing"
           style={{ 
             fontFamily: 'var(--font-playfair), serif',
             fontWeight: 900,
@@ -79,14 +84,15 @@ export default function Logo({
           x={xPos} 
           y={h * 0.72} 
           textAnchor={textAnchor}
+          textLength={targetWidth}
+          lengthAdjust="spacing"
           style={{ 
             fontFamily: 'var(--font-jakarta), sans-serif',
             fontWeight: 800,
             fontSize: `${sub}px`,
             fill: fillColor,
             filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
-            textTransform: 'uppercase',
-            letterSpacing: '0.2em'
+            textTransform: 'uppercase'
           }}
         >
           TEXNİKA
@@ -97,13 +103,14 @@ export default function Logo({
           x={xPos} 
           y={h * 0.95} 
           textAnchor={textAnchor}
+          textLength={targetWidth}
+          lengthAdjust="spacing"
           style={{ 
             fontFamily: 'var(--font-jakarta), sans-serif',
             fontWeight: 800,
             fontSize: `${sub}px`,
             fill: fillColor,
-            filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
-            letterSpacing: '0.3em'
+            filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)'
           }}
         >
           *7767
