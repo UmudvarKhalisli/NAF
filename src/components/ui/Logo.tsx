@@ -22,14 +22,14 @@ export default function Logo({
   isLightBackground = false
 }: LogoProps) {
   
-  // Dimensions mapping - Optimized for 3-line vertical layout
+  // Dimensions mapping - Optimized for 3-line vertical layout with equal widths
   const dimensions = {
-    xs: { w: 100, h: 40, font: 24, sub: 6 },
-    sm: { w: 160, h: 64, font: 38, sub: 9 },
-    md: { w: 220, h: 90, font: 56, sub: 12 },
-    lg: { w: 320, h: 130, font: 80, sub: 16 },
-    xl: { w: 450, h: 180, font: 110, sub: 22 },
-    custom: { w: customWidth || 180, h: customHeight || 80, font: 40, sub: 10 }
+    xs: { w: 100, h: 50, font: 28, sub: 10 },
+    sm: { w: 140, h: 65, font: 40, sub: 14 },
+    md: { w: 200, h: 90, font: 58, sub: 20 },
+    lg: { w: 280, h: 130, font: 82, sub: 28 },
+    xl: { w: 400, h: 180, font: 115, sub: 40 },
+    custom: { w: customWidth || 180, h: customHeight || 80, font: 40, sub: 14 }
   };
 
   const { w, h, font, sub } = dimensions[size];
@@ -47,8 +47,9 @@ export default function Logo({
   const xPos = isLeft ? "0" : "50%";
   const textAnchor = isLeft ? "start" : "middle";
 
-  // Calculate a consistent width for all text elements to ensure they align perfectly
-  const targetWidth = w * 0.92; // Using 92% to leave a tiny bit of breathing room
+  // The width of "NAF" will be our anchor. 
+  // At font size 40 (sm), "NAF" is roughly 82px wide in Playfair Black.
+  const anchorWidth = size === 'sm' ? 82 : (size === 'xs' ? 58 : w * 0.58);
 
   return (
     <div className={`flex items-center ${isLeft ? 'justify-start' : 'justify-center'} ${className}`}>
@@ -60,43 +61,58 @@ export default function Logo({
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full overflow-visible"
       >
-        {/* Line 1: NAF */}
+        {/* Line 1: NAF - No spacing as requested */}
         <text 
           x={xPos} 
-          y={h * 0.52} 
+          y={h * 0.38} 
           textAnchor={textAnchor}
-          textLength={targetWidth}
-          lengthAdjust="spacing"
           style={{ 
             fontFamily: 'var(--font-playfair), serif',
             fontWeight: 900,
             fontSize: `${font}px`,
             fill: fillColor,
             filter: isLightBackground ? 'drop-shadow(0px 2px 3px rgba(0,0,0,0.4))' : 'url(#logo-shadow)',
-            letterSpacing: '-0.02em'
+            letterSpacing: '-0.02em' // Tightened as requested
           }}
         >
           NAF
         </text>
 
-        {/* Line 2: TEXNİKA *7767 */}
+        {/* Line 2: TEXNİKA - Matches width of NAF */}
         <text 
           x={xPos} 
-          y={h * 0.85} 
+          y={h * 0.65} 
           textAnchor={textAnchor}
-          textLength={targetWidth}
+          textLength={anchorWidth} 
           lengthAdjust="spacing"
           style={{ 
             fontFamily: 'var(--font-jakarta), sans-serif',
-            fontWeight: 800,
+            fontWeight: 900,
             fontSize: `${sub}px`,
             fill: fillColor,
             filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
             textTransform: 'uppercase',
-            letterSpacing: '0.1em'
           }}
         >
-          TEXNİKA *7767
+          TEXNİKA
+        </text>
+
+        {/* Line 3: *7767 - Matches width of NAF */}
+        <text 
+          x={xPos} 
+          y={h * 0.92} 
+          textAnchor={textAnchor}
+          textLength={anchorWidth}
+          lengthAdjust="spacing"
+          style={{ 
+            fontFamily: 'var(--font-jakarta), sans-serif',
+            fontWeight: 900,
+            fontSize: `${sub}px`,
+            fill: fillColor,
+            filter: isLightBackground ? 'drop-shadow(0px 1px 2px rgba(0,0,0,0.3))' : 'url(#logo-shadow)',
+          }}
+        >
+          *7767
         </text>
 
       </svg>
